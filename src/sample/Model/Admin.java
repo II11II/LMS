@@ -8,9 +8,12 @@ public class Admin extends Person {
     }
 
     @Override
-    public void login(String username, String password) {
+    public boolean login(String username, String password) {
+        String query = "SELECT * from Admin;";
+        return exists(username, password, query);
 
     }
+
 
 
     @Override

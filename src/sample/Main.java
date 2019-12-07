@@ -22,8 +22,8 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
         Person model=new Student("u1810037","19991111","Islam","Akhrarov");
-
-            model.login("u1810037","19991111");
+        model.register();
+        System.out.println( model.login("u1810037","19991111"));
 
 //        launch(args);
     }

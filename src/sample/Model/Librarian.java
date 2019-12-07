@@ -1,5 +1,6 @@
 package sample.Model;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Librarian extends Person {
@@ -10,9 +11,12 @@ public class Librarian extends Person {
     }
 
     @Override
-    public void login(String username, String password) {
-
+    public boolean login(String username, String password) {
+        String query = "SELECT * from Librarian;";
+        return exists(username, password, query);
     }
+
+
 
 
     @Override

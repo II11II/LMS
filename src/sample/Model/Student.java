@@ -16,25 +16,9 @@ public class Student extends Person {
     }
 
     @Override
-    public void login(String username, String password) {
-
-        try {
-           String query="SELECT * from Student;";
-            ResultSet rs = statement.executeQuery(query);
-
-            // iterate through the java resultset
-            while (rs.next())
-            {
-                String id = rs.getString("username");
-                String firstName = rs.getString("firstName");
-                String lastName = rs.getString("lastName");
-
-                // print the results
-                System.out.format("%s, %s, %s \n", id, firstName, lastName);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public boolean login(String username, String password) {
+        String query = "SELECT * from Student;";
+        return exists(username, password, query);
 
     }
 
@@ -43,7 +27,7 @@ public class Student extends Person {
     public void register() {
         try {
             statement.executeUpdate("INSERT INTO Student " +
-                    "VALUES ('" + username + "', '" + firstName + "','" + lastName + "');");
+                    "VALUES ('" + username + "', '" + firstName + "','" + lastName + "','" + password + "');");
         } catch (SQLException e) {
             e.printStackTrace();
         }

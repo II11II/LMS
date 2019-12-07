@@ -1,5 +1,8 @@
 package sample.Model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public abstract class Person extends LMS {
     String username;
     String password;
@@ -15,9 +18,36 @@ public abstract class Person extends LMS {
         this.lastName = lastName;
     }
 
-     public abstract void login(String username,String password);
-     public abstract void register();
+    public abstract boolean login(String username, String password);
 
+    public abstract void register();
+
+    public boolean exists(String username, String password, String query) {
+        try {
+
+            ResultSet resultSet = statement.executeQuery(query);
+
+            // iterate through the java resultset
+            String login = "";
+            String pass = "";
+            while (resultSet.next()) {
+                login = resultSet.getString("username");
+                pass = resultSet.getString("password");
+                System.out.format("%s, %s \n", login, pass);
+            }
+            if (login.equalsIgnoreCase(username)) {
+                if (pass.equals(password)) {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return false;
+    }
 
 
 }

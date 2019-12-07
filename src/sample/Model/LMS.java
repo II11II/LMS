@@ -33,7 +33,7 @@ public abstract class LMS {
                     + "firstName varchar (30),"
                     + "lastName varchar(30), "
                     + "PRIMARY KEY(username))";
-
+            final String book="CREATE TABLE "
             statement.executeUpdate(student);
             statement.executeUpdate(admin);
             statement.executeUpdate(librarian);

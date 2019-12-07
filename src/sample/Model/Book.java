@@ -16,7 +16,7 @@ public class Book extends LMS {
     private int quantity;
 
 
-    Book() throws SQLException {
+    public Book() throws SQLException {
         super();
     }
 
@@ -30,13 +30,13 @@ public class Book extends LMS {
         this.quantity = quantity;
     }
 
-    private Queue<String> sort(String feature, String query) {
+    private Queue<String> sort(String column, String query) {
         Queue<String> stack = new LinkedList<String>();
         try {
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
-                stack.add(resultSet.getString(feature));
+                stack.add(resultSet.getString(column));
             }
 
         } catch (SQLException e) {
@@ -46,8 +46,9 @@ public class Book extends LMS {
     }
 
     public Queue<String> sort(String column ) {
-        String query = "SELECT "+ column +"FROM Registration" +
-                " ORDER BY "+ column +"DESC";
+
+        String query = "SELECT "+ column +" FROM Book" +
+                " ORDER BY "+ column +" DESC;";
         return sort(column,query);
     }
 

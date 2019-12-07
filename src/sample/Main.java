@@ -24,6 +24,11 @@ public class Main extends Application {
         Person model=new Student("u1810037","19991111","Islam","Akhrarov");
         model.register();
         System.out.println( model.login("u1810037","19991111"));
+        Book book=new Book();
+        System.out.println( book.sort("title"));
+        System.out.println(book.sort("publishDate"));
+
+
 
 //        launch(args);
     }

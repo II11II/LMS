@@ -17,7 +17,9 @@ public class Admin extends Person {
 
 
     @Override
-    public void register() {
+    public void register() {}
+
+    public void deleteStudent(){
 
     }
 

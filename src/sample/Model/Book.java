@@ -1,40 +1,63 @@
 package sample.Model;
 
 
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class Book  {
+public class Book extends LMS {
     private String title;
     private String subject;
     private String author;
     private int ISBN;
     private Date publishDate;
+    private int quantity;
 
 
-    Book() {
+    Book() throws SQLException {
+        super();
     }
 
-    Book(String title, String subject, String author, int ISBN, Date publishDate) {
-        this.author=author;
-        this.ISBN= ISBN;
-        this.publishDate=publishDate;
-        this.title=title;
-        this.subject=subject;
+    Book(String title, String subject, String author, int ISBN, Date publishDate, int quantity) throws SQLException {
+        super();
+        this.author = author;
+        this.ISBN = ISBN;
+        this.publishDate = publishDate;
+        this.title = title;
+        this.subject = subject;
+        this.quantity = quantity;
     }
 
+    private Queue<String> sort(String feature, String query) {
+        Queue<String> stack = new LinkedList<String>();
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
 
-    public String getTitle() {
+            while (resultSet.next()) {
+                stack.add(resultSet.getString(feature));
+            }
 
-        return title;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return stack;
+    }
+
+    public Queue<String> sort(String column ) {
+        String query = "SELECT "+ column +"FROM Registration" +
+                " ORDER BY "+ column +"DESC";
+        return sort(column,query);
     }
 
     public void setTitle(String title) {
         this.title = title;
 
+
     }
 
-    public String getSubject() {
+    public String getSortedBySubject() {
         return subject;
     }
 
@@ -42,7 +65,7 @@ public class Book  {
         this.subject = subject;
     }
 
-    public String getAuthor() {
+    public String getSortedByAuthor() {
         return author;
     }
 
@@ -50,7 +73,7 @@ public class Book  {
         this.author = author;
     }
 
-    public int getISBN() {
+    public int getSortedByISBN() {
         return ISBN;
     }
 
@@ -58,12 +81,20 @@ public class Book  {
         this.ISBN = ISBN;
     }
 
-    public Date getPublishDate() {
+    public Date getSortedByPublishDate() {
         return publishDate;
     }
 
     public void setPublishDate(Date publishDate) {
         this.publishDate = publishDate;
+    }
+
+    public int getSortedByQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
 

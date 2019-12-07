@@ -10,7 +10,7 @@ public abstract class Person extends LMS {
     String lastName;
 
 
-    Person(String username, String password, String firstName, String lastName) throws java.sql.SQLException {
+    public Person(String username, String password, String firstName, String lastName) throws java.sql.SQLException {
         super.createTable();
         this.username = username;
         this.password = password;
@@ -33,7 +33,6 @@ public abstract class Person extends LMS {
             while (resultSet.next()) {
                 login = resultSet.getString("username");
                 pass = resultSet.getString("password");
-                System.out.format("%s, %s \n", login, pass);
             }
             if (login.equalsIgnoreCase(username)) {
                 if (pass.equals(password)) {

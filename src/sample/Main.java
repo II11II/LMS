@@ -25,8 +25,12 @@ public class Main extends Application {
         model.register();
         System.out.println( model.login("u1810037","19991111"));
         Book book=new Book();
-        System.out.println( book.sort("title"));
-        System.out.println(book.sort("publishDate"));
+        System.out.println( book.getSortedByTitle());
+        System.out.println(book.getSortedByAuthor());
+        System.out.println(book.getSortedByISBN());
+        System.out.println(book.getSortedByPublishDate());
+        System.out.println(book.getSortedBySubject());
+        System.out.println(book.getSortedByQuantity());
 
 
 

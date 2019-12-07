@@ -41,8 +41,9 @@ public abstract class LMS {
                     + "title varchar(50),"
                     + "subject varchar(50),"
                     + "author varchar(50),"
-                    + "ISBN varchar(50),"
+                    + "ISBN int(13),"
                     + "publishDate Date,"
+                    + "quantity INT,"
                     + "PRIMARY KEY(ISBN))";
 
             statement.executeUpdate(student);

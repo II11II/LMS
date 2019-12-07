@@ -30,7 +30,7 @@ public class Book extends LMS {
         this.quantity = quantity;
     }
 
-    private Queue<String> sort(String column, String query) {
+    private Queue<String> sortStringType(String column, String query) {
         Queue<String> stack = new LinkedList<String>();
         try {
             ResultSet resultSet = statement.executeQuery(query);
@@ -44,12 +44,25 @@ public class Book extends LMS {
         }
         return stack;
     }
+    private Queue<Integer> sortIntegerType(String column, String query) {
+        Queue<Integer> stack = new LinkedList<Integer>();
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
 
-    public Queue<String> sort(String column ) {
+            while (resultSet.next()) {
+                stack.add(resultSet.getInt(column));
+            }
 
-        String query = "SELECT "+ column +" FROM Book" +
-                " ORDER BY "+ column +" DESC;";
-        return sort(column,query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return stack;
+    }
+    public Queue<String> getSortedByTitle() {
+
+        String query = "SELECT "+ "title" +" FROM Book" +
+                " ORDER BY "+ "title" +" DESC;";
+        return sortStringType("title",query);
     }
 
     public void setTitle(String title) {
@@ -58,40 +71,69 @@ public class Book extends LMS {
 
     }
 
-    public String getSortedBySubject() {
-        return subject;
+    public Queue<String> getSortedBySubject() {
+
+        String query = "SELECT "+ "subject" +" FROM Book" +
+                " ORDER BY "+ "subject" +" DESC;";
+        return sortStringType("subject",query);
+
     }
 
     public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public String getSortedByAuthor() {
-        return author;
+    public Queue<String> getSortedByAuthor() {
+
+        String query = "SELECT "+ "author" +" FROM Book" +
+                " ORDER BY "+ "author" +" DESC;";
+        return sortStringType("author",query);
+
     }
 
     public void setAuthor(String author) {
         this.author = author;
     }
 
-    public int getSortedByISBN() {
-        return ISBN;
+    public Queue<Integer> getSortedByISBN() {
+
+        String query = "SELECT "+ "ISBN" +" FROM Book" +
+                " ORDER BY "+ "ISBN" +" DESC;";
+        return sortIntegerType("ISBN",query);
+
     }
 
     public void setISBN(int ISBN) {
         this.ISBN = ISBN;
     }
 
-    public Date getSortedByPublishDate() {
+    public Queue<Date> getSortedByPublishDate() {
+
+        String query = "SELECT publishDate FROM Book ORDER BY publishDate DESC;";
+        Queue<Date> publishDate = new LinkedList<Date>();
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                publishDate.add(resultSet.getDate("publishDate"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return publishDate;
+
     }
 
     public void setPublishDate(Date publishDate) {
         this.publishDate = publishDate;
     }
 
-    public int getSortedByQuantity() {
-        return quantity;
+    public Queue<Integer> getSortedByQuantity() {
+        String query = "SELECT "+ "quantity" +" FROM Book" +
+                " ORDER BY "+ "quantity" +" DESC;";
+        return sortIntegerType("quantity",query);
+
     }
 
     public void setQuantity(int quantity) {

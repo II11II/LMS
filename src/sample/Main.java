@@ -23,7 +23,7 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
         Person model=new Student("u1810037","19991111","Islam","Akhrarov");
 
-            model.login();
+            model.login("u1810037","19991111");
 
 //        launch(args);
     }

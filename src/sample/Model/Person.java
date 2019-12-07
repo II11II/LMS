@@ -15,7 +15,7 @@ public abstract class Person extends LMS {
         this.lastName = lastName;
     }
 
-     public abstract void login();
+     public abstract void login(String username,String password);
      public abstract void register();
 
 

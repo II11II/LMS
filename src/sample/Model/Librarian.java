@@ -10,10 +10,10 @@ public class Librarian extends Person {
     }
 
     @Override
-    public void login() {
-
+    public void login(String username, String password) {
 
     }
+
 
     @Override
     public void register() {

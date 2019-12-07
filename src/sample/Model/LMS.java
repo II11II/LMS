@@ -23,16 +23,19 @@ public abstract class LMS {
                     + "username VARCHAR(8),"
                     + "firstName varchar (30),"
                     + "lastName varchar(30), "
+                    + "password varchar(30), "
                     + "PRIMARY KEY(username))";
             final String admin = "CREATE TABLE if not exists Admin  ("
                     + "username VARCHAR(8),"
                     + "firstName varchar (30),"
                     + "lastName varchar(30), "
+                    + "password varchar(30), "
                     + "PRIMARY KEY(username))";
             final String librarian = "CREATE TABLE if not exists Librarian  ("
                     + "username VARCHAR(8),"
                     + "firstName varchar (30),"
                     + "lastName varchar(30), "
+                    + "password varchar(30), "
                     + "PRIMARY KEY(username))";
             final String book = "CREATE TABLE if not exists Book ( "
                     + "title varchar(50),"

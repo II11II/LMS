@@ -8,14 +8,14 @@ public class Book  {
     private String title;
     private String subject;
     private String author;
-    private String ISBN;
+    private int ISBN;
     private Date publishDate;
 
 
     Book() {
     }
 
-    Book(String title, String subject, String author, String ISBN, Date publishDate) {
+    Book(String title, String subject, String author, int ISBN, Date publishDate) {
         this.author=author;
         this.ISBN= ISBN;
         this.publishDate=publishDate;
@@ -50,11 +50,11 @@ public class Book  {
         this.author = author;
     }
 
-    public String getISBN() {
+    public int getISBN() {
         return ISBN;
     }
 
-    public void setISBN(String ISBN) {
+    public void setISBN(int ISBN) {
         this.ISBN = ISBN;
     }
 

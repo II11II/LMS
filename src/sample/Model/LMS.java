@@ -9,11 +9,12 @@ public abstract class LMS {
     final static String driverName = "com.mysql.jdbc.Driver";
     final static String username = "root";
     final static String password = "";
-    final static String url = "jdbc:mysql://" + SERVER_NAME + "/" +TABLE+ SSL;
+    final static String url = "jdbc:mysql://" + SERVER_NAME + "/" + TABLE + SSL;
     Connection connection = DriverManager.getConnection(url, username, password);
     Statement statement = connection.createStatement();
 
-    LMS() throws SQLException {}
+    LMS() throws SQLException {
+    }
 
     public void createTable() {
         try {
@@ -33,20 +34,24 @@ public abstract class LMS {
                     + "firstName varchar (30),"
                     + "lastName varchar(30), "
                     + "PRIMARY KEY(username))";
-            final String book="CREATE TABLE "
+            final String book = "CREATE TABLE if not exists Book ( "
+                    + "title varchar(50),"
+                    + "subject varchar(50),"
+                    + "author varchar(50),"
+                    + "ISBN varchar(50),"
+                    + "publishDate Date,"
+                    + "PRIMARY KEY(ISBN))";
+
             statement.executeUpdate(student);
             statement.executeUpdate(admin);
             statement.executeUpdate(librarian);
+            statement.executeUpdate(book);
 
 
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
         }
     }
-
-
-
-
 
 
 }

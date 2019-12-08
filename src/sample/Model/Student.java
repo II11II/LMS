@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.Date;
 
 public class Student extends Person {
-    Book borrowedBook = new Book();
+    Book borrowedBook ;
     Date expireDate;
     double currentFine;
 

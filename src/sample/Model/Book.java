@@ -16,10 +16,6 @@ public class Book extends LMS {
     private int quantity;
 
 
-    public Book() throws SQLException {
-        super();
-    }
-
     Book(String title, String subject, String author, int ISBN, Date publishDate, int quantity) throws SQLException {
         super();
         this.author = author;
@@ -28,6 +24,16 @@ public class Book extends LMS {
         this.title = title;
         this.subject = subject;
         this.quantity = quantity;
+        String query = "Insert into Book ( title , subject ,author, ISBN, publishDate,quantity) " +
+                "Values ( " + title + "," + subject + "," + author + "," + ISBN + "," + publishDate + "," +
+                quantity + " );";
+        statement.executeQuery(query);
+
+
+    }
+
+    private void setFeature() {
+
     }
 
     private Queue<String> sortStringType(String column, String query) {
@@ -44,6 +50,7 @@ public class Book extends LMS {
         }
         return stack;
     }
+
     private Queue<Integer> sortIntegerType(String column, String query) {
         Queue<Integer> stack = new LinkedList<Integer>();
         try {
@@ -58,11 +65,12 @@ public class Book extends LMS {
         }
         return stack;
     }
+
     public Queue<String> getSortedByTitle() {
 
-        String query = "SELECT "+ "title" +" FROM Book" +
-                " ORDER BY "+ "title" +" DESC;";
-        return sortStringType("title",query);
+        String query = "SELECT " + "title" + " FROM Book" +
+                " ORDER BY " + "title" + " DESC;";
+        return sortStringType("title", query);
     }
 
     public void setTitle(String title) {
@@ -73,9 +81,9 @@ public class Book extends LMS {
 
     public Queue<String> getSortedBySubject() {
 
-        String query = "SELECT "+ "subject" +" FROM Book" +
-                " ORDER BY "+ "subject" +" DESC;";
-        return sortStringType("subject",query);
+        String query = "SELECT " + "subject" + " FROM Book" +
+                " ORDER BY " + "subject" + " DESC;";
+        return sortStringType("subject", query);
 
     }
 
@@ -85,9 +93,9 @@ public class Book extends LMS {
 
     public Queue<String> getSortedByAuthor() {
 
-        String query = "SELECT "+ "author" +" FROM Book" +
-                " ORDER BY "+ "author" +" DESC;";
-        return sortStringType("author",query);
+        String query = "SELECT " + "author" + " FROM Book" +
+                " ORDER BY " + "author" + " DESC;";
+        return sortStringType("author", query);
 
     }
 
@@ -97,9 +105,9 @@ public class Book extends LMS {
 
     public Queue<Integer> getSortedByISBN() {
 
-        String query = "SELECT "+ "ISBN" +" FROM Book" +
-                " ORDER BY "+ "ISBN" +" DESC;";
-        return sortIntegerType("ISBN",query);
+        String query = "SELECT " + "ISBN" + " FROM Book" +
+                " ORDER BY " + "ISBN" + " DESC;";
+        return sortIntegerType("ISBN", query);
 
     }
 
@@ -130,9 +138,9 @@ public class Book extends LMS {
     }
 
     public Queue<Integer> getSortedByQuantity() {
-        String query = "SELECT "+ "quantity" +" FROM Book" +
-                " ORDER BY "+ "quantity" +" DESC;";
-        return sortIntegerType("quantity",query);
+        String query = "SELECT " + "quantity" + " FROM Book" +
+                " ORDER BY " + "quantity" + " DESC;";
+        return sortIntegerType("quantity", query);
 
     }
 

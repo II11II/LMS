@@ -1,4 +1,4 @@
-package sample.Model;
+package com.team.LMS.Model;
 
 import java.sql.*;
 

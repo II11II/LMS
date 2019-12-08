@@ -1,11 +1,14 @@
-package sample;
+package com.team.LMS;
 
+import com.team.LMS.Model.Book;
+import com.team.LMS.Model.Person;
+import com.team.LMS.Model.Student;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.Model.*;
+import com.team.LMS.Model.*;
 
 import java.sql.SQLException;
 
@@ -13,8 +16,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/sample.fxml"));
+        primaryStage.setTitle("Library Management System");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
@@ -32,8 +35,8 @@ public class Main extends Application {
         System.out.println(book.getSortedBySubject());
         System.out.println(book.getSortedByQuantity());
 
-
-
-//        launch(args);
+       launch(args);
     }
 }
+
+

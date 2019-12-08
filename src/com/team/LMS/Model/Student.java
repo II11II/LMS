@@ -1,6 +1,5 @@
-package sample.Model;
+package com.team.LMS.Model;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 

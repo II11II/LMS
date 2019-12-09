@@ -24,7 +24,7 @@ public abstract class Person extends LMS {
 
     public abstract boolean login(String username, String password);
 
-    public abstract void register();
+    public abstract void register(String username, String password, String firstName, String lastName);
 
     public boolean exists(String username, String password, String query) {
         try {

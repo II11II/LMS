@@ -1,5 +1,6 @@
 package com.team.LMS.model;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -12,7 +13,7 @@ public class Student extends Person {
 
     }
 
-    public Student(String username, String password, String firstName, String lastName) throws SQLException {
+    private Student(String username, String password, String firstName, String lastName) throws SQLException {
         super(username, password, firstName, lastName);
 
     }
@@ -25,8 +26,20 @@ public class Student extends Person {
     }
 
 
+    //TODO:Check the functionality
+    public Student deleteStudent(String username) throws SQLException {
+
+        String query = "delete from Student where 'username' =" + username + ";";
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return this;
+    }
     @Override
-    public void register() {
+    public void register(String username, String password, String firstName, String lastName) {
         try {
             statement.executeUpdate("INSERT INTO Student " +
                     "VALUES ('" + username + "', '" + firstName + "','" + lastName + "','" + password + "');");

@@ -3,6 +3,7 @@ package com.team.LMS.model;
 import java.sql.SQLException;
 
 public class Admin extends Person {
+
     public Admin() throws SQLException {
         super();
     }
@@ -17,10 +18,10 @@ public class Admin extends Person {
 
     }
 
-
-
     @Override
-    public void register() { }
+    public void register(String username, String password, String firstName, String lastName) {
+
+    }
 
 
 

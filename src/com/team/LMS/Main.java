@@ -1,5 +1,6 @@
 package com.team.LMS;
 
+import com.team.LMS.model.Admin;
 import com.team.LMS.model.Book;
 import com.team.LMS.model.Person;
 import com.team.LMS.model.Student;
@@ -29,6 +30,7 @@ public class Main extends Application {
 //        model.register();
 //        System.out.println( model.login("u1810037","19991111"));
         Book book=new Book();
+        Admin admin;
 //        System.out.println( book.getSortedByTitle());
 //        System.out.println(book.getSortedByAuthor());
 //        System.out.println(book.getSortedByISBN());
@@ -39,7 +41,7 @@ public class Main extends Application {
 //        Book book1=new Book("C++","PL","Sarvar",232,new Date(new java.util.Date().getTime()),10);
 //        System.out.println(book.getBook());
 //        book.saveBook("C++","PL","Sarvar",242,new Date(new java.util.Date().getTime()),10);
-        book.deleteBook(242);
+//        book.deleteBook(242);
         launch(args);
     }
 }

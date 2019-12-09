@@ -1,9 +1,11 @@
 package com.team.LMS.model;
 
 
+import java.io.IOError;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 
 public class Book extends LMS {
@@ -31,7 +33,7 @@ public class Book extends LMS {
     }
 
     private Queue<String> sortStringType(String column, String query) {
-        Queue<String> stack = new LinkedList<String>();
+        Queue<String> stack = new LinkedList<>();
         try {
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -46,7 +48,7 @@ public class Book extends LMS {
     }
 
     private Queue<Integer> sortIntegerType(String column, String query) {
-        Queue<Integer> stack = new LinkedList<Integer>();
+        Queue<Integer> stack = new LinkedList<>();
         try {
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -101,7 +103,7 @@ public class Book extends LMS {
     public Queue<Date> getSortedByPublishDate() {
 
         String query = "SELECT publishDate FROM Book ORDER BY publishDate DESC;";
-        Queue<Date> publishDate = new LinkedList<Date>();
+        Queue<Date> publishDate = new LinkedList<>();
         try {
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -151,8 +153,9 @@ public class Book extends LMS {
 
         return books;
     }
-    public Book deleteBook(int ISBN){
-        String query="delete from Book where ISBN ="+ISBN;
+
+    public void deleteBook(int ISBN) {
+        String query = "delete from Book where ISBN =" + ISBN;
         try {
             PreparedStatement pstmt = connection.prepareStatement(query);
             pstmt.executeUpdate();
@@ -160,8 +163,24 @@ public class Book extends LMS {
             e.printStackTrace();
         }
 
-        return this;
     }
+//TODO : To check the function to its functionality
+    public void modifyBook(int ISBN, Map<String, Object> columnValue) {
+        for (Map.Entry<String, Object> entry : columnValue.entrySet()) {
+
+
+            String query = "UPDATE Book set " + entry.getKey() + "=" + entry.getValue() + " where ISBN = " + ISBN + ";";
+            try {
+                PreparedStatement pstmt = connection.prepareStatement(query);
+                pstmt.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                throw new IOError(new Throwable());
+            }
+        }
+
+    }
+
 
     public Date getPublishDate() {
         return publishDate;

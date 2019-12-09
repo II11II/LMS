@@ -19,7 +19,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("fxml/sample.fxml"));
         primaryStage.setTitle("Library Management System");
-        primaryStage.setScene(new Scene(root, 1000, 1000));
+        primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();
     }
 
@@ -29,16 +29,17 @@ public class Main extends Application {
 //        model.register();
 //        System.out.println( model.login("u1810037","19991111"));
         Book book=new Book();
-        System.out.println( book.getSortedByTitle());
-        System.out.println(book.getSortedByAuthor());
-        System.out.println(book.getSortedByISBN());
-        System.out.println(book.getSortedByPublishDate());
-        System.out.println(book.getSortedBySubject());
-        System.out.println(book.getSortedByQuantity());
-        Calendar calendar=Calendar.getInstance();
-
-        System.out.println(new Date(calendar.getTime().getTime()));
-//        Book book1=new Book("C++","PL","Sarvar",232,new Date(calendar.getTime().getTime()),10);
+//        System.out.println( book.getSortedByTitle());
+//        System.out.println(book.getSortedByAuthor());
+//        System.out.println(book.getSortedByISBN());
+//        System.out.println(book.getSortedByPublishDate());
+//        System.out.println(book.getSortedBySubject());
+//        System.out.println(book.getSortedByQuantity());
+//
+//        Book book1=new Book("C++","PL","Sarvar",232,new Date(new java.util.Date().getTime()),10);
+//        System.out.println(book.getBook());
+//        book.saveBook("C++","PL","Sarvar",242,new Date(new java.util.Date().getTime()),10);
+        book.deleteBook(242);
         launch(args);
     }
 }

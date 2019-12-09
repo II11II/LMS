@@ -4,7 +4,9 @@ import java.sql.SQLException;
 
 public class Librarian extends Person {
 
-
+    public Librarian() throws SQLException {
+        super();
+    }
     public Librarian(String username, String password, String firstName, String lastName) throws SQLException {
         super(username, password, firstName, lastName);
     }

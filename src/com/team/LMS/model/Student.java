@@ -7,7 +7,10 @@ public class Student extends Person {
     Book borrowedBook ;
     Date expireDate;
     double currentFine;
+    public Student() throws SQLException {
+        super();
 
+    }
 
     public Student(String username, String password, String firstName, String lastName) throws SQLException {
         super(username, password, firstName, lastName);

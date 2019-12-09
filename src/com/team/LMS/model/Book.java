@@ -1,9 +1,8 @@
 package com.team.LMS.model;
 
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Date;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -14,16 +13,9 @@ public class Book extends LMS {
     private int ISBN;
     private Date publishDate;
     private int quantity;
+    private ArrayList<Book> books = new ArrayList<>();
 
-    public Book() throws SQLException {
-        super();
-
-    }
-//PASSING DATE
-    // create a sql date object so we can use it in our INSERT statement
-//    Calendar calendar = Calendar.getInstance();
-//    java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
-    public Book(String title, String subject, String author, int ISBN, Date publishDate, int quantity) throws SQLException {
+    private Book(String title, String subject, String author, int ISBN, Date publishDate, int quantity) throws SQLException {
         super();
         this.author = author;
         this.ISBN = ISBN;
@@ -31,15 +23,10 @@ public class Book extends LMS {
         this.title = title;
         this.subject = subject;
         this.quantity = quantity;
-        String query = "Insert into Book ( title , subject ,author, ISBN, publishDate,quantity) " +
-                "Values ( '" + title + "' ,'" + subject + "','" + author + "'," + ISBN + ", DATE (" + publishDate + " , 'yy-mm-dd' )," +
-                quantity + " );";
-        statement.executeUpdate(query);
-
-
     }
 
-    private void setFeature() {
+    public Book() throws SQLException {
+        super();
 
     }
 
@@ -80,9 +67,11 @@ public class Book extends LMS {
         return sortStringType("title", query);
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public Queue<String> getSortedByAuthor() {
 
+        String query = "SELECT " + "author" + " FROM Book" +
+                " ORDER BY " + "author" + " DESC;";
+        return sortStringType("author", query);
 
     }
 
@@ -94,22 +83,6 @@ public class Book extends LMS {
 
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public Queue<String> getSortedByAuthor() {
-
-        String query = "SELECT " + "author" + " FROM Book" +
-                " ORDER BY " + "author" + " DESC;";
-        return sortStringType("author", query);
-
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public Queue<Integer> getSortedByISBN() {
 
         String query = "SELECT " + "ISBN" + " FROM Book" +
@@ -118,8 +91,11 @@ public class Book extends LMS {
 
     }
 
-    public void setISBN(int ISBN) {
-        this.ISBN = ISBN;
+    public Queue<Integer> getSortedByQuantity() {
+        String query = "SELECT " + "quantity" + " FROM Book" +
+                " ORDER BY " + "quantity" + " DESC;";
+        return sortIntegerType("quantity", query);
+
     }
 
     public Queue<Date> getSortedByPublishDate() {
@@ -140,19 +116,75 @@ public class Book extends LMS {
 
     }
 
-    public void setPublishDate(Date publishDate) {
-        this.publishDate = publishDate;
+    /**
+     * example
+     * Book book1=new Book("C++","PL","Sarvar",232,new Date(new java.util.Date().getTime()),10);
+     **/
+    public Book saveBook(String title, String subject, String author, int ISBN, Date publishDate, int quantity) {
+        String query = "Insert into Book ( title , subject ,author, ISBN, publishDate,quantity) " +
+                "Values ( '" + title + "' ,'" + subject + "','" + author + "'," + ISBN + ", DATE ( '" + publishDate + "' )," +
+                quantity + " );";
+        try {
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return this;
     }
 
-    public Queue<Integer> getSortedByQuantity() {
-        String query = "SELECT " + "quantity" + " FROM Book" +
-                " ORDER BY " + "quantity" + " DESC;";
-        return sortIntegerType("quantity", query);
+    public ArrayList<Book> getBook() {
+        String query = "Select * from Book";
+        try {
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                title = resultSet.getString("title");
+                subject = resultSet.getString("subject");
+                author = resultSet.getString("author");
+                ISBN = resultSet.getInt("ISBN");
+                publishDate = resultSet.getDate("publishDate");
+                quantity = resultSet.getInt("quantity");
+                books.add(new Book(title, subject, author, ISBN, publishDate, quantity));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        return books;
+    }
+    public Book deleteBook(int ISBN){
+        String query="delete from Book where ISBN ="+ISBN;
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return this;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public Date getPublishDate() {
+        return publishDate;
+    }
+
+    public int getISBN() {
+        return ISBN;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }
 

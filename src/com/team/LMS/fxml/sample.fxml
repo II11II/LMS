@@ -35,7 +35,7 @@
                 <TextField fx:id="txtUsername" layoutX="4.0" layoutY="61.0" prefHeight="34.0" prefWidth="275.0" promptText="username" />
                 <PasswordField fx:id="txtPassword" layoutX="4.0" layoutY="107.0" prefHeight="34.0" prefWidth="275.0" promptText="password" stylesheets="@../styling/fullpackstyling.css" />
 
-                <Button fx:id="btnLogin" layoutX="4.0" layoutY="171.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="275.0" stylesheets="@../styling/fullpackstyling.css" text="Login" />
+                <Button fx:id="btnLogin" layoutX="4.0" layoutY="171.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="275.0" stylesheets="@../styling/fullpackstyling.css" text="Login"  onAction="#onClickButton" />
 
 
                 <Label fx:id="lblErrors" alignment="CENTER" layoutX="8.0" layoutY="95.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">

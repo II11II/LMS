@@ -9,6 +9,10 @@ public abstract class Person extends LMS {
     String firstName;
     String lastName;
 
+    public Person() throws SQLException {
+        super();
+
+    }
 
     public Person(String username, String password, String firstName, String lastName) throws java.sql.SQLException {
         super.createTable();

@@ -1,4 +1,4 @@
-package com.team.LMS.Model;
+package com.team.LMS.model;
 
 import java.sql.SQLException;
 import java.util.Date;

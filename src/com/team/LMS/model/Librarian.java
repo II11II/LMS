@@ -1,4 +1,4 @@
-package com.team.LMS.Model;
+package com.team.LMS.model;
 
 import java.sql.SQLException;
 
@@ -20,6 +20,12 @@ public class Librarian extends Person {
 
     @Override
     public void register() {
+        try {
+            statement.executeUpdate("INSERT INTO Student " +
+                    "VALUES ('" + username + "', '" + firstName + "','" + lastName + "','" + password + "');");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 

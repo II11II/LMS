@@ -1,9 +1,9 @@
-package com.team.LMS.Model;
+package com.team.LMS.model;
 
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
+import java.sql.Date;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -15,8 +15,15 @@ public class Book extends LMS {
     private Date publishDate;
     private int quantity;
 
+    public Book() throws SQLException {
+        super();
 
-    Book(String title, String subject, String author, int ISBN, Date publishDate, int quantity) throws SQLException {
+    }
+//PASSING DATE
+    // create a sql date object so we can use it in our INSERT statement
+//    Calendar calendar = Calendar.getInstance();
+//    java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
+    public Book(String title, String subject, String author, int ISBN, Date publishDate, int quantity) throws SQLException {
         super();
         this.author = author;
         this.ISBN = ISBN;
@@ -25,9 +32,9 @@ public class Book extends LMS {
         this.subject = subject;
         this.quantity = quantity;
         String query = "Insert into Book ( title , subject ,author, ISBN, publishDate,quantity) " +
-                "Values ( " + title + "," + subject + "," + author + "," + ISBN + "," + publishDate + "," +
+                "Values ( '" + title + "' ,'" + subject + "','" + author + "'," + ISBN + ", DATE (" + publishDate + " , 'yy-mm-dd' )," +
                 quantity + " );";
-        statement.executeQuery(query);
+        statement.executeUpdate(query);
 
 
     }

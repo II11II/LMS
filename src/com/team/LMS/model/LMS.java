@@ -1,4 +1,4 @@
-package com.team.LMS.Model;
+package com.team.LMS.model;
 
 import java.sql.*;
 
@@ -43,7 +43,7 @@ public abstract class LMS {
                     + "author varchar(50),"
                     + "ISBN int(13),"
                     + "publishDate Date,"
-                    + "quantity INT,"
+                    + "quantity Int,"
                     + "PRIMARY KEY(ISBN))";
 
             statement.executeUpdate(student);

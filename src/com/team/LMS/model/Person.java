@@ -1,4 +1,4 @@
-package com.team.LMS.Model;
+package com.team.LMS.model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,7 +27,6 @@ public abstract class Person extends LMS {
 
             ResultSet resultSet = statement.executeQuery(query);
 
-            // iterate through the java resultset
             String login = "";
             String pass = "";
             while (resultSet.next()) {

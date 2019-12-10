@@ -1,21 +1,29 @@
 package com.team.LMS.model;
 
+import java.io.IOError;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Student extends Person {
-    Book borrowedBook ;
+    Book borrowedBook;
     Date expireDate;
-    double currentFine;
+    double fine;
+    boolean isBlocked;
+
     public Student() throws SQLException {
         super();
 
     }
 
-    private Student(String username, String password, String firstName, String lastName) throws SQLException {
+    private Student(String username, String password, String firstName, String lastName, boolean isBlocked,double fine) throws SQLException {
         super(username, password, firstName, lastName);
-
+        this.isBlocked = isBlocked;
+        this.fine=fine;
     }
 
     @Override
@@ -26,8 +34,20 @@ public class Student extends Person {
     }
 
 
+
+    public void register(String username, String password, String firstName, String lastName) {
+        boolean isBlocked=false;//by default
+        double fine=0.0;//by default
+        try {
+            statement.executeUpdate("INSERT INTO Student " +
+                    "VALUES('" + username + "', '" + firstName + "','" + lastName + "','" + password + "'," +isBlocked+","+fine+");");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     //TODO:Check the functionality
-    public Student deleteStudent(String username) throws SQLException {
+    public Student deleteStudent(String username) {
 
         String query = "delete from Student where 'username' =" + username + ";";
         try {
@@ -38,14 +58,60 @@ public class Student extends Person {
         }
         return this;
     }
-    @Override
-    public void register(String username, String password, String firstName, String lastName) {
+
+    // TODO: Check the functionality
+    public Student fineOrBlock(String username, double fine, boolean isBlocked) {
+        String query = "update " + fine + "," + "" + isBlocked + "" + " from Student where username = " + "'" + username + "';";
         try {
-            statement.executeUpdate("INSERT INTO Student " +
-                    "VALUES ('" + username + "', '" + firstName + "','" + lastName + "','" + password + "');");
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return this;
+
+    }
+
+    // TODO: Check the functionality
+    public ArrayList<Map<String,Object>> viewStudents(){
+        String query="select username,fine,isBlocked,firstName,lastName from Student";
+        ArrayList<Map<String,Object>> students=new ArrayList<>();
+        ResultSet resultSet = null;
+        try {
+            resultSet = statement.executeQuery(query);
+
+
+            Map<String,Object> student=new HashMap<>();
+            while (resultSet.next()) {
+
+                 student.put("firstName",resultSet.getString("firstName"));
+                 student.put("username",resultSet.getString("username"));
+                 student.put("lastName",resultSet.getString("lastName"));
+                 student.put("fine",resultSet.getString("fine"));
+                 student.put("isBlocked",resultSet.getString("isBlocked"));
+                 students.add(student);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println(students);
+        return students;
+    }
+
+    //TODO : To check the function to its functionality
+    public void modifyStudent(int username, Map<String, Object> columnValue) {
+        for (Map.Entry<String, Object> entry : columnValue.entrySet()) {
+
+
+            String query = "UPDATE Student set " + entry.getKey() + "=" + entry.getValue() + " where username = " + username + ";";
+            try {
+                PreparedStatement pstmt = connection.prepareStatement(query);
+                pstmt.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                throw new IOError(new Throwable());
+            }
+        }
+
     }
 
 

@@ -3,7 +3,7 @@ package com.team.LMS.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public abstract class Person extends LMS {
+public abstract class Person extends LMS  {
     String username;
     String password;
     String firstName;
@@ -24,7 +24,7 @@ public abstract class Person extends LMS {
 
     public abstract boolean login(String username, String password);
 
-    public abstract void register(String username, String password, String firstName, String lastName);
+
 
     public boolean exists(String username, String password, String query) {
         try {

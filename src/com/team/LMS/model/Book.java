@@ -14,10 +14,11 @@ public class Book extends LMS {
     private String author;
     private int ISBN;
     private Date publishDate;
+    private int reserved;
     private int quantity;
     private ArrayList<Book> books = new ArrayList<>();
 
-    private Book(String title, String subject, String author, int ISBN, Date publishDate, int quantity) throws SQLException {
+    private Book(String title, String subject, String author, int ISBN, Date publishDate, int quantity,int reserved) throws SQLException {
         super();
         this.author = author;
         this.ISBN = ISBN;
@@ -25,13 +26,14 @@ public class Book extends LMS {
         this.title = title;
         this.subject = subject;
         this.quantity = quantity;
+        this.reserved=reserved;
     }
 
     public Book() throws SQLException {
         super();
 
     }
-
+//todo: reserve()
     private Queue<String> sortStringType(String column, String query) {
         Queue<String> stack = new LinkedList<>();
         try {
@@ -145,7 +147,8 @@ public class Book extends LMS {
                 ISBN = resultSet.getInt("ISBN");
                 publishDate = resultSet.getDate("publishDate");
                 quantity = resultSet.getInt("quantity");
-                books.add(new Book(title, subject, author, ISBN, publishDate, quantity));
+                quantity = resultSet.getInt("reserved");
+                books.add(new Book(title, subject, author, ISBN, publishDate, quantity,reserved));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -204,6 +207,10 @@ public class Book extends LMS {
 
     public String getTitle() {
         return title;
+    }
+
+    public int getReserved() {
+        return reserved;
     }
 }
 

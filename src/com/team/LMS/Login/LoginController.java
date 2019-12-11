@@ -1,4 +1,4 @@
-package com.team.LMS.controllers;
+package com.team.LMS.Login;
 
 
 import com.team.LMS.model.Librarian;
@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 
 import java.sql.SQLException;
 
-public class Controller {
+public class LoginController {
     @FXML
     public TextField txtUsername;
     @FXML

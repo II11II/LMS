@@ -8,14 +8,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.sql.SQLException;
-import java.sql.Date;
-import java.util.Calendar;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Login/Login.fxml"));
         primaryStage.setTitle("Library Management System");
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();

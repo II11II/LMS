@@ -136,7 +136,7 @@ public class Book extends LMS {
         return this;
     }
 
-    public ArrayList<Book> getBook() {
+    public ArrayList<Book> getBooks() {
         String query = "Select * from Book";
         try {
             ResultSet resultSet = statement.executeQuery(query);
@@ -185,32 +185,32 @@ public class Book extends LMS {
     }
 
 
-    public Date getPublishDate() {
-        return publishDate;
-    }
-
-    public int getISBN() {
-        return ISBN;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public int getReserved() {
-        return reserved;
-    }
+//    public Date getPublishDate() {
+//        return publishDate;
+//    }
+//
+//    public int getISBN() {
+//        return ISBN;
+//    }
+//
+//    public String getAuthor() {
+//        return author;
+//    }
+//
+//    public int getQuantity() {
+//        return quantity;
+//    }
+//
+//    public String getSubject() {
+//        return subject;
+//    }
+//
+//    public String getTitle() {
+//        return title;
+//    }
+//
+//    public int getReserved() {
+//        return reserved;
+//    }
 }
 

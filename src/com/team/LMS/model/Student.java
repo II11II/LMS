@@ -72,7 +72,7 @@ public class Student extends Person {
     }
 
     // TODO: Check the functionality
-    public ArrayList<Map<String,Object>> viewStudents(){
+    public ArrayList<Map<String,Object>> getStudents(){
         String query="select username,fine,isBlocked,firstName,lastName from Student";
         ArrayList<Map<String,Object>> students=new ArrayList<>();
         ResultSet resultSet ;
@@ -98,7 +98,7 @@ public class Student extends Person {
     }
 
     //TODO : To check the function to its functionality
-    public void modifyStudent(int username, Map<String, Object> columnValue) {
+    public void modifyStudent(String username, Map<String, Object> columnValue) {
         for (Map.Entry<String, Object> entry : columnValue.entrySet()) {
 
 

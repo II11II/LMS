@@ -36,10 +36,10 @@ public class Librarian extends Person {
     }
 
     // TODO: Check the functionality
-    public ArrayList<Map<String,Object>> viewLibrarians(){
+    public ArrayList<Map<String,Object>> getLibrarians(){
         String query="select username,firstName,lastName from Librarian";
         ArrayList<Map<String,Object>> librarians=new ArrayList<>();
-        ResultSet resultSet = null;
+        ResultSet resultSet ;
         try {
             resultSet = statement.executeQuery(query);
             Map<String,Object> librarian=new HashMap<>();
@@ -58,7 +58,7 @@ public class Librarian extends Person {
     }
 
     //TODO:Check the functionality
-    public Librarian deleteLibrarian(String username) throws SQLException {
+    public Librarian deleteLibrarian(String username)  {
 
         String query = "delete from Librarian where 'username' =" + username + ";";
         try {
@@ -71,7 +71,7 @@ public class Librarian extends Person {
     }
 
     //TODO : To check the function to its functionality
-    public void modifyLibrarian(int username, Map<String, Object> columnValue) {
+    public void modifyLibrarian(String username, Map<String, Object> columnValue) {
         for (Map.Entry<String, Object> entry : columnValue.entrySet()) {
 
 

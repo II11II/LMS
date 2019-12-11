@@ -26,7 +26,7 @@ public class Main extends Application {
 
         Student model=new Student();
 
-        System.out.println(model.viewStudents());
+        System.out.println(model.getStudents());
 //        System.out.println(model.viewStudents());
 //        model.register("u1810037","19991111","Islam","Akhrarov");
 //        System.out.println( model.login("u1810037","19991111"));

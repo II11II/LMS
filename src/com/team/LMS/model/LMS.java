@@ -53,6 +53,11 @@ public abstract class LMS {
                     + "username varchar(8),"
                     + "FOREIGN KEY (username) REFERENCES Student(username) ,"
                     + "PRIMARY KEY(username))";
+            final String before = "CREATE TABLE if not exists BookIssue ( "
+                    + "ISBN int(13),"
+                    + "username varchar(8),"
+                    + "FOREIGN KEY (username) REFERENCES Student(username) ,"
+                    + "PRIMARY KEY(username))";
 
             statement.executeUpdate(student);
             statement.executeUpdate(admin);

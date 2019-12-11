@@ -12,268 +12,268 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team.LMS.controller.librarian.LibrarianIssueController">
-    <Pane layoutY="-7.0" prefHeight="160.0" prefWidth="714.0" style="-fx-background-color: #538acf;">
-        <Label layoutX="45.0" layoutY="45.0" text="Issue Book" textFill="WHITE">
-            <font>
-                <Font size="48.0" />
-            </font>
-        </Label>
-    </Pane>
-    <Pane layoutX="33.0" layoutY="182.0" prefHeight="305.0" prefWidth="300.0" style="-fx-background-color: #9fc5e8;">
-        <children>
-            <VBox layoutY="-1.0" prefHeight="305.0" prefWidth="300.0">
-                <children>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Student ID :  " textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <TextField prefHeight="31.0" prefWidth="98.0">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </TextField>
-                            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@style.css" text="Search" textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </Button>
-                        </children>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="First Name : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </Label>
-                            <Label fx:id="firstNameText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Last Name : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="lastNameText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Department :  " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="departmentText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Degree : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="degreeText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                        <opaqueInsets>
-                            <Insets />
-                        </opaqueInsets>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Date of Issue : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <DatePicker prefHeight="31.0" prefWidth="171.0" />
-                        </children>
-                        <opaqueInsets>
-                            <Insets />
-                        </opaqueInsets>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                </children>
-            </VBox>
-        </children>
-    </Pane>
-    <Pane layoutX="383.0" layoutY="182.0" prefHeight="305.0" prefWidth="300.0" style="-fx-background-color: #9fc5e8;">
-        <children>
-            <VBox layoutY="-1.0" prefHeight="305.0" prefWidth="300.0">
-                <children>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="ISBN : " textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <TextField prefHeight="31.0" prefWidth="146.0">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </TextField>
-                            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@style.css" text="Search" textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </Button>
-                        </children>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Title : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </Label>
-                            <Label fx:id="titleText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Subject : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="subjectText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Status : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="statusText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Author : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="authorText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                        <opaqueInsets>
-                            <Insets />
-                        </opaqueInsets>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Copyright : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="copyrigthText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                        <opaqueInsets>
-                            <Insets />
-                        </opaqueInsets>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                </children>
-            </VBox>
-        </children>
-    </Pane>
-   <Button layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@style.css" text="Save" textFill="WHITE" />
+<Pane layoutY="-7.0" prefHeight="160.0" prefWidth="714.0" style="-fx-background-color: #538acf;">
+    <Label layoutX="45.0" layoutY="45.0" text="Issue Book" textFill="WHITE">
+        <font>
+            <Font size="48.0" />
+        </font>
+    </Label>
+</Pane>
+<Pane layoutX="33.0" layoutY="182.0" prefHeight="305.0" prefWidth="300.0" style="-fx-background-color: #9fc5e8;">
+    <children>
+        <VBox layoutY="-1.0" prefHeight="305.0" prefWidth="300.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Student ID :  " textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="issueIDTextField" prefHeight="31.0" prefWidth="98.0">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Button fx:id="issueIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@style.css" text="Search" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="First Name : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="issueFirstNameText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Last Name : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="issueLastNameText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Department :  " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="issueDepartmentText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Degree : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="issueDegreeText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Date of Issue : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <DatePicker fx:id="issueDatePicker" prefHeight="31.0" prefWidth="171.0" />
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</Pane>
+<Pane layoutX="383.0" layoutY="182.0" prefHeight="305.0" prefWidth="300.0" style="-fx-background-color: #9fc5e8;">
+    <children>
+        <VBox layoutY="-1.0" prefHeight="305.0" prefWidth="300.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="ISBN : " textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="issueISBNTextField" prefHeight="31.0" prefWidth="146.0">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Button fx:id="issueISBNSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@style.css" text="Search" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Title : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="issueTitleText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Subject : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="issueSubjectText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Status : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="issueStatusText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Author : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="issueAuthorText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Copyright : " textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="issueCopyrigthText" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</Pane>
+<Button fx:id="bookIssueSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@style.css" text="Issue" textFill="WHITE" />
 </AnchorPane>

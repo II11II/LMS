@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team.LMS.controller.librarian.LibrarianBlockController">
+    <Pane layoutY="-7.0" prefHeight="160.0" prefWidth="714.0" style="-fx-background-color: #538acf;">
+        <Label layoutX="45.0" layoutY="45.0" text="Block Student" textFill="WHITE">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+    </Pane>
+    <Pane layoutX="179.0" layoutY="201.0" prefHeight="253.0" prefWidth="357.0" style="-fx-background-color: #9fc5e8;">
+        <VBox layoutY="-1.0" prefHeight="253.0" prefWidth="357.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                <Label text="Student ID :  " textFill="WHITE">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="blockIDTextField" prefHeight="31.0" prefWidth="143.0">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </TextField>
+                <Button fx:id="blockIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@style.css" text="Search" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </Button>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                <Label text="First Name : " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="blockFirstNameText" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="484.0">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+                <Label text="Last Name : " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="blockLastNameText" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+                <Label text="Department :  " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="blockDepartmentText" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+                <Label text="Degree : " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="blockDegreeText" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </Pane>
+    <Button fx:id="blockSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@style.css" text="Block" textFill="WHITE" />
+</AnchorPane>

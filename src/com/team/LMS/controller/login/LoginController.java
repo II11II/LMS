@@ -1,4 +1,4 @@
-package com.team.LMS.Login;
+package com.team.LMS.controller.login;
 
 
 import com.team.LMS.model.Librarian;

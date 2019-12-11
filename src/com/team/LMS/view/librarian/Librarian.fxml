@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="970.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.team.LMS.Librarians.LibrarianController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="970.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.team.LMS.controller.librarian.LibrarianController">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="257.0" style="-fx-background-color: #2E76CF;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <ImageView fitHeight="75.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../images/book.png" />
+                        <Image url="@../../assets/images/book.png" />
                     </image>
                     <VBox.margin>
                         <Insets bottom="20.0" top="50.0" />
@@ -22,7 +22,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../images/team.png" />
+                                <Image url="@../../assets/images/team.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -34,7 +34,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../images/library.png" />
+                                <Image url="@../../assets/images/library.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -46,7 +46,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../images/notepad.png" />
+                                <Image url="@../../assets/images/notepad.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -58,7 +58,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../images/back-arrow.png" />
+                                <Image url="@../../assets/images/back-arrow.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -70,7 +70,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../images/dollar.png" />
+                                <Image url="@../../assets/images/dollar.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -82,7 +82,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../images/block-user.png" />
+                                <Image url="@../../assets/images/block-user.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -94,7 +94,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../images/sign-out.png" />
+                                <Image url="@../../assets/images/sign-out.png" />
                             </image>
                         </ImageView>
                     </graphic>

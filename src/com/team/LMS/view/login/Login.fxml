@@ -40,7 +40,7 @@
             <PasswordField fx:id="txtPassword" layoutX="4.0" layoutY="107.0" prefHeight="34.0" prefWidth="275.0"
                            promptText="password" stylesheets="@../../assets/styling/fullpackstyling.css"/>
 
-            <Button fx:id="btnLogin" layoutX="4.0" layoutY="171.0" mnemonicParsing="false" onAction="#onClickButton"
+            <Button fx:id="btnLogin" layoutX="4.0" layoutY="171.0" mnemonicParsing="false" onAction="#userAuthentication"
                     prefHeight="34.0" prefWidth="275.0" stylesheets="@../../assets/styling/fullpackstyling.css" text="Login"/>
 
 

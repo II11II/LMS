@@ -25,7 +25,8 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
         Student model=new Student();
-        model.viewStudents();
+
+        System.out.println(model.viewStudents());
 //        System.out.println(model.viewStudents());
 //        model.register("u1810037","19991111","Islam","Akhrarov");
 //        System.out.println( model.login("u1810037","19991111"));

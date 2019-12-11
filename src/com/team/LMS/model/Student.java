@@ -75,7 +75,7 @@ public class Student extends Person {
     public ArrayList<Map<String,Object>> viewStudents(){
         String query="select username,fine,isBlocked,firstName,lastName from Student";
         ArrayList<Map<String,Object>> students=new ArrayList<>();
-        ResultSet resultSet = null;
+        ResultSet resultSet ;
         try {
             resultSet = statement.executeQuery(query);
 
@@ -93,7 +93,7 @@ public class Student extends Person {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(students);
+
         return students;
     }
 

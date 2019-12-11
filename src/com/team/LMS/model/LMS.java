@@ -47,7 +47,6 @@ public abstract class LMS {
                     + "author varchar(50),"
                     + "ISBN int(13),"
                     + "publishDate Date,"
-                    + "quantity Int,"
                     + "PRIMARY KEY(ISBN))";
             final String bookIssue = "CREATE TABLE if not exists BookIssue ( "
                     + "ISBN int(13),"

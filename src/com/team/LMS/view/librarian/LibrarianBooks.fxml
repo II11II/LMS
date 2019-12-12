@@ -30,22 +30,22 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="borrowedBooksBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" stylesheets="@style.css" text="Borrowed Books" textFill="WHITE">
+                        <Button fx:id="borrowedBooksBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" stylesheets="@../../assets/styling/style.css" text="Borrowed Books" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="addBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@style.css" text="Add" textFill="WHITE">
+                        <Button fx:id="addBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Add" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="95.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="editBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@style.css" text="Edit" textFill="WHITE">
+                        <Button fx:id="editBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="deleteBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@style.css" text="Delete" textFill="WHITE">
+                        <Button fx:id="deleteBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Delete" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
@@ -61,7 +61,7 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="304.0" prefWidth="712.0">
                             <children>
-                                <TableView fx:id="booksTableView" layoutX="-3.0" layoutY="-3.0" prefHeight="308.0" prefWidth="717.0" stylesheets="@style.css">
+                                <TableView fx:id="booksTableView" layoutX="-3.0" layoutY="-3.0" prefHeight="308.0" prefWidth="717.0" stylesheets="@../../assets/styling/style.css">
                                     <columns>
                                         <TableColumn prefWidth="75.0" text="ISBN" />
                                         <TableColumn prefWidth="75.0" text="Title" />

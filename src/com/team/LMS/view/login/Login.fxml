@@ -10,51 +10,42 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="854.0" style="-fx-background-color: #fff;"
-            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.team.LMS.controller.login.LoginController">
-    <AnchorPane prefHeight="503.0" prefWidth="382.0" style="-fx-background-color: #2E76CF;"
-                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="166.0" layoutY="179.0" pickOnBounds="true"
-                   preserveRatio="true">
-            <Image url="@../../assets/images/Inha.png"/>
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="854.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team.LMS.controller.login.LoginController">
+    <AnchorPane prefHeight="503.0" prefWidth="382.0" style="-fx-background-color: #2E76CF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <ImageView fitHeight="52.0" fitWidth="52.0" layoutX="166.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../assets/images/Inha.png" />
         </ImageView>
-        <Label alignment="CENTER" layoutX="65.0" layoutY="262.0" prefHeight="23.0" prefWidth="250.0"
-               text="Library Management System" textFill="WHITE">
+        <Label alignment="CENTER" layoutX="65.0" layoutY="262.0" prefHeight="23.0" prefWidth="250.0" text="Library Management System" textFill="WHITE">
             <font>
-                <Font name="Segoe UI bold" size="18.0"/>
+                <Font name="Segoe UI bold" size="18.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="89.0" layoutY="295.0" prefHeight="23.0" prefWidth="205.0"
-               text="Digital Library" textFill="WHITE">
+        <Label alignment="CENTER" layoutX="89.0" layoutY="295.0" prefHeight="23.0" prefWidth="205.0" text="Digital Library" textFill="WHITE">
             <font>
-                <Font name="Segoe UI bold" size="12.0"/>
+                <Font name="Segoe UI bold" size="12.0" />
             </font>
         </Label>
 
     </AnchorPane>
     <Pane layoutX="488.0" layoutY="100.0" AnchorPane.bottomAnchor="73.0" AnchorPane.topAnchor="100.0">
         <children>
-            <TextField fx:id="txtUsername" layoutX="4.0" layoutY="61.0" prefHeight="34.0" prefWidth="275.0"
-                       promptText="username"/>
-            <PasswordField fx:id="txtPassword" layoutX="4.0" layoutY="107.0" prefHeight="34.0" prefWidth="275.0"
-                           promptText="password" stylesheets="@../../assets/styling/fullpackstyling.css"/>
+            <TextField fx:id="txtUsername" layoutX="4.0" layoutY="61.0" prefHeight="34.0" prefWidth="275.0" promptText="username" />
+            <PasswordField fx:id="txtPassword" layoutX="4.0" layoutY="107.0" prefHeight="34.0" prefWidth="275.0" promptText="password" stylesheets="@../../assets/styling/fullpackstyling.css" />
 
-            <Button fx:id="btnLogin" layoutX="4.0" layoutY="171.0" mnemonicParsing="false" onAction="#userAuthentication"
-                    prefHeight="34.0" prefWidth="275.0" stylesheets="@../../assets/styling/fullpackstyling.css" text="Login"/>
+            <Button fx:id="btnLogin" layoutX="4.0" layoutY="200.0" mnemonicParsing="false" onAction="#userAuthentication" prefHeight="34.0" prefWidth="275.0" stylesheets="@../../assets/styling/fullpackstyling.css" text="Login" />
 
 
-            <Label fx:id="lblErrors" alignment="CENTER" layoutX="8.0" layoutY="95.0" prefHeight="23.0" prefWidth="275.0"
-                   textFill="#ff6354">
+            <Label fx:id="lblErrors" alignment="CENTER" layoutX="8.0" layoutY="95.0" prefHeight="23.0" prefWidth="275.0" textFill="#ff6354">
                 <font>
-                    <Font name="Segoe UI" size="10.0"/>
+                    <Font name="Segoe UI" size="10.0" />
                 </font>
             </Label>
             <Label layoutY="-8.0" text="Login">
                 <font>
-                    <Font name="Courier New Bold Italic" size="25.0"/>
+                    <Font name="Courier New Bold Italic" size="25.0" />
                 </font>
             </Label>
+         <Label fx:id="errorMessageLabel" layoutX="5.0" layoutY="155.0" textFill="#eb5252" />
         </children>
     </Pane>
 </AnchorPane>

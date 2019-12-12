@@ -186,31 +186,31 @@ public class Book extends LMS {
 
 
     public Date getPublishDate() {
-        return publishDate;
+        return this.publishDate;
     }
 
     public int getISBN() {
-        return ISBN;
+        return this.ISBN;
     }
 
     public String getAuthor() {
-        return author;
+        return this.author;
     }
 
     public int getQuantity() {
-        return quantity;
+        return this.quantity;
     }
 
     public String getSubject() {
-        return subject;
+        return this.subject;
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public int getReserved() {
-        return reserved;
+        return this.reserved;
     }
 }
 

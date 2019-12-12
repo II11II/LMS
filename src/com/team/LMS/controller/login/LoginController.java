@@ -14,18 +14,16 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginController {
-    @FXML
-    public TextField txtUsername;
-    @FXML
-    public PasswordField txtPassword;
-    @FXML
-    public Button btnLogin;
-    @FXML
-    public Label lblErrors;
+    @FXML private TextField txtUsername;
+    @FXML private PasswordField txtPassword;
+    @FXML private Button btnLogin;
+    @FXML private Label lblErrors;
+    @FXML private Label errorMessageLabel;
 
     public void userAuthentication() throws SQLException, IOException {
         Student student = new Student();
         Librarian librarian = new Librarian();
+
         if (txtUsername.getText().length() == 8) {
             if (student.login(txtUsername.getText(), txtPassword.getText())) {
                 System.out.println("Welcome student ");
@@ -35,7 +33,8 @@ public class LoginController {
             controlWindows(btnLogin);
             LibrarianDashController librarianDashController = new LibrarianDashController();
             librarianDashController.LDashboardController();
-        }
+        } else
+            errorMessageLabel.setText("You entered wrong password or username !");
     }
 
     public static void controlWindows(Button button) {

@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Student extends Person {
-    Book borrowedBook;
-    Date expireDate;
+//    Book borrowedBook;
+//    Date expireDate;
     double fine;
     boolean isBlocked;
 
@@ -20,10 +20,10 @@ public class Student extends Person {
 
     }
 
-    private Student(String username, String password, String firstName, String lastName, boolean isBlocked,double fine) throws SQLException {
+    private Student(String username, String password, String firstName, String lastName, boolean isBlocked, double fine) throws SQLException {
         super(username, password, firstName, lastName);
         this.isBlocked = isBlocked;
-        this.fine=fine;
+        this.fine = fine;
     }
 
     @Override
@@ -34,13 +34,12 @@ public class Student extends Person {
     }
 
 
-
     public void register(String username, String password, String firstName, String lastName) {
-        boolean isBlocked=false;//by default
-        double fine=0.0;//by default
+        boolean isBlocked = false;//by default
+        double fine = 0.0;//by default
         try {
             statement.executeUpdate("INSERT INTO Student " +
-                    "VALUES('" + username + "', '" + firstName + "','" + lastName + "','" + password + "'," +isBlocked+","+fine+");");
+                    "VALUES('" + username + "', '" + firstName + "','" + lastName + "','" + password + "'," + isBlocked + "," + fine + ");");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -71,23 +70,21 @@ public class Student extends Person {
     }
 
     // TODO: Check the functionality
-    public ArrayList<Student> getStudents(){
-        String query="select username,fine,isBlocked,firstName,lastName from Student";
-        ArrayList<Student> students=new ArrayList<>();
-        ResultSet resultSet ;
+    public ArrayList<Student> getStudents() {
+        String query = "select username,fine,isBlocked,firstName,lastName from Student";
+        ArrayList<Student> students = new ArrayList<>();
+        ResultSet resultSet;
         try {
             resultSet = statement.executeQuery(query);
-
-
-            Student student=new Student();
+            Student student;
             while (resultSet.next()) {
-
-                 student.firstName=resultSet.getString("firstName");
-                 student.username=resultSet.getString("username");
-                 student.lastName=resultSet.getString("lastName");
-                 student.fine=resultSet.getDouble("fine");
-                 student.isBlocked=resultSet.getBoolean("isBlocked");
-                 students.add(student);
+                student = new Student();
+                student.firstName = resultSet.getString("firstName");
+                student.username = resultSet.getString("username");
+                student.lastName = resultSet.getString("lastName");
+                student.fine = resultSet.getDouble("fine");
+                student.isBlocked = resultSet.getBoolean("isBlocked");
+                students.add(student);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -112,7 +109,6 @@ public class Student extends Person {
         }
 
     }
-
 
 
 }

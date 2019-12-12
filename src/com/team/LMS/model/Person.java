@@ -3,7 +3,7 @@ package com.team.LMS.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public abstract class Person extends LMS  {
+public abstract class Person extends LMS {
     String username;
     String password;
     String firstName;
@@ -23,7 +23,6 @@ public abstract class Person extends LMS  {
     }
 
     public abstract boolean login(String username, String password);
-
 
 
     public boolean exists(String username, String password, String query) {
@@ -52,18 +51,18 @@ public abstract class Person extends LMS  {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public String getUsername() {
-        return username;
+        return this.username;
     }
 }

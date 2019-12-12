@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,17 +32,20 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
 
-        Student model = new Student();
-        model.getFirstName();
+//        Student model = new Student();
+//        model.getFirstName();
 //        model.deleteStudent("u1810037");
 
 //        System.out.println(model.getStudents());
 //        System.out.println(model.viewStudents());
-//        model.register("u1810037","19991111","Islam","Akhrarov");
+//        model.register("s1810037","19991111","Islam","Akhrarov");
+//        model.register("s1810032","19991111","C","Akhrarov");
+//        model.register("S1810033","19991111","B","Akhrarov");
+//        model.register("S1810035","19991111","A","Akhrarov");
 //        System.out.println( model.login("u1810037","19991111"));
 //        Book book=new Book();
 //        Librarian librarian=new Librarian();
-//        librarian.register("u19137","1111","Islam","Akhrarov");
+//        librarian.register("l19137","1","Islam","Akhrarov");
 //        librarian.viewLibrarians();
 //        System.out.println( book.getSortedByTitle());
 //        System.out.println(book.getSortedByAuthor());

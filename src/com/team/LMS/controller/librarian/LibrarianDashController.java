@@ -38,16 +38,16 @@ public class LibrarianDashController {
 
 
     public void studentsData() throws IOException, SQLException {
-        LoginController.controlWindows(studentsBtn);
         LibrarianStudentsController librarianStudentsController;
         librarianStudentsController = new LibrarianStudentsController();
         librarianStudentsController.LStudentController();
+        LoginController.controlWindows(studentsBtn);
     }
 
     public void booksData() throws IOException {
-        LoginController.controlWindows(booksBtn);
         LibrarianBooksController librarianBooksController;
         librarianBooksController = new LibrarianBooksController();
         librarianBooksController.LBooksController();
+        LoginController.controlWindows(booksBtn);
     }
 }

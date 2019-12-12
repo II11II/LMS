@@ -1,5 +1,6 @@
 package com.team.LMS.controller.librarian;
 
+import com.team.LMS.controller.login.LoginController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class LibrarianDashController {
     @FXML
@@ -25,7 +27,7 @@ public class LibrarianDashController {
     @FXML
     public Button studentsBtn;
 
-    public void LibraryDashboardController() throws IOException {
+    public void LDashboardController() throws IOException {
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianDashboard.fxml"));
         primaryStage.setTitle("Library Management System");
@@ -34,7 +36,18 @@ public class LibrarianDashController {
 
     }
 
-    public void dataStudent(){
 
+    public void studentsData() throws IOException, SQLException {
+        LoginController.controlWindows(studentsBtn);
+        LibrarianStudentsController librarianStudentsController;
+        librarianStudentsController = new LibrarianStudentsController();
+        librarianStudentsController.LStudentController();
+    }
+
+    public void booksData() throws IOException {
+        LoginController.controlWindows(booksBtn);
+        LibrarianBooksController librarianBooksController;
+        librarianBooksController = new LibrarianBooksController();
+        librarianBooksController.LBooksController();
     }
 }

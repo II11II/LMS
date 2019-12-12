@@ -31,17 +31,17 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
 
-        Student model = new Student();
-        model.getStudents();
-        model.deleteStudent("u1810037");
+//        Student model = new Student();
+//        model.getStudents();
+//        model.deleteStudent("u1810037");
 
-        System.out.println(model.getStudents());
+//        System.out.println(model.getStudents());
 //        System.out.println(model.viewStudents());
 //        model.register("u1810037","19991111","Islam","Akhrarov");
 //        System.out.println( model.login("u1810037","19991111"));
 //        Book book=new Book();
-        Librarian librarian=new Librarian();
-//        librarian.register("u19137","11111111","Islam","Akhrarov");
+//        Librarian librarian=new Librarian();
+//        librarian.register("u19137","1111","Islam","Akhrarov");
 //        librarian.viewLibrarians();
 //        System.out.println( book.getSortedByTitle());
 //        System.out.println(book.getSortedByAuthor());

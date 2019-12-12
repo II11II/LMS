@@ -23,9 +23,6 @@ public class LoginController {
     @FXML
     public Label lblErrors;
 
-//    @FXML
-//    public Label errorMessageLabel;
-
     public void userAuthentication() throws SQLException, IOException {
         Student student = new Student();
         Librarian librarian = new Librarian();
@@ -35,15 +32,15 @@ public class LoginController {
             }
         } else if (librarian.login(txtUsername.getText(), txtPassword.getText())) {
             System.out.println("librarian");
-            Stage stage=(Stage) btnLogin.getScene().getWindow();
-            stage.close();
+            controlWindows(btnLogin);
             LibrarianDashController librarianDashController = new LibrarianDashController();
-            librarianDashController.LibraryDashboardController();
+            librarianDashController.LDashboardController();
         }
-//        else if (txtUsername.getText() == null || txtPassword.getText() == null) {
-//            System.out.println("Your username and/or password do not match");
-//            errorMessageLabel.setText("Your username and/or password do not match");
-//        }
+    }
+
+    public static void controlWindows(Button button) {
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
     }
 
 

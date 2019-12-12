@@ -49,7 +49,7 @@ public class Student extends Person {
     //TODO:Check the functionality
     public void deleteStudent(String username) {
 
-        String query = "delete from Student where username ='" + username + "';";
+        String query = "delete from Student where username = '" + username + " ';";
         try {
             PreparedStatement pstmt = connection.prepareStatement(query);
             pstmt.executeUpdate();

@@ -71,22 +71,22 @@ public class Student extends Person {
     }
 
     // TODO: Check the functionality
-    public ArrayList<Map<String,Object>> getStudents(){
+    public ArrayList<Student> getStudents(){
         String query="select username,fine,isBlocked,firstName,lastName from Student";
-        ArrayList<Map<String,Object>> students=new ArrayList<>();
+        ArrayList<Student> students=new ArrayList<>();
         ResultSet resultSet ;
         try {
             resultSet = statement.executeQuery(query);
 
 
-            Map<String,Object> student=new HashMap<>();
+            Student student=new Student();
             while (resultSet.next()) {
 
-                 student.put("firstName",resultSet.getString("firstName"));
-                 student.put("username",resultSet.getString("username"));
-                 student.put("lastName",resultSet.getString("lastName"));
-                 student.put("fine",resultSet.getString("fine"));
-                 student.put("isBlocked",resultSet.getString("isBlocked"));
+                 student.firstName=resultSet.getString("firstName");
+                 student.username=resultSet.getString("username");
+                 student.lastName=resultSet.getString("lastName");
+                 student.fine=resultSet.getDouble("fine");
+                 student.isBlocked=resultSet.getBoolean("isBlocked");
                  students.add(student);
             }
         } catch (SQLException e) {

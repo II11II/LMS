@@ -34,7 +34,7 @@
                         <Insets left="10.0" />
                     </HBox.margin>
                 </TextField>
-                <Button fx:id="blockIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@style.css" text="Search" textFill="WHITE">
+                <Button fx:id="blockIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>
@@ -114,5 +114,5 @@
             </HBox>
         </VBox>
     </Pane>
-    <Button fx:id="blockSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@style.css" text="Block" textFill="WHITE" />
+    <Button fx:id="blockSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Block" textFill="WHITE" />
 </AnchorPane>

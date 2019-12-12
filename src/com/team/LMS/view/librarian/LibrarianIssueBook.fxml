@@ -38,7 +38,7 @@
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </TextField>
-                        <Button fx:id="issueIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@style.css" text="Search" textFill="WHITE">
+                        <Button fx:id="issueIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
@@ -164,7 +164,7 @@
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </TextField>
-                        <Button fx:id="issueISBNSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@style.css" text="Search" textFill="WHITE">
+                        <Button fx:id="issueISBNSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
@@ -275,5 +275,5 @@
         </VBox>
     </children>
 </Pane>
-<Button fx:id="bookIssueSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@style.css" text="Issue" textFill="WHITE" />
+<Button fx:id="bookIssueSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Issue" textFill="WHITE" />
 </AnchorPane>

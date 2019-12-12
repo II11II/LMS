@@ -34,7 +34,7 @@
                         <Insets left="10.0" />
                     </HBox.margin>
                 </TextField>
-                <Button fx:id="blockIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+                <Button fx:id="blockIDSearchBtn" onAction="#blockStudentAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>

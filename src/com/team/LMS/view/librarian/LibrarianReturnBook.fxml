@@ -38,7 +38,7 @@
                                     <Insets left="10.0" />
                                 </HBox.margin>
                             </TextField>
-                            <Button fx:id="returnIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+                            <Button fx:id="returnIDSearchBtn" onAction="#returnSearchStudentAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                                 <HBox.margin>
                                     <Insets left="10.0" />
                                 </HBox.margin>
@@ -164,7 +164,7 @@
                                     <Insets left="10.0" />
                                 </HBox.margin>
                             </TextField>
-                            <Button fx:id="returnISBNSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+                            <Button fx:id="returnISBNSearchBtn" onAction="#returnSearchBookAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                                 <HBox.margin>
                                     <Insets left="10.0" />
                                 </HBox.margin>

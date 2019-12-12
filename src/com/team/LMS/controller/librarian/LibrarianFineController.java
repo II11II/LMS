@@ -1,5 +1,6 @@
 package com.team.LMS.controller.librarian;
 
+import com.team.LMS.model.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class LibrarianFineController {
     @FXML private TextField fineIDTextField;
@@ -28,5 +31,27 @@ public class LibrarianFineController {
         primaryStage.setTitle("Issue Fine book information");
         primaryStage.setScene(new Scene(root, 710, 550));
         primaryStage.show();
+    }
+    public void issueFineAction() throws SQLException {
+        Student student=new Student();
+        ArrayList<Student> students=student.getStudents();
+        for(Student student_:students){
+            if(student_.getUsername().equalsIgnoreCase(fineIDTextField.getText())){
+                fineFirstNameText.setText(student_.getFirstName());
+                fineLastNameText.setText(student_.getLastName());
+                fineDepartmentText.setText("NULL");
+                fineDegreeText.setText("NULL");
+                fineAmountTextField.setText("UNKNOWN");
+                blockDegreeText1.setText("UNKNOWN");
+                break;
+            }
+            else{
+                fineFirstNameText.setText(null);
+                fineLastNameText.setText(null);
+                fineDepartmentText.setText(null);
+                fineDegreeText.setText(null);
+                blockDegreeText1.setText(null);
+            }
+        }
     }
 }

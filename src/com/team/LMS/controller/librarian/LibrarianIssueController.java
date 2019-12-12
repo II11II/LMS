@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+import java.sql.SQLException;
 public class LibrarianIssueController {
     @FXML private TextField issueIDTextField;
     @FXML private Button issueIDSearchBtn;
@@ -35,5 +35,12 @@ public class LibrarianIssueController {
         primaryStage.setTitle("Issue book information");
         primaryStage.setScene(new Scene(root, 710, 550));
         primaryStage.show();
+    }
+    public void searchStudentAction() throws SQLException {
+        LibrarianReturnController.returnStudent(issueIDTextField, issueFirstNameText, issueLastNameText, issueDepartmentText, issueDegreeText, issueDatePicker);
+    }
+
+    public void searchBookAction()throws SQLException{
+        LibrarianReturnController.returnBook(issueISBNTextField, issueTitleText, issueAuthorText, issueCopyrigthText, issueStatusText, issueSubjectText);
     }
 }

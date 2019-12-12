@@ -31,8 +31,8 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
 
-//        Student model = new Student();
-//        model.getStudents();
+        Student model = new Student();
+        model.getFirstName();
 //        model.deleteStudent("u1810037");
 
 //        System.out.println(model.getStudents());

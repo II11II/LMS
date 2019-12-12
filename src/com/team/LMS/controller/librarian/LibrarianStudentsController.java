@@ -57,7 +57,7 @@ public class LibrarianStudentsController {
 
     public void contentTable() throws SQLException {
         Student student = new Student();
-        ArrayList<Map<String, Object>> allStudents = student.getStudents();
+//        ArrayList<Map<String, Object>> allStudents = student.getStudents();
 //        for (Map<String, Object> allStudent : allStudents) {
 //            TableColumn<Map.Entry<String, Object>, K> column1 = new TableColumn<>(col1Name);
 //            column1.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue().getKey()));

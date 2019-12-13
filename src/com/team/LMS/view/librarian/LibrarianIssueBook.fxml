@@ -64,12 +64,12 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
                     <children>
-                        <Label text="Degree : " textFill="WHITE">
+                        <Label text="Last Name : " textFill="WHITE">
                             <font>
                                 <Font name="System Bold Italic" size="15.0" />
                             </font>
                         </Label>
-                        <Label fx:id="issueDegreeText" textFill="WHITE">
+                        <Label fx:id="issueLastNameText" textFill="WHITE">
                             <font>
                                 <Font name="System Bold Italic" size="15.0" />
                             </font>

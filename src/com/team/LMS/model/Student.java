@@ -12,8 +12,8 @@ import java.util.Map;
 public class Student extends Person {
     //    Book borrowedBook;
 //    Date expireDate;
-    double fine;
     boolean isBlocked;
+    double fine;
 
     public Student() throws SQLException {
         super();

@@ -18,7 +18,6 @@ public class LibrarianIssueController {
     @FXML private Button issueIDSearchBtn;
     @FXML private Label issueFirstNameText;
     @FXML private Label issueLastNameText;
-    @FXML private Label issueDepartmentText;
     @FXML private Label issueDegreeText;
     @FXML private DatePicker issueDatePicker;
     @FXML private TextField issueISBNTextField;
@@ -38,7 +37,7 @@ public class LibrarianIssueController {
         primaryStage.show();
     }
     public void searchStudentAction() throws SQLException {
-        LibrarianReturnController.returnStudent(issueIDTextField, issueFirstNameText, issueLastNameText, issueDepartmentText, issueDegreeText, issueDatePicker);
+        LibrarianReturnController.returnStudent(issueIDTextField, issueFirstNameText, issueLastNameText, issueDatePicker);
     }
 
     public void searchBookAction()throws SQLException{

@@ -17,6 +17,8 @@ import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 import java.util.ResourceBundle;
 
 public class LibrarianBooksController implements Initializable {
@@ -46,29 +48,96 @@ public class LibrarianBooksController implements Initializable {
         primaryStage.setScene(new Scene(root, 710, 550));
         primaryStage.show();
     }
-
-    ObservableList<Book> getBook() throws SQLException {
-        Book book = new Book();
-        ArrayList<Book> books = book.getBooks();
-        ObservableList<Book> personObservableList = FXCollections.observableArrayList();
-        personObservableList.addAll(books);
-        return personObservableList;
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        try {
+            setCol("default");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            booksTableView.setItems(getBook("default"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    ObservableList<Book> getBook(String string) throws SQLException {
+        Book book = new Book();
+        ObservableList<Book> booksObservableList = FXCollections.observableArrayList();
+        if(string.equals("default")){
+            ArrayList<Book> sortDefault = book.getBooks(string);
+            booksObservableList.addAll(sortDefault);
+        }
+        if(string.equals("isbn")){
+            ArrayList<Book>sortIsbn=book.getBooks(string);
+            booksObservableList.addAll(sortIsbn);
+        }
+        if(string.equals("title")){
+            ArrayList<Book>sortTitle=book.getBooks(string);
+            booksObservableList.addAll(sortTitle);
+        }
+        if(string.equals("subject")){
+            ArrayList<Book>sortSubject=book.getBooks(string);
+            booksObservableList.addAll(sortSubject);
+        }
+        if(string.equals("author")){
+            ArrayList<Book>sortAuthor=book.getBooks(string);
+            booksObservableList.addAll(sortAuthor);
+        }
+        if(string.equals("copyright")){
+            ArrayList<Book>sortCopyright=book.getBooks(string);
+            booksObservableList.addAll(sortCopyright);
+        }
+        return booksObservableList;
+    }
+
+    private void setCol(String type) throws SQLException {
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         colSubject.setCellValueFactory(new PropertyValueFactory<>("subject"));
         colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
         colISBN.setCellValueFactory(new PropertyValueFactory<>("ISBN"));
         colCopyright.setCellValueFactory(new PropertyValueFactory<>("publishDate"));
-        colStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+//        colStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        booksTableView.setItems(getBook(type));
 
-        try {
-            booksTableView.setItems(getBook());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    }
+    public void itemIsSelected() throws SQLException {
+        if(isbnCheckBox.isSelected())
+            setCol("isbn");
+        else if(titleCheckBox.isSelected())
+            setCol("title");
+        else if(subjectCheckBox.isSelected())
+            setCol("subject");
+        else if(authorCheckBox.isSelected())
+            setCol("author");
+        else if(copyrightCheckBox.isSelected())
+            setCol("copyright");
+        else
+            setCol("default");
+    }
+    public void isbnCheckBoxAction() throws SQLException {
+        booksTableView.setItems(getBook("isbn"));
+        itemIsSelected();
+    }
+
+    public void titleCheckBoxAction()throws SQLException{
+        booksTableView.setItems(getBook("title"));
+        itemIsSelected();
+    }
+
+    public void subjectCheckBoxAction()throws SQLException{
+        booksTableView.setItems(getBook("subject"));
+        itemIsSelected();
+    }
+
+    public void authorCheckBoxAction()throws SQLException{
+        booksTableView.setItems(getBook("author"));
+        itemIsSelected();
+    }
+
+    public void copyrightCheckBoxAction()throws SQLException{
+        booksTableView.setItems(getBook("copyright"));
+        itemIsSelected();
     }
 }

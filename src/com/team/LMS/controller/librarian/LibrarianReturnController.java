@@ -73,7 +73,7 @@ public class LibrarianReturnController {
 
     static void returnBook(TextField returnISBNTextField, Label returnTitleText, Label returnAuthorText, Label returnCopyrigthText, Label returnStatusText, Label returnSubjectText) throws SQLException {
         Book book=new Book();
-        ArrayList<Book> books=book.getBooks();
+        ArrayList<Book> books=book.getBooks("default");
         for(Book book_:books){
             if(book_.getISBN()==Integer.parseInt(returnISBNTextField.getText())){
                 returnTitleText.setText(book_.getTitle());

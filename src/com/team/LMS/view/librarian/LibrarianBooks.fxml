@@ -85,11 +85,11 @@
                                 <Insets left="70.0" />
                             </HBox.margin>
                         </CheckBox>
-                        <CheckBox fx:id="titleCheckBox" mnemonicParsing="false" text="Title" />
-                        <CheckBox fx:id="subjectCheckBox" mnemonicParsing="false" text="Subject" />
+                        <CheckBox fx:id="titleCheckBox" onAction="#titleCheckBoxAction" mnemonicParsing="false" text="Title" />
+                        <CheckBox fx:id="subjectCheckBox" onAction="#subjectCheckBoxAction" mnemonicParsing="false" text="Subject" />
                         <CheckBox fx:id="statusCheckBox" mnemonicParsing="false" text="Status" />
-                        <CheckBox fx:id="authorCheckBox" mnemonicParsing="false" text="Author" />
-                        <CheckBox fx:id="copyrightCheckBox" mnemonicParsing="false" text="Copyright" />
+                        <CheckBox fx:id="authorCheckBox" onAction="#authorCheckBoxAction" mnemonicParsing="false" text="Author" />
+                        <CheckBox fx:id="copyrightCheckBox" onAction="#copyrightCheckBoxAction" mnemonicParsing="false" text="Copyright" />
                     </children>
                 </HBox>
             </children>

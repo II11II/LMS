@@ -18,7 +18,7 @@
                     <VBox.margin>
                         <Insets bottom="20.0" top="50.0" />
                     </VBox.margin></ImageView>
-                <Button fx:id="studentProfileBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Profile" textFill="WHITE">
+                <Button fx:id="studentProfileBtn" onAction="#profileData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Profile" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -30,7 +30,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="studentBooksBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Books" textFill="WHITE">
+                <Button fx:id="studentBooksBtn" onAction="#booksData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Books" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -42,7 +42,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="studentReserveBookBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Reserve book" textFill="WHITE">
+                <Button fx:id="studentReserveBookBtn" onAction="#reserveBookData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Reserve book" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -54,7 +54,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="signoutBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Sign Out" textFill="WHITE">
+                <Button fx:id="signoutBtn" onAction="#signoutData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Sign Out" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>

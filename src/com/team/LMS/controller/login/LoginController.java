@@ -5,10 +5,13 @@ import com.team.LMS.controller.student.StudentDashController;
 import com.team.LMS.model.Librarian;
 import com.team.LMS.model.Student;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -47,5 +50,12 @@ public class LoginController {
         stage.close();
     }
 
-
+    public static void signoutOption(Button button) throws IOException {
+        LoginController.controlWindows(button);
+        Stage primaryStage = new Stage();
+        AnchorPane root = FXMLLoader.load(LoginController.class.getResource("/com/team/LMS/view/login/Login.fxml"));
+        primaryStage.setTitle("Library Management System");
+        primaryStage.setScene(new Scene(root, 800, 500));
+        primaryStage.show();
+    }
 }

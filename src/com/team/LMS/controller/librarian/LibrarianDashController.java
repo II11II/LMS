@@ -31,7 +31,7 @@ public class LibrarianDashController {
     }
 
 
-    public void studentsData() throws IOException, SQLException {
+    public void studentsData() throws IOException {
         LoginController.controlWindows(studentsBtn);
         LibrarianStudentsController librarianStudentsController;
         librarianStudentsController = new LibrarianStudentsController();
@@ -74,12 +74,7 @@ public class LibrarianDashController {
     }
 
     public void signoutData()throws IOException{
-        LoginController.controlWindows(blockStudentBtn);
-        Stage primaryStage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/login/Login.fxml"));
-        primaryStage.setTitle("Library Management System");
-        primaryStage.setScene(new Scene(root, 800, 500));
-        primaryStage.show();
+        LoginController.signoutOption(signoutBtn);
     }
 
 }

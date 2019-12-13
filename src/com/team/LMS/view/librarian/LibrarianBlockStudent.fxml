@@ -18,9 +18,9 @@
             </font>
         </Label>
     </Pane>
-    <Pane layoutX="179.0" layoutY="201.0" prefHeight="253.0" prefWidth="357.0" style="-fx-background-color: #9fc5e8;">
-        <VBox layoutY="-1.0" prefHeight="253.0" prefWidth="357.0">
-            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+    <Pane layoutX="179.0" layoutY="201.0" prefHeight="217.0" prefWidth="357.0" style="-fx-background-color: #9fc5e8;">
+        <VBox layoutY="-1.0" prefHeight="217.0" prefWidth="357.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="357.0">
                 <Label text="Student ID :  " textFill="WHITE">
                     <HBox.margin>
                         <Insets left="10.0" />
@@ -34,13 +34,13 @@
                         <Insets left="10.0" />
                     </HBox.margin>
                 </TextField>
-                <Button fx:id="blockIDSearchBtn" onAction="#blockStudentAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+                <Button fx:id="blockIDSearchBtn" mnemonicParsing="false" onAction="#blockStudentAction" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>
                 </Button>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="357.0">
                 <Label text="First Name : " textFill="WHITE">
                     <font>
                         <Font name="System Bold Italic" size="15.0" />
@@ -55,7 +55,7 @@
                     </font>
                 </Label>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="484.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="357.0">
                 <VBox.margin>
                     <Insets />
                 </VBox.margin>
@@ -73,46 +73,7 @@
                     </font>
                 </Label>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                <VBox.margin>
-                    <Insets />
-                </VBox.margin>
-                <padding>
-                    <Insets left="10.0" />
-                </padding>
-                <Label text="Department :  " textFill="WHITE">
-                    <font>
-                        <Font name="System Bold Italic" size="15.0" />
-                    </font>
-                </Label>
-                <Label fx:id="blockDepartmentText" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold Italic" size="15.0" />
-                    </font>
-                </Label>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                <opaqueInsets>
-                    <Insets />
-                </opaqueInsets>
-                <VBox.margin>
-                    <Insets />
-                </VBox.margin>
-                <padding>
-                    <Insets left="10.0" />
-                </padding>
-                <Label text="Degree : " textFill="WHITE">
-                    <font>
-                        <Font name="System Bold Italic" size="15.0" />
-                    </font>
-                </Label>
-                <Label fx:id="blockDegreeText" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold Italic" size="15.0" />
-                    </font>
-                </Label>
-            </HBox>
         </VBox>
     </Pane>
-    <Button fx:id="blockSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Block" textFill="WHITE" />
+    <Button fx:id="blockSaveBtn" layoutX="416.0" layoutY="466.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Block" textFill="WHITE" />
 </AnchorPane>

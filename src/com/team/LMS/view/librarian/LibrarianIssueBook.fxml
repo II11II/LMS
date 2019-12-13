@@ -38,7 +38,7 @@
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </TextField>
-                        <Button fx:id="issueIDSearchBtn" onAction="#searchStudentAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+                        <Button fx:id="issueIDSearchBtn" mnemonicParsing="false" onAction="#searchStudentAction" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
@@ -61,46 +61,6 @@
                             </font>
                         </Label>
                     </children>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                    <children>
-                        <Label text="Last Name : " textFill="WHITE">
-                            <font>
-                                <Font name="System Bold Italic" size="15.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="issueLastNameText" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold Italic" size="15.0" />
-                            </font>
-                        </Label>
-                    </children>
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                    <padding>
-                        <Insets left="10.0" />
-                    </padding>
-                </HBox>
-                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                    <children>
-                        <Label text="Department :  " textFill="WHITE">
-                            <font>
-                                <Font name="System Bold Italic" size="15.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="issueDepartmentText" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold Italic" size="15.0" />
-                            </font>
-                        </Label>
-                    </children>
-                    <VBox.margin>
-                        <Insets />
-                    </VBox.margin>
-                    <padding>
-                        <Insets left="10.0" />
-                    </padding>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
                     <children>
@@ -164,7 +124,7 @@
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </TextField>
-                        <Button fx:id="issueISBNSearchBtn" onAction="#searchBookAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+                        <Button fx:id="issueISBNSearchBtn" mnemonicParsing="false" onAction="#searchBookAction" prefHeight="31.0" prefWidth="65.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>

@@ -52,7 +52,7 @@
                   <URL value="@../../assets/styling/style.css" />
                </stylesheets>
                 </Button>
-                <Button fx:id="issueBookBtn" onAction="#issueBookData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" text="Issue book" textFill="WHITE">
+                <Button fx:id="issueBookBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#issueBookData" prefHeight="40.0" prefWidth="267.0" text="Issue book" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -68,7 +68,7 @@
                   <URL value="@../../assets/styling/style.css" />
                </stylesheets>
                 </Button>
-                <Button fx:id="returnBookBtn" onAction="#returnBookData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" text="Return book" textFill="WHITE">
+                <Button fx:id="returnBookBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#returnBookData" prefHeight="40.0" prefWidth="267.0" text="Return book" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -84,7 +84,7 @@
                   <URL value="@../../assets/styling/style.css" />
                </stylesheets>
                 </Button>
-                <Button fx:id="issueFineBtn" onAction="#issueFineData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" text="Issue fine" textFill="WHITE">
+                <Button fx:id="issueFineBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#issueFineData" prefHeight="40.0" prefWidth="267.0" text="Issue fine" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -100,7 +100,7 @@
                   <URL value="@../../assets/styling/style.css" />
                </stylesheets>
                 </Button>
-                <Button fx:id="blockStudentBtn" onAction="#blockStudentData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" text="Block student" textFill="WHITE">
+                <Button fx:id="blockStudentBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#blockStudentData" prefHeight="40.0" prefWidth="267.0" text="Block student" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -116,7 +116,7 @@
                   <URL value="@../../assets/styling/style.css" />
                </stylesheets>
                 </Button>
-                <Button fx:id="signoutBtn" onAction="#signoutData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" text="Sign Out" textFill="WHITE">
+                <Button fx:id="signoutBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#signoutData" prefHeight="40.0" prefWidth="267.0" text="Sign Out" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>

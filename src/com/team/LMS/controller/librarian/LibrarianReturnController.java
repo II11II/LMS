@@ -21,8 +21,6 @@ public class LibrarianReturnController {
     @FXML private Button returnIDSearchBtn;
     @FXML private Label returnFirstNameText;
     @FXML private Label returnLastNameText;
-    @FXML private Label returnDepartmentText;
-    @FXML private Label returnDegreeText;
     @FXML private DatePicker returnDatePicker;
     @FXML private TextField returnISBNTextField;
     @FXML private Button returnISBNSearchBtn;
@@ -42,26 +40,22 @@ public class LibrarianReturnController {
     }
 
     public void returnSearchStudentAction() throws SQLException {
-        returnStudent(returnIDTextField, returnFirstNameText, returnLastNameText, returnDepartmentText, returnDegreeText, returnDatePicker);
+        returnStudent(returnIDTextField, returnFirstNameText, returnLastNameText, returnDatePicker);
     }
 
-    static void returnStudent(TextField returnIDTextField, Label returnFirstNameText, Label returnLastNameText, Label returnDepartmentText, Label returnDegreeText, DatePicker returnDatePicker) throws SQLException {
+    static void returnStudent(TextField returnIDTextField, Label returnFirstNameText, Label returnLastNameText,  DatePicker returnDatePicker) throws SQLException {
         Student student=new Student();
         ArrayList<Student> students=student.getStudents();
         for(Student student_:students){
             if(student_.getUsername().equalsIgnoreCase(returnIDTextField.getText())){
                 returnFirstNameText.setText(student_.getFirstName());
                 returnLastNameText.setText(student_.getLastName());
-                returnDepartmentText.setText("NULL");
-                returnDegreeText.setText("NULL");
                 returnDatePicker.setAccessibleText("UNKNOWN");
                 break;
             }
             else{
                 returnFirstNameText.setText(null);
                 returnLastNameText.setText(null);
-                returnDepartmentText.setText(null);
-                returnDegreeText.setText(null);
                 returnDatePicker.setAccessibleText(null);
             }
         }
@@ -88,7 +82,7 @@ public class LibrarianReturnController {
                 returnAuthorText.setText(null);
                 returnCopyrigthText.setText(null);
                 returnStatusText.setText(null);
-                returnSubjectText.setAccessibleText(null);
+                returnSubjectText.setText(null);
             }
         }
     }

@@ -28,7 +28,6 @@ public class LibrarianDashController {
         primaryStage.setTitle("Library Management System");
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();
-
     }
 
 

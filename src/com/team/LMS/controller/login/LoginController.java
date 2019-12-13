@@ -1,6 +1,7 @@
 package com.team.LMS.controller.login;
 
 import com.team.LMS.controller.librarian.LibrarianDashController;
+import com.team.LMS.controller.student.StudentDashController;
 import com.team.LMS.model.Librarian;
 import com.team.LMS.model.Student;
 import javafx.fxml.FXML;
@@ -27,7 +28,11 @@ public class LoginController {
         if (txtUsername.getText().length() == 8) {
             if (student.login(txtUsername.getText(), txtPassword.getText())) {
                 System.out.println("Welcome student ");
-            }
+                controlWindows(btnLogin);
+                StudentDashController studentDashController=new StudentDashController();
+                studentDashController.SDashboardController();
+            }else
+                errorMessageLabel.setText("You entered wrong password or username !");
         } else if (librarian.login(txtUsername.getText(), txtPassword.getText())) {
             System.out.println("librarian");
             controlWindows(btnLogin);

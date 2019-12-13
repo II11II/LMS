@@ -12,8 +12,8 @@ import java.util.Map;
 public class Student extends Person {
     //    Book borrowedBook;
 //    Date expireDate;
-    double fine;
     boolean isBlocked;
+    double fine;
 
     public Student() throws SQLException {
         super();
@@ -30,7 +30,6 @@ public class Student extends Person {
     public boolean login(String username, String password) {
         String query = "SELECT * from Student;";
         return exists(username, password, query);
-
     }
 
 

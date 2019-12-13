@@ -1,25 +1,18 @@
 package com.team.LMS;
 
-import com.team.LMS.model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.sql.SQLException;
-import java.sql.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class Main extends Application {
 
 
     @Override
-    public  void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception {
 
 
         AnchorPane root = FXMLLoader.load(getClass().getResource("view/login/Login.fxml"));
@@ -54,11 +47,11 @@ public class Main extends Application {
 //        System.out.println(book.getSortedBySubject());
 //        System.out.println(book.getSortedByQuantity());
 //
-        Book book=new Book();
-//        System.out.println(book.getBook());
-        book.saveBook("C++","PL","Sarvar",2434,new Date(new java.util.Date().getTime()),10);
+//        Book book=new Book();
+//      System.out.println(book.getBook());
+//        book.saveBook("J++","PI","Sara",100,new Date(new java.util.Date().getTime()));
 //
-//        book.saveBook("C++","PL","Sarvar",24,new Date(new java.util.Date().getTime()),10);
+//        book.saveBook("A++","AI","Sara",32,new Date(new java.util.Date().getTime()));
 //        book.deleteBook(242);
         launch(args);
     }

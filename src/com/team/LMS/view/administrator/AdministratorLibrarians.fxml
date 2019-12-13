@@ -42,7 +42,7 @@
                                 <Insets left="20.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="adminDeleteLibrarianBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Delete" textFill="WHITE">
+                        <Button fx:id="adminSearchLibrarianBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Search" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
@@ -50,7 +50,7 @@
                                 <URL value="@../../assets/styling/style.css" />
                             </stylesheets>
                         </Button>
-                        <TextField fx:id="adminDeleteStudentTextField" prefHeight="31.0" prefWidth="207.0">
+                        <TextField fx:id="adminDeleteLibrarianTextField" prefHeight="31.0" prefWidth="207.0">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>

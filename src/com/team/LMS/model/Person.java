@@ -35,13 +35,13 @@ public abstract class Person extends LMS {
             while (resultSet.next()) {
                 login = resultSet.getString("username");
                 pass = resultSet.getString("password");
-            }
-            if (login.equalsIgnoreCase(username)) {
-                if (pass.equals(password)) {
-                    return true;
+                if (login.equalsIgnoreCase(username)) {
+                    if (pass.equals(password)) {
+                        return true;
+                    }
+                } else {
+                    return false;
                 }
-            } else {
-                return false;
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -8,9 +8,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class StudentDashController {
+
     public void SDashboardController() throws IOException {
         Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianDashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/student/StudentDashboard.fxml"));
         primaryStage.setTitle("Library Management System");
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();

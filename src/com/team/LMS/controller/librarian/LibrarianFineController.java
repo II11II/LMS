@@ -19,9 +19,6 @@ public class LibrarianFineController {
     @FXML private Button fineIDSearchBtn;
     @FXML private Label fineFirstNameText;
     @FXML private Label fineLastNameText;
-    @FXML private Label fineDepartmentText;
-    @FXML private Label fineDegreeText;
-    @FXML private Label blockDegreeText1;
     @FXML private TextField fineAmountTextField;
     @FXML private Button fineSaveBtn;
 
@@ -39,18 +36,12 @@ public class LibrarianFineController {
             if(student_.getUsername().equalsIgnoreCase(fineIDTextField.getText())){
                 fineFirstNameText.setText(student_.getFirstName());
                 fineLastNameText.setText(student_.getLastName());
-                fineDepartmentText.setText("NULL");
-                fineDegreeText.setText("NULL");
                 fineAmountTextField.setText("UNKNOWN");
-                blockDegreeText1.setText("UNKNOWN");
                 break;
             }
             else{
                 fineFirstNameText.setText(null);
                 fineLastNameText.setText(null);
-                fineDepartmentText.setText(null);
-                fineDegreeText.setText(null);
-                blockDegreeText1.setText(null);
             }
         }
     }

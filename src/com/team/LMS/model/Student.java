@@ -30,7 +30,6 @@ public class Student extends Person {
     public boolean login(String username, String password) {
         String query = "SELECT * from Student;";
         return exists(username, password, query);
-
     }
 
 

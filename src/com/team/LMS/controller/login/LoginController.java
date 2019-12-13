@@ -31,7 +31,8 @@ public class LoginController {
                 controlWindows(btnLogin);
                 StudentDashController studentDashController=new StudentDashController();
                 studentDashController.SDashboardController();
-            }
+            }else
+                errorMessageLabel.setText("You entered wrong password or username !");
         } else if (librarian.login(txtUsername.getText(), txtPassword.getText())) {
             System.out.println("librarian");
             controlWindows(btnLogin);

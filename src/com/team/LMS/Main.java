@@ -1,5 +1,6 @@
 package com.team.LMS;
 
+import com.team.LMS.model.Admin;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,18 +14,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
-
         AnchorPane root = FXMLLoader.load(getClass().getResource("view/login/Login.fxml"));
         primaryStage.setTitle("Library Management System");
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();
-
-
     }
 
     public static void main(String[] args) throws SQLException {
-
+//        Admin admin=new Admin();
+//        admin.register("admin","admin","ABDUVOHID","ISROILOV");
 //        Student model = new Student();
 //        model.getFirstName();
 //        model.deleteStudent("u1810037");

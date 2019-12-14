@@ -1,4 +1,66 @@
 package com.team.LMS.controller.administrator;
 
-public class AdministratorStudentsController {
+import com.team.LMS.model.Person;
+import com.team.LMS.model.Student;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+public class AdministratorStudentsController implements Initializable {
+
+    @FXML private Button adminAddStudentBtn;
+    @FXML private Button adminEditStudentBtn;
+    @FXML private Button adminSearchStudentBtn;
+    @FXML private TextField adminDeleteStudentTextField;
+    @FXML private TableView<Person> adminStudentsTableView;
+    @FXML private TableColumn<Student,String> colFirstname;
+    @FXML private TableColumn<Student,String> colId;
+    @FXML private TableColumn<Student,String> colLastname;
+
+    public void AStudentController() throws IOException {
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/administrator/AdministratorStudents.fxml"));
+        primaryStage.setTitle("Student");
+        primaryStage.setScene(new Scene(root, 710, 550));
+        primaryStage.show();
+    }
+    ObservableList<Person> getStudent() throws SQLException {
+        Student student = new Student();
+        ArrayList<Student> students = student.getStudents();
+        ObservableList<Person> personObservableList = FXCollections.observableArrayList();
+        personObservableList.addAll(students);
+        return personObservableList;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        colId.setCellValueFactory(new PropertyValueFactory<>("username"));
+        colFirstname.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        colLastname.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+
+
+        try {
+            adminStudentsTableView.setItems(getStudent());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

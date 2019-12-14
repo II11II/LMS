@@ -63,12 +63,12 @@
                             <children>
                                 <TableView fx:id="adminBooksTableView" layoutX="-3.0" layoutY="-3.0" prefHeight="308.0" prefWidth="717.0">
                                     <columns>
-                                        <TableColumn prefWidth="75.0" text="           ISBN" />
-                                        <TableColumn prefWidth="75.0" text="           Title" />
-                                        <TableColumn prefWidth="75.0" text="         Subject" />
-                                        <TableColumn prefWidth="75.0" text="          Status" />
-                                        <TableColumn prefWidth="75.0" text="         Author" />
-                              <TableColumn prefWidth="75.0" text="      Copyright" />
+                                        <TableColumn prefWidth="75.0" fx:id="colIsbn" text="           ISBN" />
+                                        <TableColumn prefWidth="75.0" fx:id="colTitle" text="           Title" />
+                                        <TableColumn prefWidth="75.0" fx:id="colSubject" text="         Subject" />
+                                        <TableColumn prefWidth="75.0" fx:id="colStatus" text="          Status" />
+                                        <TableColumn prefWidth="75.0" fx:id="colAuthor" text="         Author" />
+                              <TableColumn prefWidth="75.0" fx:id="colCopyright" text="      Copyright" />
                                     </columns>
                                     <columnResizePolicy>
                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

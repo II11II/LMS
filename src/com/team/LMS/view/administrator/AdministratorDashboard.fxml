@@ -18,7 +18,7 @@
                     <VBox.margin>
                         <Insets bottom="20.0" top="50.0" />
                     </VBox.margin></ImageView>
-                <Button fx:id="adminLibrariansBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Librarians" textFill="WHITE">
+                <Button fx:id="adminLibrariansBtn" onAction="#librarianData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Librarians" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -30,7 +30,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="adminStudentsBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Students" textFill="WHITE">
+                <Button fx:id="adminStudentsBtn" onAction="#studentData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Students" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -42,7 +42,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="adminBooksBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Books" textFill="WHITE">
+                <Button fx:id="adminBooksBtn" onAction="#bookData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Books" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -54,7 +54,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="adminsignoutBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Sign Out" textFill="WHITE">
+                <Button fx:id="adminsignoutBtn" onAction="#adminSignoutData" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Sign Out" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>

@@ -36,27 +36,25 @@ public class Librarian extends Person {
     }
 
     // TODO: Check the functionality
-    public ArrayList<Map<String,Object>> getLibrarians(){
+    public ArrayList<Librarian> getLibrarians(){
         String query="select username,firstName,lastName from Librarian";
-        ArrayList<Map<String,Object>> librarians=new ArrayList<>();
+        ArrayList<Librarian> librarians=new ArrayList<>();
         ResultSet resultSet ;
         try {
             resultSet = statement.executeQuery(query);
-            Map<String,Object> librarian=new HashMap<>();
+           Librarian librarian;
             while (resultSet.next()) {
-
-                librarian.put("firstName",resultSet.getString("firstName"));
-                librarian.put("lastName",resultSet.getString("lastName"));
-                librarian.put("fine",resultSet.getString("username"));
+                librarian = new Librarian();
+                librarian.firstName = resultSet.getString("firstName");
+                librarian.username = resultSet.getString("username");
+                librarian.lastName = resultSet.getString("lastName");
                 librarians.add(librarian);
-                librarian.clear();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return librarians;
     }
-
     //TODO:Check the functionality
     public Librarian deleteLibrarian(String username)  {
 

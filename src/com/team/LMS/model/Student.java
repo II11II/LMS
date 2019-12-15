@@ -1,6 +1,9 @@
 package com.team.LMS.model;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
+
 import java.io.IOError;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +28,35 @@ public class Student extends Person {
         this.isBlocked = isBlocked;
         this.fine = fine;
     }
+// TODO: To check
+    public void issueBook(String username, int ISBN, Date issueDate) throws SQLException {
+
+        String insert = " Insert into BookIssue (" + "username," + "isbn," + "issueDate" + ") values (" + "'" + username + "'," + ISBN + ",'" + issueDate + "'" + ") ;";
+        try {
+            PreparedStatement statement = connection.prepareStatement(insert);
+            statement.executeUpdate(insert);
+
+        } catch (MySQLSyntaxErrorException e) {
+            System.out.println(e.toString());
+        }
+
+
+    }
+// TODO: To check
+    public void returnBook(String username, int ISBN, Date returnDate) throws SQLException {
+
+        String insert = " UPDATE BookIssue set returnDate = " + returnDate + " where username = " + username + ";";
+        try {
+            PreparedStatement statement = connection.prepareStatement(insert);
+            statement.executeUpdate(insert);
+
+        } catch (MySQLSyntaxErrorException e) {
+            System.out.println(e.toString());
+        }
+
+
+    }
+
 
     @Override
     public boolean login(String username, String password) {
@@ -56,11 +88,12 @@ public class Student extends Person {
         }
     }
 
-    // TODO: Check the functionality
+    // TODO: Check
     public Student fineOrBlock(String username, double fine, boolean isBlocked) {
-        String query = "update " + fine + "," + "" + isBlocked + "" + " from Student where username = " + "'" + username + "';";
+        String query = "update Student set fine= " + fine + ", set isBlocked = '"  + isBlocked + "'" + " where username = " + "'" + username + "';";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
         }

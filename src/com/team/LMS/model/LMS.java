@@ -11,13 +11,13 @@ public abstract class LMS {
     final static String password = "";
     final static String url = "jdbc:mysql://" + SERVER_NAME + "/" + TABLE + SSL;
     Connection connection = DriverManager.getConnection(url, username, password);
-     Statement statement = connection.createStatement();
+    Statement statement = connection.createStatement();
 
     LMS() throws SQLException {
         createTable();
     }
 
-    public  void createTable() {
+    public void createTable() {
         try {
             Class.forName(driverName);
             final String student = "CREATE TABLE if not exists Student  ("
@@ -49,10 +49,12 @@ public abstract class LMS {
                     + "publishDate Date,"
                     + "PRIMARY KEY(ISBN))";
             final String bookIssue = "CREATE TABLE if not exists BookIssue ( "
-                    + "ISBN int(13),"
+                    + "`id` int(11) NOT NULL AUTO_INCREMENT,"
                     + "username varchar(8),"
-                    + "FOREIGN KEY (username) REFERENCES Student(username) ,"
-                    + "PRIMARY KEY(username))";
+                    + "ISBN int(13),"
+                    + "issueDate Date,"
+                    + "returnDate Date,"
+                    + "PRIMARY KEY(id))";
             final String before = "CREATE TABLE if not exists BookIssue ( "
                     + "ISBN int(13),"
                     + "username varchar(8),"

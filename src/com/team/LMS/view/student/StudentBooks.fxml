@@ -25,7 +25,7 @@
             <RowConstraints maxHeight="384.0" minHeight="10.0" prefHeight="323.0" vgrow="SOMETIMES" />
         </rowConstraints>
         <children>
-            <ScrollPane prefHeight="368.0" prefWidth="713.0" GridPane.rowIndex="1">
+            <ScrollPane prefHeight="330.0" prefWidth="713.0" GridPane.rowIndex="1">
                 <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="712.0">
                         <children>
@@ -48,21 +48,21 @@
             </ScrollPane>
             <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="713.0" spacing="30.0">
                 <children>
-                    <CheckBox fx:id="studentIsbnCheckBox" mnemonicParsing="false" text="ISBN">
+                    <CheckBox fx:id="studentIsbnCheckBox" mnemonicParsing="false" stylesheets="@../../assets/styling/style.css" text="ISBN">
                         <HBox.margin>
                             <Insets left="70.0" />
                         </HBox.margin>
                     </CheckBox>
-                    <CheckBox fx:id="studentTitleCheckBox" mnemonicParsing="false" text="Title" />
-                    <CheckBox fx:id="studentSubjectCheckBox" mnemonicParsing="false" text="Subject" />
-                    <CheckBox fx:id="studentStatusCheckBox" mnemonicParsing="false" text="Status" />
-                    <CheckBox fx:id="studentAuthorCheckBox" mnemonicParsing="false" text="Author" />
-                    <CheckBox fx:id="studentCopyrightCheckBox" mnemonicParsing="false" text="Copyright" />
+                    <CheckBox fx:id="studentTitleCheckBox" mnemonicParsing="false" stylesheets="@../../assets/styling/style.css" text="Title" />
+                    <CheckBox fx:id="studentSubjectCheckBox" mnemonicParsing="false" stylesheets="@../../assets/styling/style.css" text="Subject" />
+                    <CheckBox fx:id="studentStatusCheckBox" mnemonicParsing="false" stylesheets="@../../assets/styling/style.css" text="Status" />
+                    <CheckBox fx:id="studentAuthorCheckBox" mnemonicParsing="false" stylesheets="@../../assets/styling/style.css" text="Author" />
+                    <CheckBox fx:id="studentCopyrightCheckBox" mnemonicParsing="false" stylesheets="@../../assets/styling/style.css" text="Copyright" />
                 </children>
             </HBox>
         </children>
     </GridPane>
-    <Pane layoutY="-7.0" prefHeight="128.0" prefWidth="714.0" style="-fx-background-color: #2E76CF;">
+    <Pane layoutY="21.0" prefHeight="128.0" prefWidth="714.0" style="-fx-background-color: #2874A6;" stylesheets="@../../assets/styling/style.css">
         <children>
             <Label layoutX="45.0" layoutY="29.0" text="Books" textFill="WHITE">
                 <font>

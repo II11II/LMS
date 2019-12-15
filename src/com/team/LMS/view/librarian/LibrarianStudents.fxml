@@ -37,7 +37,7 @@
                                 <URL value="@../../assets/styling/style.css" />
                             </stylesheets>
                         </Button>
-                        <Button fx:id="addStudentBtn" onAction="#addStudentAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Add" textFill="WHITE">
+                        <Button fx:id="addStudentBtn" mnemonicParsing="false" onAction="#addStudentAction" prefHeight="31.0" prefWidth="80.0" text="Add" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="95.0" />
                             </HBox.margin>
@@ -45,7 +45,7 @@
                                 <URL value="@../../assets/styling/style.css" />
                             </stylesheets>
                         </Button>
-                        <Button fx:id="editStudentBtn" onAction="#editStudentAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
+                        <Button fx:id="editStudentBtn" mnemonicParsing="false" onAction="#editStudentAction" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
@@ -88,9 +88,9 @@
                 </ScrollPane>
             </children>
         </GridPane>
-        <Pane layoutY="-7.0" prefHeight="160.0" prefWidth="714.0" style="-fx-background-color: #2E76CF;">
+        <Pane layoutY="21.0" prefHeight="128.0" prefWidth="714.0" style="-fx-background-color: #2874A6;">
             <children>
-                <Label layoutX="45.0" layoutY="45.0" text="Students" textFill="WHITE">
+                <Label layoutX="40.0" layoutY="29.0" text="Students" textFill="WHITE">
                     <font>
                         <Font size="48.0" />
                     </font>

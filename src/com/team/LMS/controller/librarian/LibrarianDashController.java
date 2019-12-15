@@ -81,7 +81,7 @@ public class LibrarianDashController implements Initializable{
         LoginController.signoutOption(signoutBtn);
     }
 
-    private void setNode(Node node) {
+    public void setNode(Node node) {
         StudentDashController.forSetNode(node, holderPane);
     }
 }

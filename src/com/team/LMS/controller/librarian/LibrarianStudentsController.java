@@ -1,21 +1,18 @@
 package com.team.LMS.controller.librarian;
 
+import com.team.LMS.controller.global.AddStudentController;
+import com.team.LMS.controller.global.EditStudentController;
 import com.team.LMS.model.Person;
 import com.team.LMS.model.Student;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -59,7 +56,13 @@ public class LibrarianStudentsController implements Initializable {
 
     }
 
-    public void addStudentAction(){
+    public void addStudentAction() throws IOException {
+        AddStudentController addStudentController=new AddStudentController();
+        addStudentController.addStudentFunction();
+    }
 
+    public void editStudentAction()throws IOException{
+        EditStudentController editStudentController=new EditStudentController();
+        editStudentController.editStudentFunction();
     }
 }

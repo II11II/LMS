@@ -2,7 +2,6 @@ package com.team.LMS.controller.librarian;
 
 import com.team.LMS.controller.login.LoginController;
 import com.team.LMS.controller.student.StudentDashController;
-import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,8 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-
 import javafx.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;

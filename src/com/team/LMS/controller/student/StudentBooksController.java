@@ -1,20 +1,12 @@
 package com.team.LMS.controller.student;
 
 import com.team.LMS.model.Book;
-import com.team.LMS.model.Student;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 

@@ -1,31 +1,26 @@
 package com.team.LMS.controller.librarian;
 
+import com.team.LMS.controller.global.AddBookController;
+import com.team.LMS.controller.global.EditBookController;
 import com.team.LMS.model.Book;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
 import java.util.ResourceBundle;
 
 public class LibrarianBooksController implements Initializable {
+    @FXML private Button searchBookBtn;
     @FXML private Button borrowedBooksBtn;
     @FXML private Button addBookBtn;
     @FXML private Button editBookBtn;
-    @FXML private Button deleteBookBtn;
     @FXML private TextField deleteBookTextField;
     @FXML private TableView<Book> booksTableView;
     @FXML private CheckBox isbnCheckBox;
@@ -86,15 +81,20 @@ public class LibrarianBooksController implements Initializable {
     }
 
     private void setCol(String type) throws SQLException {
+        setColHelper(colTitle, colSubject, colAuthor, colISBN, colCopyright);
+//        colStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        booksTableView.setItems(getBook(type));
+
+    }
+
+    public static void setColHelper(TableColumn<Book, String> colTitle, TableColumn<Book, String> colSubject, TableColumn<Book, String> colAuthor, TableColumn<Book, Integer> colISBN, TableColumn<Book, Date> colCopyright) {
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         colSubject.setCellValueFactory(new PropertyValueFactory<>("subject"));
         colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
         colISBN.setCellValueFactory(new PropertyValueFactory<>("ISBN"));
         colCopyright.setCellValueFactory(new PropertyValueFactory<>("publishDate"));
-//        colStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        booksTableView.setItems(getBook(type));
-
     }
+
     public void itemIsSelected() throws SQLException {
         if(isbnCheckBox.isSelected())
             setCol("isbn");
@@ -132,5 +132,15 @@ public class LibrarianBooksController implements Initializable {
     public void copyrightCheckBoxAction()throws SQLException{
         booksTableView.setItems(getBook("copyright"));
         itemIsSelected();
+    }
+
+    public void addBookAction() throws IOException {
+        AddBookController addBookController=new AddBookController();
+        addBookController.addBookFunction();
+    }
+
+    public void editBookAction() throws IOException {
+        EditBookController editBookController=new EditBookController();
+        editBookController.editBookFunction();
     }
 }

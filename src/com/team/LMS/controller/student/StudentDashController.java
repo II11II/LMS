@@ -1,6 +1,5 @@
 package com.team.LMS.controller.student;
 
-import com.mysql.jdbc.log.Log;
 import com.team.LMS.controller.librarian.LibrarianDashController;
 import com.team.LMS.controller.login.LoginController;
 import javafx.animation.FadeTransition;

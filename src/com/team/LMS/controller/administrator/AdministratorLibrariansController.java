@@ -1,20 +1,18 @@
 package com.team.LMS.controller.administrator;
 
+import com.team.LMS.controller.global.AddLibrarianController;
+import com.team.LMS.controller.global.EditLibrarianController;
 import com.team.LMS.model.Librarian;
 import com.team.LMS.model.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class AdministratorLibrariansController implements Initializable {
 
-    Button adminAddLibrarianBtn;
+    @FXML private Button adminAddLibrarianBtn;
     @FXML private Button adminEditLibrarianBtn;
     @FXML private Button adminSearchLibrarianBtn;
     @FXML private TextField adminDeleteLibrarianTextField;
@@ -53,6 +51,16 @@ public class AdministratorLibrariansController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
+
+    public void addLibrarianAction() throws IOException {
+        AddLibrarianController addLibrarianController=new AddLibrarianController();
+        addLibrarianController.addLibrarianFunction();
+    }
+
+    public void editLibrarianAction() throws IOException {
+        EditLibrarianController editLibrarianController=new EditLibrarianController();
+        editLibrarianController.editLibrarianFunction();
+    }
+
 }

@@ -35,12 +35,12 @@
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="addBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Add" textFill="WHITE">
+                        <Button fx:id="addBookBtn" onAction="#addBookAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Add" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="95.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="editBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
+                        <Button fx:id="editBookBtn" onAction="#editBookAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>

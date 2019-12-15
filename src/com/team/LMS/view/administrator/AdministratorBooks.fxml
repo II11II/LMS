@@ -29,7 +29,7 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button fx:id="adminAddBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Add" textFill="WHITE">
+                        <Button fx:id="adminAddBookBtn" onAction="#addBookAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Add" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="200.0" />
                             </HBox.margin>
@@ -37,7 +37,7 @@
                                 <URL value="@../../assets/styling/style.css" />
                             </stylesheets>
                         </Button>
-                        <Button fx:id="adminEditBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
+                        <Button fx:id="adminEditBookBtn" onAction="#editBookAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>

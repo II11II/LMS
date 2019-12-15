@@ -1,20 +1,18 @@
 package com.team.LMS.controller.administrator;
 
+import com.team.LMS.controller.global.AddBookController;
+import com.team.LMS.controller.global.EditBookController;
+import com.team.LMS.controller.librarian.LibrarianBooksController;
 import com.team.LMS.model.Book;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -64,14 +62,20 @@ public class AdministratorBooksController implements Initializable {
     }
 
     private void setCol() throws SQLException {
-        colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
-        colSubject.setCellValueFactory(new PropertyValueFactory<>("subject"));
-        colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
-        colIsbn.setCellValueFactory(new PropertyValueFactory<>("ISBN"));
-        colCopyright.setCellValueFactory(new PropertyValueFactory<>("publishDate"));
+        LibrarianBooksController.setColHelper(colTitle, colSubject, colAuthor, colIsbn, colCopyright);
         colStatus.setCellValueFactory(new PropertyValueFactory<>("reserved"));
         adminBooksTableView.setItems(getBook());
 
     }
+    public void addBookAction() throws IOException {
+        AddBookController addBookController=new AddBookController();
+        addBookController.addBookFunction();
+    }
+
+    public void editBookAction() throws IOException {
+        EditBookController editBookController = new EditBookController();
+        editBookController.editBookFunction();
+    }
+
 
 }

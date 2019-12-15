@@ -31,8 +31,6 @@ public class LibrarianStudentsController implements Initializable {
     @FXML private TableColumn<Person,String> colFirstName;
     @FXML private TableColumn<Person,String> colLastName;
 
-
-
     ObservableList<Person> getStudent() throws SQLException {
         Student student = new Student();
         ArrayList<Student> students = student.getStudents();

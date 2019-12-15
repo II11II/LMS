@@ -25,7 +25,7 @@ public abstract class LMS {
                     + "firstName varchar (30),"
                     + "lastName varchar(30), "
                     + "password varchar(30), "
-                    + "isBlocked Bool,"
+                    + "isBlocked Boolean,"
                     + "fine DOUBLE,"
                     + "PRIMARY KEY(username))";
             final String admin = "CREATE TABLE if not exists Admin  ("
@@ -54,6 +54,7 @@ public abstract class LMS {
                     + "ISBN int(13),"
                     + "issueDate Date,"
                     + "returnDate Date,"
+                    + "periodDate Date,"
                     + "PRIMARY KEY(id))";
             final String before = "CREATE TABLE if not exists BookIssue ( "
                     + "ISBN int(13),"

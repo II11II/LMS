@@ -11,7 +11,6 @@ public abstract class Person extends LMS {
 
     public Person() throws SQLException {
         super();
-
     }
 
     public Person(String username, String password, String firstName, String lastName) throws java.sql.SQLException {

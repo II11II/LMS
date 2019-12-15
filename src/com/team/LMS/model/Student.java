@@ -1,22 +1,21 @@
 package com.team.LMS.model;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 
 import java.io.IOError;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 public class Student extends Person {
-    //  Book borrowedBook;
-//  Date expireDate;
+
     boolean isBlocked;
     double fine;
+
 
     public Student() throws SQLException {
         super();
@@ -28,32 +27,38 @@ public class Student extends Person {
         this.isBlocked = isBlocked;
         this.fine = fine;
     }
-// TODO: To check
-    public void issueBook(String username, int ISBN, Date issueDate) throws SQLException {
 
-        String insert = " Insert into BookIssue (" + "username," + "isbn," + "issueDate" + ") values (" + "'" + username + "'," + ISBN + ",'" + issueDate + "'" + ") ;";
+    // TODO: Duplication
+    public void issueBook(String username, int ISBN, Date issueDate, Date periodDate) throws SQLException {
+        String checkQuery="";
+        String insertQuery = " Insert into BookIssue  (" + "username," + "isbn," + "periodDate," + "issueDate" + ") values (" + "'" + username + "'," + ISBN + ",'" + issueDate + "'" + ",'" + periodDate + "'" + ")  ;";
         try {
-            PreparedStatement statement = connection.prepareStatement(insert);
-            statement.executeUpdate(insert);
+            PreparedStatement statement = connection.prepareStatement(insertQuery);
+            statement.executeUpdate();
 
         } catch (MySQLSyntaxErrorException e) {
             System.out.println(e.toString());
+
+        } catch (MySQLIntegrityConstraintViolationException e) {
+            String updateQuery = " UPDATE BookIssue set issueDate = '" + issueDate + "' periodDate = '" + periodDate + "' where username = '" + username + "' and ISBN = " + ISBN + ";";
+
+            PreparedStatement statement = connection.prepareStatement(updateQuery);
+            statement.executeUpdate();
         }
 
 
     }
-// TODO: To check
+
     public void returnBook(String username, int ISBN, Date returnDate) throws SQLException {
 
-        String insert = " UPDATE BookIssue set returnDate = " + returnDate + " where username = " + username + ";";
+        String insertQuery = " UPDATE BookIssue set returnDate = '" + returnDate + "' where username = '" + username + "' and ISBN = " + ISBN + ";";
         try {
-            PreparedStatement statement = connection.prepareStatement(insert);
-            statement.executeUpdate(insert);
+            PreparedStatement statement = connection.prepareStatement(insertQuery);
+            statement.executeUpdate(insertQuery);
 
         } catch (MySQLSyntaxErrorException e) {
             System.out.println(e.toString());
         }
-
 
     }
 
@@ -88,16 +93,15 @@ public class Student extends Person {
         }
     }
 
-    // TODO: Check
-    public Student fineOrBlock(String username, double fine, boolean isBlocked) {
-        String query = "update Student set fine= " + fine + ", set isBlocked = '"  + isBlocked + "'" + " where username = " + "'" + username + "';";
+
+    public void fineOrBlock(String username, double fine, boolean isBlocked) {
+        String query = "update Student set fine= " + fine + ",  isBlocked = " + isBlocked + "" + " where username = " + "'" + username + "';";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.executeQuery();
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return this;
 
     }
 
@@ -141,6 +145,4 @@ public class Student extends Person {
         }
 
     }
-
-
 }

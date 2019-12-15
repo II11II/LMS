@@ -1,11 +1,15 @@
 package com.team.LMS;
 
 import com.team.LMS.model.Admin;
+import com.team.LMS.model.OverdueStudent;
+import com.team.LMS.model.Student;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import java.sql.Date;
 import java.sql.SQLException;
 
 
@@ -23,7 +27,15 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 //        Admin admin=new Admin();
 //        admin.register("admin","admin","ABDUVOHID","ISROILOV");
-//        Student model = new Student();
+        Student model = new Student();
+        model.fineOrBlock("s1810037", 248455, false);
+        /**Example
+         model.issueBook("s1810037",24,new Date(new java.util.Date().getTime()));
+         **/
+//        model.issueBook("s1810037",24,new Date(new java.util.Date().getTime()),new Date(new java.util.Date().getTime()));
+//        model.returnBook("s1810037",24,new Date(new java.util.Date().getTime()));
+        OverdueStudent overdueStudent=new OverdueStudent();
+        System.out.println(overdueStudent.isOverdue("s1810037"));
 //        model.getFirstName();
 //        model.deleteStudent("u1810037");
 

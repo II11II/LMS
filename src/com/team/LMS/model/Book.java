@@ -29,10 +29,8 @@ public class Book extends LMS {
 
     public Book() throws SQLException {
         super();
-
     }
 
-    //todo: reserve()
     private Queue<String> sortStringType(String column, String query) {
         Queue<String> stack = new LinkedList<>();
         try {
@@ -64,25 +62,32 @@ public class Book extends LMS {
     }
 
     public ArrayList<Book> getBooks(String string) {
-        String query = "";
-        if (string.equals("default")) {
-            query = "Select * from Book";
-        } else if (string.equals("isbn")) {
-            query = "SELECT " + "*" + " FROM Book" +
-                    " ORDER BY " + "ISBN" + " ASC;";
-        } else if (string.equals("title")) {
-            query = "SELECT " + "*" + " FROM Book" +
-                    " ORDER BY " + "title" + " ASC;";
-        } else if (string.equals("subject")) {
-            query = "SELECT " + "*" + " FROM Book" +
-                    " ORDER BY " + "subject" + " ASC;";
-        } else if (string.equals("author")) {
-            query = "SELECT " + "*" + " FROM Book" +
-                    " ORDER BY " + "author" + " ASC;";
-        } else if (string.equals("copyright")) {
-            query = "SELECT * FROM Book ORDER BY publishDate DESC;";
-        } else
-            query = "Select * from Book";
+        String query;
+        switch (string) {
+            case "isbn":
+                query = "SELECT " + "*" + " FROM Book" +
+                        " ORDER BY " + "ISBN" + " ASC;";
+                break;
+            case "title":
+                query = "SELECT " + "*" + " FROM Book" +
+                        " ORDER BY " + "title" + " ASC;";
+                break;
+            case "subject":
+                query = "SELECT " + "*" + " FROM Book" +
+                        " ORDER BY " + "subject" + " ASC;";
+                break;
+            case "author":
+                query = "SELECT " + "*" + " FROM Book" +
+                        " ORDER BY " + "author" + " ASC;";
+                break;
+            case "copyright":
+                query = "SELECT * FROM Book ORDER BY publishDate DESC;";
+                break;
+            case "default":
+            default:
+                query = "Select * from Book";
+                break;
+        }
         try {
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {

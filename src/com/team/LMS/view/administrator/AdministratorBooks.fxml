@@ -29,7 +29,7 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button fx:id="adminAddBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Add" textFill="WHITE">
+                        <Button fx:id="adminAddBookBtn" onAction="#addBookAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Add" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="200.0" />
                             </HBox.margin>
@@ -37,12 +37,12 @@
                                 <URL value="@../../assets/styling/style.css" />
                             </stylesheets>
                         </Button>
-                        <Button fx:id="adminEditBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
+                        <Button fx:id="adminEditBookBtn" onAction="#editBookAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" stylesheets="@../../assets/styling/style.css" text="Edit" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="adminDeleteBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Delete" textFill="WHITE">
+                        <Button fx:id="adminSearchBookBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Search" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="20.0" />
                             </HBox.margin>
@@ -63,12 +63,12 @@
                             <children>
                                 <TableView fx:id="adminBooksTableView" layoutX="-3.0" layoutY="-3.0" prefHeight="308.0" prefWidth="717.0">
                                     <columns>
-                                        <TableColumn prefWidth="75.0" text="           ISBN" />
-                                        <TableColumn prefWidth="75.0" text="           Title" />
-                                        <TableColumn prefWidth="75.0" text="         Subject" />
-                                        <TableColumn prefWidth="75.0" text="          Status" />
-                                        <TableColumn prefWidth="75.0" text="         Author" />
-                              <TableColumn prefWidth="75.0" text="      Copyright" />
+                                        <TableColumn prefWidth="75.0" fx:id="colIsbn" text="           ISBN" />
+                                        <TableColumn prefWidth="75.0" fx:id="colTitle" text="           Title" />
+                                        <TableColumn prefWidth="75.0" fx:id="colSubject" text="         Subject" />
+                                        <TableColumn prefWidth="75.0" fx:id="colStatus" text="          Status" />
+                                        <TableColumn prefWidth="75.0" fx:id="colAuthor" text="         Author" />
+                              <TableColumn prefWidth="75.0" fx:id="colCopyright" text="      Copyright" />
                                     </columns>
                                     <columnResizePolicy>
                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

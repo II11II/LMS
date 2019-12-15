@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="970.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team.LMS.controller.student.StudentDashController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="970.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team.LMS.controller.student.StudentDashController">
     <children>
         <VBox alignment="TOP_CENTER" layoutY="-7.0" prefHeight="583.0" prefWidth="257.0" style="-fx-background-color: #2E76CF;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="-7.0">
             <children>
@@ -18,7 +16,7 @@
                     <VBox.margin>
                         <Insets bottom="20.0" top="50.0" />
                     </VBox.margin></ImageView>
-                <Button fx:id="studentProfileBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Profile" textFill="WHITE">
+                <Button fx:id="studentProfileBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#profileData" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Profile" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -30,7 +28,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="studentBooksBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Books" textFill="WHITE">
+                <Button fx:id="studentBooksBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#booksData" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Books" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -42,7 +40,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="studentReserveBookBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Reserve book" textFill="WHITE">
+                <Button fx:id="studentReserveBookBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#reserveBookData" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Reserve book" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -54,7 +52,7 @@
                         <Insets left="50.0" />
                     </padding>
                 </Button>
-                <Button fx:id="signoutBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Sign Out" textFill="WHITE">
+                <Button fx:id="signoutBtn" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#signoutData" prefHeight="40.0" prefWidth="267.0" stylesheets="@../../assets/styling/style.css" text="Sign Out" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -68,5 +66,6 @@
                 </Button>
             </children>
         </VBox>
+      <AnchorPane fx:id="holderPaneStudent" layoutX="255.0" prefHeight="576.0" prefWidth="715.0" />
     </children>
 </AnchorPane>

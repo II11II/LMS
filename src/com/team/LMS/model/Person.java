@@ -39,13 +39,10 @@ public abstract class Person extends LMS {
                     if (pass.equals(password)) {
                         return true;
                     }
-                } else {
-                    return false;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
-
         }
         return false;
     }

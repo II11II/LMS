@@ -1,16 +1,10 @@
 package com.team.LMS.controller.librarian;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class LibrarianIssueController {
@@ -29,13 +23,6 @@ public class LibrarianIssueController {
     @FXML private Label issueCopyrigthText;
     @FXML private Button bookIssueSaveBtn;
 
-    public void LIssueController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianIssueBook.fxml"));
-        primaryStage.setTitle("Issue book information");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
     public void searchStudentAction() throws SQLException {
         LibrarianReturnController.returnStudent(issueIDTextField, issueFirstNameText, issueLastNameText, issueDatePicker);
     }

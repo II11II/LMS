@@ -37,7 +37,7 @@
                                 <URL value="@../../assets/styling/style.css" />
                             </stylesheets>
                         </Button>
-                        <Button fx:id="addStudentBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Add" textFill="WHITE">
+                        <Button fx:id="addStudentBtn" onAction="#addStudentAction" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" text="Add" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="95.0" />
                             </HBox.margin>

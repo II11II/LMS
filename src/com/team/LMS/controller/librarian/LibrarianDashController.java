@@ -1,80 +1,91 @@
 package com.team.LMS.controller.librarian;
 
 import com.team.LMS.controller.login.LoginController;
+import com.team.LMS.controller.student.StudentDashController;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import javafx.event.ActionEvent;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class LibrarianDashController {
+public class LibrarianDashController implements Initializable{
 
+    AnchorPane studentsInfo,booksInfo,issueBook,issueFine,returnInfo,blockInfo;
+    @FXML private AnchorPane holderPane;
+    @FXML private Button studentsBtn;
     @FXML private Button booksBtn;
     @FXML private Button returnBookBtn;
     @FXML private Button issueBookBtn;
     @FXML private Button issueFineBtn;
     @FXML private Button blockStudentBtn;
     @FXML private Button signoutBtn;
-    @FXML private Button studentsBtn;
 
     public void LDashboardController() throws IOException {
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianDashboard.fxml"));
         primaryStage.setTitle("Library Management System");
-        primaryStage.setScene(new Scene(root, 800, 500));
+        primaryStage.setScene(new Scene(root, 970, 576));
         primaryStage.show();
     }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        try {
+            studentsInfo = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianStudents.fxml"));
+            booksInfo = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianBooks.fxml"));
+            issueFine = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianIssueFine.fxml"));
+            issueBook = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianIssueBook.fxml"));
+            returnInfo = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianReturnBook.fxml"));
+            blockInfo = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianBlockStudent.fxml"));
+            setNode(studentsInfo);
+        } catch (IOException ex) {
+            Logger.getLogger(LibrarianDashController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-
-    public void studentsData() throws IOException {
-        LoginController.controlWindows(studentsBtn);
-        LibrarianStudentsController librarianStudentsController;
-        librarianStudentsController = new LibrarianStudentsController();
-        librarianStudentsController.LStudentController();
     }
 
-    public void booksData() throws IOException {
-        LoginController.controlWindows(booksBtn);
-        LibrarianBooksController librarianBooksController;
-        librarianBooksController = new LibrarianBooksController();
-        librarianBooksController.LBooksController();
+    @FXML private void studentsData(ActionEvent event) {
+        setNode(studentsInfo);
     }
 
-    public void issueBookData()throws IOException{
-        LoginController.controlWindows(issueBookBtn);
-        LibrarianIssueController librarianIssueController;
-        librarianIssueController=new LibrarianIssueController();
-        librarianIssueController.LIssueController();
+    @FXML private void booksData(ActionEvent event) {
+        setNode(booksInfo);
     }
 
-    public void returnBookData()throws IOException{
-        LoginController.controlWindows(returnBookBtn);
-        LibrarianReturnController librarianReturnController;
-        librarianReturnController=new LibrarianReturnController();
-        librarianReturnController.LReturnController();
+    @FXML private void issueBookData(ActionEvent event){
+         setNode(issueBook);
     }
 
-    public void issueFineData()throws IOException{
-        LoginController.controlWindows(issueFineBtn);
-        LibrarianFineController librarianFineController;
-        librarianFineController=new LibrarianFineController();
-        librarianFineController.LFineController();
+    @FXML private void returnBookData(ActionEvent event){
+        setNode(returnInfo);
     }
 
-    public void blockStudentData()throws IOException{
-        LoginController.controlWindows(blockStudentBtn);
-        LibrarianBlockController librarianBlockController;
-        librarianBlockController=new LibrarianBlockController();
-        librarianBlockController.LBlockController();
+    @FXML private void issueFineData(ActionEvent event){
+        setNode(issueFine);
+    }
+
+    @FXML private void blockStudentData(ActionEvent event){
+        setNode(blockInfo);
     }
 
     public void signoutData()throws IOException{
         LoginController.signoutOption(signoutBtn);
     }
 
+    private void setNode(Node node) {
+        StudentDashController.forSetNode(node, holderPane);
+    }
 }
+

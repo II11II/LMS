@@ -33,14 +33,6 @@ public class AdministratorLibrariansController implements Initializable {
     @FXML private TableColumn<Librarian,String> colId;
     @FXML private TableColumn<Librarian,String> colLastName;
 
-    public void ALibrarianController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/administrator/AdministratorLibrarians.fxml"));
-        primaryStage.setTitle("Librarian");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
-
     ObservableList<Person> getLibrarian() throws SQLException {
         Librarian librarian = new Librarian();
         ArrayList<Librarian> librarians = librarian.getLibrarians();

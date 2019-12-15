@@ -34,14 +34,6 @@ public class StudentBooksController implements Initializable {
     @FXML private CheckBox studentAuthorCheckBox;
     @FXML private CheckBox studentCopyrightCheckBox;
 
-    public void SBooksController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/student/StudentBooks.fxml"));
-        primaryStage.setTitle("Student books");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

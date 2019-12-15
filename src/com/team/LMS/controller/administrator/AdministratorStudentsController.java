@@ -33,13 +33,6 @@ public class AdministratorStudentsController implements Initializable {
     @FXML private TableColumn<Student,String> colId;
     @FXML private TableColumn<Student,String> colLastname;
 
-    public void AStudentController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/administrator/AdministratorStudents.fxml"));
-        primaryStage.setTitle("Student");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
     ObservableList<Person> getStudent() throws SQLException {
         Student student = new Student();
         ArrayList<Student> students = student.getStudents();

@@ -40,14 +40,6 @@ public class AdministratorBooksController implements Initializable {
     @FXML
     private TableView<Book> adminBooksTableView;
 
-    public void ABooksController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/administrator/AdministratorBooks.fxml"));
-        primaryStage.setTitle("Book");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

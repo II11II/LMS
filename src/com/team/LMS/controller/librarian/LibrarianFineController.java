@@ -22,13 +22,6 @@ public class LibrarianFineController {
     @FXML private TextField fineAmountTextField;
     @FXML private Button fineSaveBtn;
 
-    public void LFineController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianIssueFine.fxml"));
-        primaryStage.setTitle("Issue Fine book information");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
     public void issueFineAction() throws SQLException {
         Student student=new Student();
         ArrayList<Student> students=student.getStudents();

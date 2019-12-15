@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class LibrarianStudentsController implements Initializable {
+    @FXML private Button searchStudentBtn;
     @FXML private Button overdueStudentsBtn;
     @FXML private Button addStudentBtn;
     @FXML private Button editStudentBtn;
@@ -34,17 +35,6 @@ public class LibrarianStudentsController implements Initializable {
     @FXML private TableColumn<Person,String> colLastName;
 
 
-    public LibrarianStudentsController() {
-
-    }
-
-    public void LStudentController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianStudents.fxml"));
-        primaryStage.setTitle("Students information");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
 
     ObservableList<Person> getStudent() throws SQLException {
         Student student = new Student();
@@ -56,7 +46,6 @@ public class LibrarianStudentsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         colId.setCellValueFactory(new PropertyValueFactory<>("username"));
         colFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         colLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
@@ -67,6 +56,10 @@ public class LibrarianStudentsController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public void addStudentAction(){
 
     }
 }

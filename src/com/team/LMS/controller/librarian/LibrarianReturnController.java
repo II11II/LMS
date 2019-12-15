@@ -31,14 +31,6 @@ public class LibrarianReturnController {
     @FXML private Label returnCopyrigthText;
     @FXML private Button returnBookSaveBtn;
 
-    public void LReturnController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianReturnBook.fxml"));
-        primaryStage.setTitle("Return book information");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
-
     public void returnSearchStudentAction() throws SQLException {
         returnStudent(returnIDTextField, returnFirstNameText, returnLastNameText, returnDatePicker);
     }

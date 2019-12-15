@@ -41,13 +41,6 @@ public class LibrarianBooksController implements Initializable {
     @FXML private TableColumn<Book,Date> colCopyright;
     @FXML private TableColumn<Book,String> colAuthor;
 
-    public void LBooksController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianBooks.fxml"));
-        primaryStage.setTitle("Books information");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

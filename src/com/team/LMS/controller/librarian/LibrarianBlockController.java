@@ -23,14 +23,6 @@ public class LibrarianBlockController {
     @FXML private Label blockDegreeText;
     @FXML private Button blockSaveBtn;
 
-    public void LBlockController() throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianBlockStudent.fxml"));
-        primaryStage.setTitle("Block student information");
-        primaryStage.setScene(new Scene(root, 710, 550));
-        primaryStage.show();
-    }
-
     public void blockStudentAction() throws SQLException {
         Student student=new Student();
         ArrayList<Student> students=student.getStudents();

@@ -14,124 +14,114 @@
     <Pane layoutX="-1.0" prefHeight="416.0" prefWidth="474.0" style="-fx-background-color: #9fc5e8;">
         <VBox layoutY="-1.0" prefHeight="414.0" prefWidth="474.0">
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-                <Label text="ISBN :  " textFill="WHITE">
-                    <HBox.margin>
-                        <Insets left="60.0" />
-                    </HBox.margin>
-                    <font>
-                        <Font name="System Bold Italic" size="15.0" />
-                    </font>
-                </Label>
                 <TextField fx:id="addBookISBNTextField" prefHeight="31.0" prefWidth="220.0">
                     <HBox.margin>
-                        <Insets left="39.0" />
+                        <Insets left="90.0" />
                     </HBox.margin>
                 </TextField>
+                <Label text="ISBN" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-                <Label text="Title : " textFill="WHITE">
+                <TextField fx:id="addBookTitleTextField" prefHeight="31.0" prefWidth="220.0">
+                    <HBox.margin>
+                        <Insets left="90.0" />
+                    </HBox.margin>
+                </TextField>
+                <Label text="Title" textFill="WHITE">
                     <font>
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                     <HBox.margin>
-                        <Insets left="60.0" />
+                        <Insets left="20.0" />
                     </HBox.margin>
                 </Label>
-                <TextField fx:id="addBookTitleTextField" prefHeight="31.0" prefWidth="220.0">
-                    <HBox.margin>
-                        <Insets left="45.0" />
-                    </HBox.margin>
-                </TextField>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="480.0">
                 <VBox.margin>
                     <Insets />
                 </VBox.margin>
-                <padding>
-                    <Insets left="10.0" />
-                </padding>
-                <Label text="Subject : " textFill="WHITE">
+                <TextField fx:id="addBookSubjectTextField" prefHeight="31.0" prefWidth="220.0">
+                    <HBox.margin>
+                        <Insets left="90.0" />
+                    </HBox.margin>
+                </TextField>
+                <Label prefHeight="21.0" prefWidth="60.0" text="Subject" textFill="WHITE">
                     <font>
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                     <HBox.margin>
-                        <Insets left="50.0" />
+                        <Insets left="20.0" />
                     </HBox.margin>
                 </Label>
-                <TextField fx:id="addBookSubjectTextField" prefHeight="31.0" prefWidth="220.0">
-                    <HBox.margin>
-                        <Insets left="27.0" />
-                    </HBox.margin>
-                </TextField>
             </HBox>
          <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-            <padding>
-               <Insets left="10.0" />
-            </padding>
             <children>
-               <Label text="Status : " textFill="WHITE">
-                  <font>
-                     <Font name="System Bold Italic" size="15.0" />
-                  </font>
-                  <HBox.margin>
-                     <Insets left="50.0" />
-                  </HBox.margin>
-               </Label>
                <TextField fx:id="addBookStatusTextField" prefHeight="31.0" prefWidth="220.0">
                   <HBox.margin>
-                     <Insets left="34.0" />
+                     <Insets left="90.0" />
                   </HBox.margin>
                </TextField>
-            </children>
-         </HBox>
-         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-            <padding>
-               <Insets left="10.0" />
-            </padding>
-            <children>
-               <Label text="Author : " textFill="WHITE">
+               <Label text="Status" textFill="WHITE">
                   <font>
                      <Font name="System Bold Italic" size="15.0" />
                   </font>
                   <HBox.margin>
-                     <Insets left="50.0" />
+                     <Insets left="20.0" />
                   </HBox.margin>
                </Label>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
+            <children>
                <TextField fx:id="addBookAuthorTextField" prefHeight="31.0" prefWidth="220.0">
                   <HBox.margin>
-                     <Insets left="30.0" />
+                     <Insets left="90.0" />
                   </HBox.margin>
                </TextField>
-            </children>
-         </HBox>
-         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-            <padding>
-               <Insets left="10.0" />
-            </padding>
-            <children>
-               <Label text="Copyright : " textFill="WHITE">
+               <Label text="Author" textFill="WHITE">
                   <font>
                      <Font name="System Bold Italic" size="15.0" />
                   </font>
                   <HBox.margin>
-                     <Insets left="50.0" />
+                     <Insets left="20.0" />
                   </HBox.margin>
                </Label>
-               <TextField fx:id="addBookCopyrightTextField" prefHeight="31.0" prefWidth="220.0">
-                  <HBox.margin>
-                     <Insets left="11.0" />
-                  </HBox.margin>
-               </TextField>
             </children>
          </HBox>
          <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-            <padding>
-               <Insets left="10.0" />
-            </padding>
             <children>
+               <TextField fx:id="addBookCopyrightTextField" prefHeight="31.0" prefWidth="220.0">
+                  <HBox.margin>
+                     <Insets left="90.0" />
+                  </HBox.margin>
+               </TextField>
+               <Label text="Copyright" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold Italic" size="15.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
+            <children>
+               <Label fx:id="addBookErrorMessage" prefHeight="21.0" prefWidth="222.0" textFill="#eb5252">
+                  <HBox.margin>
+                     <Insets left="15.0" />
+                  </HBox.margin>
+               </Label>
                <Button fx:id="addBookCancelBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
                   <HBox.margin>
-                     <Insets left="225.0" />
+                     <Insets left="15.0" />
                   </HBox.margin>
                </Button>
                <Button fx:id="addBookOKBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="OK" textFill="WHITE">

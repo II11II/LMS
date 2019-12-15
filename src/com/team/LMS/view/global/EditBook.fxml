@@ -14,7 +14,12 @@
     <Pane layoutX="-1.0" prefHeight="416.0" prefWidth="474.0" style="-fx-background-color: #9fc5e8;">
         <VBox layoutY="-1.0" prefHeight="414.0" prefWidth="474.0">
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-                <Label text="ISBN :  " textFill="WHITE">
+                <TextField fx:id="editBookISBNTextField" prefHeight="31.0" prefWidth="220.0">
+                    <HBox.margin>
+                        <Insets left="30.0" />
+                    </HBox.margin>
+                </TextField>
+                <Label text="ISBN" textFill="WHITE">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>
@@ -22,19 +27,19 @@
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                 </Label>
-                <TextField fx:id="editBookISBNTextField" prefHeight="31.0" prefWidth="220.0">
-                    <HBox.margin>
-                        <Insets left="39.0" />
-                    </HBox.margin>
-                </TextField>
-            <Button fx:id="editBookSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+            <Button fx:id="editBookSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="15.0" />
+                  <Insets left="25.0" />
                </HBox.margin>
             </Button>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-                <Label text="Title : " textFill="WHITE">
+                <TextField fx:id="editBookTitleTextField" prefHeight="31.0" prefWidth="220.0">
+                    <HBox.margin>
+                        <Insets left="30.0" />
+                    </HBox.margin>
+                </TextField>
+                <Label text="Title" textFill="WHITE">
                     <font>
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
@@ -42,91 +47,74 @@
                         <Insets left="20.0" />
                     </HBox.margin>
                 </Label>
-                <TextField fx:id="editBookTitleTextField" prefHeight="31.0" prefWidth="220.0">
-                    <HBox.margin>
-                        <Insets left="45.0" />
-                    </HBox.margin>
-                </TextField>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
                 <VBox.margin>
                     <Insets />
                 </VBox.margin>
-                <padding>
-                    <Insets left="10.0" />
-                </padding>
-                <Label text="Subject : " textFill="WHITE">
+                <TextField fx:id="editBookSubjectTextField" prefHeight="31.0" prefWidth="220.0">
+                    <HBox.margin>
+                        <Insets left="30.0" />
+                    </HBox.margin>
+                </TextField>
+                <Label text="Subject" textFill="WHITE">
                     <font>
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                     <HBox.margin>
-                        <Insets left="10.0" />
+                        <Insets left="20.0" />
                     </HBox.margin>
                 </Label>
-                <TextField fx:id="editBookSubjectTextField" prefHeight="31.0" prefWidth="220.0">
-                    <HBox.margin>
-                        <Insets left="27.0" />
-                    </HBox.margin>
-                </TextField>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-                <padding>
-                    <Insets left="10.0" />
-                </padding>
                 <children>
-                    <Label text="Status : " textFill="WHITE">
+                    <TextField fx:id="editBookStatusTextField" prefHeight="31.0" prefWidth="220.0">
+                        <HBox.margin>
+                            <Insets left="30.0" />
+                        </HBox.margin>
+                    </TextField>
+                    <Label text="Status" textFill="WHITE">
                         <font>
                             <Font name="System Bold Italic" size="15.0" />
                         </font>
                         <HBox.margin>
-                            <Insets left="10.0" />
+                            <Insets left="20.0" />
                         </HBox.margin>
                     </Label>
-                    <TextField fx:id="editBookStatusTextField" prefHeight="31.0" prefWidth="220.0">
-                        <HBox.margin>
-                            <Insets left="34.0" />
-                        </HBox.margin>
-                    </TextField>
                 </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-                <padding>
-                    <Insets left="10.0" />
-                </padding>
                 <children>
-                    <Label text="Author : " textFill="WHITE">
-                        <font>
-                            <Font name="System Bold Italic" size="15.0" />
-                        </font>
-                        <HBox.margin>
-                            <Insets left="10.0" />
-                        </HBox.margin>
-                    </Label>
                     <TextField fx:id="editBookAuthorTextField" prefHeight="31.0" prefWidth="220.0">
                         <HBox.margin>
                             <Insets left="30.0" />
                         </HBox.margin>
                     </TextField>
-                </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
-                <padding>
-                    <Insets left="10.0" />
-                </padding>
-                <children>
-                    <Label text="Copyright : " textFill="WHITE">
+                    <Label text="Author" textFill="WHITE">
                         <font>
                             <Font name="System Bold Italic" size="15.0" />
                         </font>
                         <HBox.margin>
-                            <Insets left="10.0" />
+                            <Insets left="20.0" />
                         </HBox.margin>
                     </Label>
+                </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">
+                <children>
                     <TextField fx:id="editBookCopyrightTextField" prefHeight="31.0" prefWidth="220.0">
                         <HBox.margin>
-                            <Insets left="11.0" />
+                            <Insets left="30.0" />
                         </HBox.margin>
                     </TextField>
+                    <Label text="Copyright" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold Italic" size="15.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="20.0" />
+                        </HBox.margin>
+                    </Label>
                 </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="474.0">

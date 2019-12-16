@@ -29,7 +29,7 @@ public class Main extends Application {
 //        Admin admin=new Admin();
 //        admin.register("admin","admin","ABDUVOHID","ISROILOV");
         Student model = new Student();
-        model.modifyStudent("s1810037", "Joker", "Batman");
+        model.modifyStudent("u1810037", "Islam", "Akhrarov");
         /**Example
          model.issueBook("s1810037",24,new Date(new java.util.Date().getTime()));
          **/

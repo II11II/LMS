@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -16,5 +20,98 @@
                 </Label>
             </children>
         </Pane>
+        <ImageView fitHeight="161.0" fitWidth="165.0" layoutX="277.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Emilia.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="299.0" layoutY="246.0" text="Emilia Clarke">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="340.0" layoutY="275.0" text="Milly">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font>
+        </Label>
+        <Separator layoutX="354.0" layoutY="308.0" orientation="VERTICAL" prefHeight="244.0" prefWidth="0.0" style="-fx-background-color: #424242;" />
+        <Label layoutX="42.0" layoutY="298.0" text="Basic Information">
+            <font>
+                <Font name="Algerian" size="15.0" />
+            </font></Label>
+        <Pane layoutX="42.0" layoutY="325.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10; -fx-background-color: #424242;">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <children>
+                <Label layoutX="22.0" layoutY="15.0" text="Full Name" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="167.0" layoutY="15.0" text="Emilia Clarke" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Pane layoutX="42.0" layoutY="380.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10; -fx-background-color: #424242;">
+            <children>
+                <Label layoutX="23.0" layoutY="15.0" text="Student ID" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="168.0" layoutY="15.0" text="s1810032" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Pane layoutX="42.0" layoutY="437.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10; -fx-background-color: #424242;">
+            <children>
+                <Label layoutX="24.0" layoutY="15.0" text="Password" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="166.0" layoutY="15.0" text="19991111" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Pane layoutX="42.0" layoutY="494.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10; -fx-background-color: #424242;">
+            <children>
+                <Label layoutX="23.0" layoutY="15.0" text="Email Address" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="165.0" layoutY="15.0" text="milly@gmail.com" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Pane layoutX="370.0" layoutY="325.0" prefHeight="161.0" prefWidth="302.0" style="-fx-background-radius: 10; -fx-background-color: #424242;">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <children>
+                <Label layoutX="22.0" layoutY="15.0" text="Borrowed books" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="profileBorrowedBooksLabel" layoutX="167.0" layoutY="15.0" text="Dietel - C++, Java" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Label layoutX="370.0" layoutY="299.0" text="Basic Information">
+            <font>
+                <Font name="Algerian" size="15.0" />
+            </font>
+        </Label>
+        <Pane layoutX="370.0" layoutY="494.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10; -fx-background-color: #424242;">
+            <children>
+                <Label layoutX="23.0" layoutY="15.0" text="Current Fine" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="profileCurrentFineLabel" layoutX="165.0" layoutY="15.0" text="\$0" textFill="WHITE" />
+            </children>
+        </Pane>
     </children>
 </AnchorPane>
+
+

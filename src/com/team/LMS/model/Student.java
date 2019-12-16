@@ -129,7 +129,6 @@ public class Student extends Person {
         return students;
     }
 
-    //TODO : To check the function to its functionality
     public void modifyStudent(String username, String firstName, String lastName) {
 
 

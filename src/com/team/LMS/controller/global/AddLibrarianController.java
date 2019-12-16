@@ -1,5 +1,7 @@
 package com.team.LMS.controller.global;
 
+import com.team.LMS.controller.administrator.AdministratorLibrariansController;
+import com.team.LMS.controller.librarian.LibrarianBooksController;
 import com.team.LMS.controller.login.LoginController;
 import com.team.LMS.model.Librarian;
 import com.team.LMS.model.Student;
@@ -54,6 +56,7 @@ public class AddLibrarianController {
         else {
             librarian.register(librarianId, "1", addLibrarianFirstNameTextField.getText(), addLibrarianLastNameTextField.getText());
             LoginController.controlWindows(addLibrariantOKBtn);
+            AdministratorLibrariansController.refresh();
         }
     }
     public void cancelAdditionLibrarian(){

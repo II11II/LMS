@@ -1,5 +1,6 @@
 package com.team.LMS.controller.global;
 
+import com.team.LMS.controller.administrator.AdministratorLibrariansController;
 import com.team.LMS.controller.login.LoginController;
 import com.team.LMS.model.Librarian;
 import com.team.LMS.model.Student;
@@ -55,6 +56,7 @@ public class EditLibrarianController {
             librarian.setLastName(editLibrarianLastNameTextField.getText());
 //            librarian.modifyLibrarian(librarian.getUsername(),librarian.getFirstName(),librarian.getLastName());
             LoginController.controlWindows(editLibrarianOKBtn);
+            AdministratorLibrariansController.refresh();
         }else {
             System.out.println("Librarian with this ID does not exist");
         }

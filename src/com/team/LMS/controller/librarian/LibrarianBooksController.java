@@ -35,6 +35,7 @@ public class LibrarianBooksController implements Initializable {
     @FXML private TableColumn<Book,Integer> colStatus;
     @FXML private TableColumn<Book,Date> colCopyright;
     @FXML private TableColumn<Book,String> colAuthor;
+    public static ObservableList<Book> booksObservableList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -50,9 +51,8 @@ public class LibrarianBooksController implements Initializable {
             e.printStackTrace();
         }
     }
-    ObservableList<Book> getBook(String string) throws SQLException {
+    public static ObservableList<Book> getBook(String string) throws SQLException {
         Book book = new Book();
-        ObservableList<Book> booksObservableList = FXCollections.observableArrayList();
         if(string.equals("default")){
             ArrayList<Book> sortDefault = book.getBooks(string);
             booksObservableList.addAll(sortDefault);
@@ -142,6 +142,10 @@ public class LibrarianBooksController implements Initializable {
     public void editBookAction() throws IOException {
         EditBookController editBookController=new EditBookController();
         editBookController.editBookFunction();
+    }
+    public static void refresh() throws SQLException {
+        booksObservableList.clear();
+        LibrarianBooksController.getBook("default");
     }
 
 }

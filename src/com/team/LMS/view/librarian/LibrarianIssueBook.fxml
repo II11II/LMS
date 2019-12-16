@@ -235,5 +235,5 @@
         </VBox>
     </children>
 </Pane>
-<Button fx:id="bookIssueSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Issue" textFill="WHITE" />
+<Button fx:id="bookIssueSaveBtn" onAction="#issueSave" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Issue" textFill="WHITE" />
 </AnchorPane>

@@ -1,10 +1,13 @@
 package com.team.LMS.controller.librarian;
 
+import com.team.LMS.model.Student;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.sql.Date;
 import java.sql.SQLException;
 
 public class LibrarianIssueController {
@@ -29,5 +32,9 @@ public class LibrarianIssueController {
 
     public void searchBookAction()throws SQLException{
         LibrarianReturnController.returnBook(issueISBNTextField, issueTitleText, issueAuthorText, issueCopyrigthText, issueStatusText, issueSubjectText);
+    }
+    public void issueSave() throws SQLException {
+        Student student =new Student();
+        student.issueBook(issueIDTextField.getText(),Integer.parseInt(issueISBNTextField.getText()),new Date(new java.util.Date().getTime()),Date.valueOf(String.valueOf(issueDatePicker)));
     }
 }

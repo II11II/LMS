@@ -95,5 +95,5 @@
          </HBox>
         </VBox>
     </Pane>
-    <Button fx:id="fineSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Fine" textFill="WHITE" />
+    <Button fx:id="fineSaveBtn" onAction="#issueFineButton" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Fine" textFill="WHITE" />
 </AnchorPane>

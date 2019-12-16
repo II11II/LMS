@@ -75,5 +75,5 @@
             </HBox>
         </VBox>
     </Pane>
-    <Button fx:id="blockSaveBtn" layoutX="416.0" layoutY="466.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Block" textFill="WHITE" />
+    <Button fx:id="blockSaveBtn" onAction="#blockStudentButton" layoutX="416.0" layoutY="466.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Block" textFill="WHITE" />
 </AnchorPane>

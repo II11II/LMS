@@ -232,5 +232,5 @@
             </VBox>
         </children>
     </Pane>
-    <Button fx:id="returnBookSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Return" textFill="WHITE" />
+    <Button fx:id="returnBookSaveBtn" onAction="#returnBook" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Return" textFill="WHITE" />
 </AnchorPane>

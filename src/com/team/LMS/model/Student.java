@@ -105,6 +105,10 @@ public class Student extends Person {
 
     }
 
+    public void setBlocked(boolean blocked) {
+        isBlocked = blocked;
+    }
+
     // TODO: Check the functionality
     public ArrayList<Student> getStudents() {
         String query = "select username,fine,isBlocked,firstName,lastName from Student";
@@ -143,4 +147,15 @@ public class Student extends Person {
         }
     }
 
+    public boolean isBlocked() {
+        return isBlocked;
+    }
+
+    public double getFine() {
+        return fine;
+    }
+
+    public void setFine(double fine) {
+        this.fine = fine;
+    }
 }

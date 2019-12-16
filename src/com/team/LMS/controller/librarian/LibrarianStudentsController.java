@@ -54,8 +54,8 @@ public class LibrarianStudentsController implements Initializable {
         colLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
 
 
-        try {
-            studentsTableView.setItems(getStudent(null));
+        try {//here was error LIBRARIAN
+            studentsTableView.setItems(getStudent(new Student().getStudents()));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -97,17 +97,19 @@ public class LibrarianStudentsController implements Initializable {
     }
 
     public void overdueStudentsButton() throws SQLException {
-        OverdueStudent overdueStudent=new OverdueStudent();
-         Student student=new Student();
-         ArrayList<Student>students=new ArrayList<>();
-         ArrayList<Student>studentOverdue=new ArrayList<>();
-        for(Student student1:students){
-            if(overdueStudent.isOverdue(student1.getUsername())){
-                studentOverdue.add(student1);
-            }
-        }
+//        OverdueStudent overdueStudent=new OverdueStudent();
+//         Student student=new Student();
+//         ArrayList<Student>students=new ArrayList<>();
+//         ArrayList<Student>studentOverdue=new ArrayList<>();
+//        for(Student student1:students){
+//            if(overdueStudent.isOverdue(student1.getUsername())){
+//                studentOverdue.add(student1);
+//            }
+//        }
+
+              OverdueStudent overdueStudent=  new OverdueStudent();
         personObservableList.clear();
-        LibrarianStudentsController.getStudent(studentOverdue);
+        LibrarianStudentsController.getStudent(overdueStudent.overdueStudent());
     }
 
 

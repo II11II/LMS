@@ -25,7 +25,7 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
         OverdueStudent overdueStudent=new OverdueStudent();
         BookIssue bookIssue=new BookIssue();
-        for (OverdueStudent s:overdueStudent.overdueStudents()
+        for (Student s:overdueStudent.overdueStudent()
              ) {
             System.out.println(s.getUsername());
 

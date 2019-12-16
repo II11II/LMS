@@ -26,16 +26,38 @@ public class OverdueStudent extends Student {
         }
         return false;
     }
-
-    public ArrayList<OverdueStudent> overdueStudents() throws SQLException {
+//NEED to delete
+//    public ArrayList<OverdueStudent> overdueStudents() throws SQLException {
+//        OverdueStudent student = new OverdueStudent();
+//        ArrayList<OverdueStudent> overdueStudents = new ArrayList<>();
+//        Student student1 = new Student();
+//        BookIssue bookIssue = new BookIssue();
+//        OverdueStudent returnStudents;
+//        for (BookIssue issue : bookIssue.bookIssues()) {
+//            if (student.isOverdue(issue.getUsername())) {
+//                returnStudents = new OverdueStudent();
+//                returnStudents.username = issue.getUsername();
+//                for (Student s : student1.getStudents()) {
+//                    if (s.getUsername().equals(issue.getUsername())) {
+//                        returnStudents.lastName = s.getLastName();
+//                        returnStudents.firstName = s.getFirstName();
+//                    }
+//                }
+//                overdueStudents.add(returnStudents);
+//
+//            }
+//        }
+//        return overdueStudents;
+//    }
+    public ArrayList<Student> overdueStudent() throws SQLException {
         OverdueStudent student = new OverdueStudent();
-        ArrayList<OverdueStudent> overdueStudents = new ArrayList<>();
+        ArrayList<Student> overdueStudents = new ArrayList<>();
         Student student1 = new Student();
         BookIssue bookIssue = new BookIssue();
-        OverdueStudent returnStudents;
+        Student returnStudents;
         for (BookIssue issue : bookIssue.bookIssues()) {
             if (student.isOverdue(issue.getUsername())) {
-                returnStudents = new OverdueStudent();
+                returnStudents = new Student();
                 returnStudents.username = issue.getUsername();
                 for (Student s : student1.getStudents()) {
                     if (s.getUsername().equals(issue.getUsername())) {
@@ -46,8 +68,6 @@ public class OverdueStudent extends Student {
                 overdueStudents.add(returnStudents);
 
             }
-
-
         }
         return overdueStudents;
     }

@@ -65,7 +65,8 @@ public class Book extends LMS {
         String query;
         switch (string) {
             case "isbn":
-                query = "SELECT " + "*" + " FROM Book" +
+                query =
+                        "SELECT " + "*" + " FROM Book" +
                         " ORDER BY " + "ISBN" + " ASC;";
                 break;
             case "title":
@@ -156,6 +157,30 @@ public class Book extends LMS {
 
     public int getReserved() {
         return this.reserved;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setPublishDate(Date publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    public void setReserved(int reserved) {
+        this.reserved = reserved;
     }
 }
 

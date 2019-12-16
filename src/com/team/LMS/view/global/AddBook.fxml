@@ -119,12 +119,12 @@
                      <Insets left="15.0" />
                   </HBox.margin>
                </Label>
-               <Button fx:id="addBookCancelBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
+               <Button fx:id="addBookCancelBtn" onAction="#cancelAdditionBook" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
                   <HBox.margin>
                      <Insets left="15.0" />
                   </HBox.margin>
                </Button>
-               <Button fx:id="addBookOKBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="OK" textFill="WHITE">
+               <Button fx:id="addBookOKBtn" onAction="#addNewBook" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="OK" textFill="WHITE">
                   <HBox.margin>
                      <Insets left="10.0" />
                   </HBox.margin>

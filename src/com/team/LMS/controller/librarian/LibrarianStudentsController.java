@@ -2,6 +2,7 @@ package com.team.LMS.controller.librarian;
 
 import com.team.LMS.controller.global.AddStudentController;
 import com.team.LMS.controller.global.EditStudentController;
+import com.team.LMS.model.Librarian;
 import com.team.LMS.model.Person;
 import com.team.LMS.model.Student;
 import javafx.collections.FXCollections;
@@ -62,5 +63,22 @@ public class LibrarianStudentsController implements Initializable {
     public void editStudentAction()throws IOException{
         EditStudentController editStudentController=new EditStudentController();
         editStudentController.editStudentFunction();
+    }
+
+    public void searchStudent() throws SQLException {
+        Student student=new Student();
+        ArrayList<Student>students=student.getStudents();
+        String searching=deleteStudentTextField.getText();
+        boolean flag=false;
+        for(Student student_:students) {
+            if (searching.equals(student_.getUsername())) {
+                flag = true;
+                break;
+            }
+        }
+        if(flag)
+            System.out.println("Searching student is found !");
+        else
+            System.out.println("This kind of student doesn't exist ! ");
     }
 }

@@ -130,19 +130,17 @@ public class Student extends Person {
     }
 
     //TODO : To check the function to its functionality
-    public void modifyStudent(String username, Map<String, Object> columnValue) {
-        for (Map.Entry<String, Object> entry : columnValue.entrySet()) {
+    public void modifyStudent(String username, String firstName, String lastName) {
 
 
-            String query = "UPDATE Student set " + entry.getKey() + "=" + entry.getValue() + " where username = " + username + ";";
-            try {
-                PreparedStatement pstmt = connection.prepareStatement(query);
-                pstmt.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
-                throw new IOError(new Throwable());
-            }
+        String query = "UPDATE Student set  firstName" + "=" + firstName + " , set  lastName = " + lastName + " where username = " + username + ";";
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new IOError(new Throwable());
         }
-
     }
+
 }

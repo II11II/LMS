@@ -1,5 +1,6 @@
 package com.team.LMS.controller.global;
 
+import com.team.LMS.controller.login.LoginController;
 import com.team.LMS.model.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,25 +31,34 @@ public class EditStudentController {
         primaryStage.show();
     }
 
-
-    public Student editStudent() throws SQLException {
+    public Student editStudentSearch() throws SQLException {
         Student student=new Student();
         String studentId=editStudentIDTextField.getText();
         ArrayList<Student> students=student.getStudents();
         for(Student student_:students){
             if(student_.getUsername().equals(studentId)){
+                editStudentFirstNameTextField.setText(student_.getFirstName());
+                editStudentLastNameTextField.setText(student_.getLastName());
                 return student_;
             }
         }
         return null;
     }
 
-    public void editAddition(String studentId) throws SQLException {
-        Student student=new Student();
-        student=editStudent();
-//        if(student!=null){
-//            student.modifyStudent;
-//        }
+    public void editStudentOk() throws SQLException {
+        Student student;
+        student=editStudentSearch();
+        if(student!=null) {
+            student.setFirstName(editStudentFirstNameTextField.getText());
+            student.setLastName(editStudentLastNameTextField.getText());
+            student.modifyStudent(student.getUsername(),student.getFirstName(),student.getLastName());
+            LoginController.controlWindows(editStudentOKBtn);
+        }else {
+            System.out.println("Student with this ID does not exist");
+        }
+    }
 
+    public void editStudentCancel(){
+        LoginController.controlWindows(editStudentCancelBtn);
     }
 }

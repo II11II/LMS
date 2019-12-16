@@ -27,7 +27,7 @@
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                 </Label>
-            <Button fx:id="editBookSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+            <Button fx:id="editBookSearchBtn" onAction="#editBookSearch" mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                <HBox.margin>
                   <Insets left="25.0" />
                </HBox.margin>
@@ -122,12 +122,12 @@
                     <Insets left="10.0" />
                 </padding>
                 <children>
-                    <Button fx:id="editBookCancelBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
+                    <Button fx:id="editBookCancelBtn" onAction="#editStudentCancel" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
                         <HBox.margin>
                             <Insets left="225.0" />
                         </HBox.margin>
                     </Button>
-                    <Button fx:id="editBookOKBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="OK" textFill="WHITE">
+                    <Button fx:id="editBookOKBtn" onAction="#editBookOk" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="OK" textFill="WHITE">
                         <HBox.margin>
                             <Insets left="10.0" />
                         </HBox.margin>

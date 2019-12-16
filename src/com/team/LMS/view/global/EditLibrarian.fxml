@@ -27,7 +27,7 @@
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                 </Label>
-                <Button fx:id="editLibrarianSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+                <Button fx:id="editLibrarianSearchBtn" onAction="#editLibrarianSearch" mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                     <HBox.margin>
                         <Insets left="20.0" />
                     </HBox.margin>
@@ -71,12 +71,12 @@
                     <Insets left="10.0" />
                 </padding>
                 <children>
-                    <Button fx:id="editLibrarianCancelBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
+                    <Button fx:id="editLibrarianCancelBtn" onAction="#editStudentCancel" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
                         <HBox.margin>
                             <Insets left="233.0" />
                         </HBox.margin>
                     </Button>
-                    <Button fx:id="editLibrariantOKBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="OK" textFill="WHITE">
+                    <Button fx:id="editLibrarianOKBtn" onAction="#editLibrarianOk" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="OK" textFill="WHITE">
                         <HBox.margin>
                             <Insets left="10.0" />
                         </HBox.margin>

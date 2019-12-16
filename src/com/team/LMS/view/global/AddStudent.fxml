@@ -14,55 +14,52 @@
     <Pane layoutX="-1.0" prefHeight="284.0" prefWidth="474.0" style="-fx-background-color: #9fc5e8;">
         <VBox layoutY="-1.0" prefHeight="280.0" prefWidth="466.0">
             <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="357.0">
-                <Label text="Student ID :  " textFill="WHITE">
-                    <HBox.margin>
-                        <Insets left="60.0" />
-                    </HBox.margin>
-                    <font>
-                        <Font name="System Bold Italic" size="15.0" />
-                    </font>
-                </Label>
                 <TextField fx:id="addStudentIDTextField" prefHeight="31.0" prefWidth="220.0">
                     <HBox.margin>
-                        <Insets left="10.0" />
+                        <Insets left="60.0" />
                     </HBox.margin>
                 </TextField>
+                <Label text="Student ID" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                    </font>
+                </Label>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="357.0">
-                <Label text="First Name : " textFill="WHITE">
+            <TextField fx:id="addStudentFirstNameTextField" prefHeight="31.0" prefWidth="220.0">
+               <HBox.margin>
+                  <Insets left="60.0" />
+               </HBox.margin>
+            </TextField>
+                <Label text="First Name" textFill="WHITE">
                     <font>
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                     <HBox.margin>
-                        <Insets left="60.0" />
+                        <Insets left="20.0" />
                     </HBox.margin>
                 </Label>
-            <TextField fx:id="addStudentFirstNameTextField" prefHeight="31.0" prefWidth="220.0">
-               <HBox.margin>
-                  <Insets left="11.0" />
-               </HBox.margin>
-            </TextField>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="357.0">
                 <VBox.margin>
                     <Insets />
                 </VBox.margin>
-                <padding>
-                    <Insets left="10.0" />
-                </padding>
-                <Label text="Last Name : " textFill="WHITE">
+            <TextField fx:id="addStudentLastNameTextField" prefHeight="31.0" prefWidth="220.0">
+               <HBox.margin>
+                  <Insets left="60.0" />
+               </HBox.margin>
+            </TextField>
+                <Label text="Last Name" textFill="WHITE">
                     <font>
                         <Font name="System Bold Italic" size="15.0" />
                     </font>
                <HBox.margin>
-                  <Insets left="50.0" />
+                  <Insets left="20.0" />
                </HBox.margin>
                 </Label>
-            <TextField fx:id="addStudentLastNameTextField" prefHeight="31.0" prefWidth="220.0">
-               <HBox.margin>
-                  <Insets left="12.0" />
-               </HBox.margin>
-            </TextField>
             </HBox>
          <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="465.0">
             <padding>
@@ -73,7 +70,7 @@
                   <HBox.margin>
                      <Insets left="5.0" />
                   </HBox.margin></Label>
-                <Button fx:id="addStudentCancelBtn" onAction="#cancelAdditionStudent" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
+                <Button fx:id="addStudentCancelBtn" mnemonicParsing="false" onAction="#cancelAdditionStudent" prefHeight="31.0" prefWidth="100.0" stylesheets="@../../assets/styling/style.css" text="Cancel" textFill="WHITE">
                   <HBox.margin>
                      <Insets left="10.0" />
                   </HBox.margin>

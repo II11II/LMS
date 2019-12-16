@@ -30,7 +30,7 @@ public class Main extends Application {
             System.out.println(s.getUsername());
 
         }
-        System.out.println(overdueStudent.overdueStudents());
+        System.out.println(overdueStudent.overdueStudent());
 //        Admin admzzin=new Admin();
 //        admin.register("admin","admin","ABDUVOHID","ISROILOV");
 //        Student model = new Student();

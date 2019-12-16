@@ -150,13 +150,16 @@ public class LibrarianBooksController implements Initializable {
 
     public void borrowedBookButton() throws SQLException {
         Book book=new Book();
+
         ArrayList<Book>bookBorrow=new ArrayList<>();
-        ArrayList<Book>books=new ArrayList<>();
-        for(Book book1:books){
-            if(book1.getReserved()==0){
-                bookBorrow.add(book1);
+//        ArrayList<Book>books=new ArrayList<>();
+        for(Book b: book.getBooks("reserved")){
+            if(b.getReserved()>0){
+                bookBorrow.add(b);
             }
         }
+        refresh();
         booksObservableList.addAll(bookBorrow);
+
     }
 }

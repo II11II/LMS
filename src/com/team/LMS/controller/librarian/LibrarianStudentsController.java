@@ -31,11 +31,10 @@ public class LibrarianStudentsController implements Initializable {
     @FXML private TableColumn<Person,String> colId;
     @FXML private TableColumn<Person,String> colFirstName;
     @FXML private TableColumn<Person,String> colLastName;
-
+    ObservableList<Person> personObservableList = FXCollections.observableArrayList();
     ObservableList<Person> getStudent() throws SQLException {
         Student student = new Student();
         ArrayList<Student> students = student.getStudents();
-        ObservableList<Person> personObservableList = FXCollections.observableArrayList();
         personObservableList.addAll(students);
         return personObservableList;
     }
@@ -74,6 +73,9 @@ public class LibrarianStudentsController implements Initializable {
         for(Student student_:students) {
             if (searching.equals(student_.getUsername())) {
                 flag = true;
+//                 personObservableList = FXCollections.observableArrayList();
+                personObservableList.clear();
+                personObservableList.addAll(student_);
                 break;
             }
         }

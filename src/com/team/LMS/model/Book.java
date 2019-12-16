@@ -67,7 +67,7 @@ public class Book extends LMS {
             case "isbn":
                 query =
                         "SELECT " + "*" + " FROM Book" +
-                        " ORDER BY " + "ISBN" + " ASC;";
+                                " ORDER BY " + "ISBN" + " ASC;";
                 break;
             case "title":
                 query = "SELECT " + "*" + " FROM Book" +
@@ -118,19 +118,25 @@ public class Book extends LMS {
     }
 
     //TODO : To check the function to its functionality
-    public void modifyBook(int ISBN, Map<String, Object> columnValue) {
-        for (Map.Entry<String, Object> entry : columnValue.entrySet()) {
+    public void modifyBook(int ISBN, String title,
+                           String subject,
+                           String author, Date publishDate, int reserved) {
 
+        String query = "UPDATE Book set  title = '" + title + "' , " +
+                "  subject = '" + subject + "', " +
+                "author = '" + author + "'," +
+                "publishDate = '" + publishDate + "'," +
+                "reserved = " + reserved +
+                " where ISBN = '" + ISBN + "';";
 
-            String query = "UPDATE Book set " + entry.getKey() + "=" + entry.getValue() + " where ISBN = " + ISBN + ";";
-            try {
-                PreparedStatement pstmt = connection.prepareStatement(query);
-                pstmt.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
-                throw new IOError(new Throwable());
-            }
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new IOError(new Throwable());
         }
+
 
     }
 

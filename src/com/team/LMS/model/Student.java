@@ -133,7 +133,7 @@ public class Student extends Person {
     public void modifyStudent(String username, String firstName, String lastName) {
 
 
-        String query = "UPDATE Student set  firstName" + "=" + firstName + " , set  lastName = " + lastName + " where username = " + username + ";";
+        String query = "UPDATE Student set  firstName = '" + firstName + "' ,   lastName = '" + lastName + "' where username = '" + username + "';";
         try {
             PreparedStatement pstmt = connection.prepareStatement(query);
             pstmt.executeUpdate();

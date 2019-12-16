@@ -36,13 +36,13 @@ public class Librarian extends Person {
     }
 
     // TODO: Check the functionality
-    public ArrayList<Librarian> getLibrarians(){
-        String query="select username,firstName,lastName from Librarian";
-        ArrayList<Librarian> librarians=new ArrayList<>();
-        ResultSet resultSet ;
+    public ArrayList<Librarian> getLibrarians() {
+        String query = "select username,firstName,lastName from Librarian";
+        ArrayList<Librarian> librarians = new ArrayList<>();
+        ResultSet resultSet;
         try {
             resultSet = statement.executeQuery(query);
-           Librarian librarian;
+            Librarian librarian;
             while (resultSet.next()) {
                 librarian = new Librarian();
                 librarian.firstName = resultSet.getString("firstName");
@@ -55,8 +55,9 @@ public class Librarian extends Person {
         }
         return librarians;
     }
+
     //TODO:Check the functionality
-    public Librarian deleteLibrarian(String username)  {
+    public Librarian deleteLibrarian(String username) {
 
         String query = "delete from Librarian where 'username' =" + username + ";";
         try {
@@ -69,20 +70,18 @@ public class Librarian extends Person {
     }
 
     //TODO : To check the function to its functionality
-    public void modifyLibrarian(String username, Map<String, Object> columnValue) {
-        for (Map.Entry<String, Object> entry : columnValue.entrySet()) {
+    public void modifyLibrarian(String username, String firstName, String lastName) {
 
 
-            String query = "UPDATE Librarian set " + entry.getKey() + "=" + entry.getValue() + " where username = " + username + ";";
-            try {
-                PreparedStatement pstmt = connection.prepareStatement(query);
-                pstmt.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
-                throw new IOError(new Throwable());
-            }
+        String query = "UPDATE Librarian set  firstName = '" + firstName + "' ,   lastName = '" + lastName + "' where username = '" + username + "';";
+
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new IOError(new Throwable());
         }
-
     }
 
 

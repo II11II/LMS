@@ -1,6 +1,7 @@
 package com.team.LMS;
 
 import com.team.LMS.model.Admin;
+import com.team.LMS.model.Book;
 import com.team.LMS.model.OverdueStudent;
 import com.team.LMS.model.Student;
 import javafx.application.Application;
@@ -27,8 +28,8 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 //        Admin admin=new Admin();
 //        admin.register("admin","admin","ABDUVOHID","ISROILOV");
-//        Student model = new Student();
-//        model.fineOrBlock("s1810037", 248455, false);
+        Student model = new Student();
+        model.modifyStudent("s1810037", "Joker", "Batman");
         /**Example
          model.issueBook("s1810037",24,new Date(new java.util.Date().getTime()));
          **/
@@ -57,9 +58,9 @@ public class Main extends Application {
 //        System.out.println(book.getSortedBySubject());
 //        System.out.println(book.getSortedByQuantity());
 //
-//        Book book=new Book();
+        Book book=new Book();
 //      System.out.println(book.getBook());
-//        book.saveBook("J++","PI","Sara",100,new Date(new java.util.Date().getTime()));
+        book.modifyBook(24,"PI","Sara","100",new Date(new java.util.Date().getTime()),0);
 //
 //        book.saveBook("A++","AI","Sara",32,new Date(new java.util.Date().getTime()));
 //        book.deleteBook(242);

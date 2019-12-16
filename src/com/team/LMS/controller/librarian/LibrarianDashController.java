@@ -46,6 +46,7 @@ public class LibrarianDashController implements Initializable{
             issueBook = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianIssueBook.fxml"));
             returnInfo = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianReturnBook.fxml"));
             blockInfo = FXMLLoader.load(getClass().getResource("/com/team/LMS/view/librarian/LibrarianBlockStudent.fxml"));
+
             setNode(studentsInfo);
         } catch (IOException ex) {
             Logger.getLogger(LibrarianDashController.class.getName()).log(Level.SEVERE, null, ex);
@@ -53,7 +54,8 @@ public class LibrarianDashController implements Initializable{
 
     }
 
-    @FXML private void studentsData(ActionEvent event) {
+    @FXML private void studentsData(ActionEvent event) throws IOException {
+
         setNode(studentsInfo);
     }
 

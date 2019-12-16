@@ -84,6 +84,9 @@ public class Book extends LMS {
             case "copyright":
                 query = "SELECT * FROM Book ORDER BY publishDate DESC;";
                 break;
+                case "reserved":
+                query = "SELECT * FROM Book ORDER BY reserved DESC;";
+                break;
             case "default":
             default:
                 query = "Select * from Book";
@@ -97,6 +100,7 @@ public class Book extends LMS {
                 author = resultSet.getString("author");
                 ISBN = resultSet.getInt("ISBN");
                 publishDate = resultSet.getDate("publishDate");
+                reserved = resultSet.getInt("reserved");
                 books.add(new Book(title, subject, author, ISBN, publishDate, reserved));
             }
         } catch (SQLException e) {

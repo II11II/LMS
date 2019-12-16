@@ -40,7 +40,7 @@ public class EditLibrarianController {
         for(Librarian librarian_:librarians){
             if(librarian_.getUsername().equals(librarianId)){
                 editLibrarianFirstNameTextField.setText(librarian_.getFirstName());
-                editLibrarianIDTextField.setText(librarian_.getLastName());
+                editLibrarianLastNameTextField.setText(librarian_.getLastName());
                 return librarian_;
             }
         }

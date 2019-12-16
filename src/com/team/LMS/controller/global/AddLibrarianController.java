@@ -41,8 +41,8 @@ public class AddLibrarianController {
         boolean flag=false;
         ArrayList<Librarian> librarians=librarian.getLibrarians();
         librarianId = addLibrarianIDTextField.getText();
-        for(Librarian librarian1_ :librarians){
-            if (librarian.getUsername().equals(librarianId)) {
+        for(Librarian librarian_ :librarians){
+            if (librarian_.getUsername().equals(librarianId)) {
                 flag = true;
                 break;
             }

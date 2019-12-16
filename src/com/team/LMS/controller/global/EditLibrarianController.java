@@ -34,7 +34,7 @@ public class EditLibrarianController {
     }
 
 
-    public Librarian editLibrarianSearch() throws SQLException {
+    public void editLibrarianSearch() throws SQLException {
         Librarian librarian=new Librarian();
         String librarianId=editLibrarianIDTextField.getText();
         ArrayList<Librarian> librarians=librarian.getLibrarians();
@@ -42,19 +42,19 @@ public class EditLibrarianController {
             if(librarian_.getUsername().equals(librarianId)){
                 editLibrarianFirstNameTextField.setText(librarian_.getFirstName());
                 editLibrarianLastNameTextField.setText(librarian_.getLastName());
-                return librarian_;
+                break;
             }
         }
-        return null;
+
     }
 
     public void editLibrarianOk() throws SQLException {
         Librarian librarian;
-        librarian=editLibrarianSearch();
-        if(librarian!=null) {
+        librarian=new Librarian();
+        if(!editLibrarianIDTextField.getText().equals("")) {
             librarian.setFirstName(editLibrarianFirstNameTextField.getText());
             librarian.setLastName(editLibrarianLastNameTextField.getText());
-//            librarian.modifyLibrarian(librarian.getUsername(),librarian.getFirstName(),librarian.getLastName());
+            librarian.modifyLibrarian(librarian.getUsername(),librarian.getFirstName(),librarian.getLastName());
             LoginController.controlWindows(editLibrarianOKBtn);
             AdministratorLibrariansController.refresh();
         }else {

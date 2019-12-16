@@ -19,15 +19,24 @@ import java.util.ArrayList;
 
 public class EditBookController {
 
-    @FXML private TextField editBookISBNTextField;
-    @FXML private Button editBookSearchBtn;
-    @FXML private TextField editBookTitleTextField;
-    @FXML private TextField editBookSubjectTextField;
-    @FXML private TextField editBookStatusTextField;
-    @FXML private TextField editBookAuthorTextField;
-    @FXML private TextField editBookCopyrightTextField;
-    @FXML private Button editBookCancelBtn;
-    @FXML private Button editBookOKBtn;
+    @FXML
+    private TextField editBookISBNTextField;
+    @FXML
+    private Button editBookSearchBtn;
+    @FXML
+    private TextField editBookTitleTextField;
+    @FXML
+    private TextField editBookSubjectTextField;
+    @FXML
+    private TextField editBookStatusTextField;
+    @FXML
+    private TextField editBookAuthorTextField;
+    @FXML
+    private TextField editBookCopyrightTextField;
+    @FXML
+    private Button editBookCancelBtn;
+    @FXML
+    private Button editBookOKBtn;
 
     public void editBookFunction() throws IOException {
         Stage primaryStage = new Stage();
@@ -37,41 +46,52 @@ public class EditBookController {
         primaryStage.show();
     }
 
-    public Book editBookSearch() throws SQLException
-    {
-        Book book=new Book();
-        String bookISBN=editBookISBNTextField.getText();
-        ArrayList<Book> books=book.getBooks("default");
-        for(Book book_:books){
-            if(Integer.toString(book_.getISBN()).equals(bookISBN)){
+    public void editBookSearch() throws SQLException {
+        Book book = new Book();
+        String bookISBN = editBookISBNTextField.getText();
+        ArrayList<Book> books = book.getBooks("default");
+        for (Book book_ : books) {
+            if (Integer.toString(book_.getISBN()).equals(bookISBN)) {
                 editBookAuthorTextField.setText(book_.getAuthor());
-                editBookCopyrightTextField.setText(String.valueOf(book.getPublishDate()));
-                editBookTitleTextField.setText(book.getTitle());
-                editBookSubjectTextField.setText(book.getSubject());
-                editBookStatusTextField.setText(String.valueOf(book.getReserved()));
-                return book_;
+                editBookCopyrightTextField.setText(String.valueOf(book_.getPublishDate()));
+                editBookTitleTextField.setText(book_.getTitle());
+                editBookSubjectTextField.setText(book_.getSubject());
+                editBookStatusTextField.setText(String.valueOf(book_.getReserved()));
+                break;
             }
         }
-        return null;
+
     }
 
     public void editBookOk() throws SQLException {
         Book book;
-        book=editBookSearch();
-        if(book!=null) {
+        book = new Book();
+        int reserved = 0;
+        ArrayList<Book> s = book.getBooks("");
+        for (Book books : s) {
+            if (books.getISBN() == Integer.parseInt(editBookISBNTextField.getText())) {
+                reserved = books.getReserved();
+            }
+        }
+        if (!editBookISBNTextField.getText().equals("")) {
             book.setTitle(editBookTitleTextField.getText());
             book.setAuthor(editBookAuthorTextField.getText());
             book.setPublishDate(Date.valueOf(editBookCopyrightTextField.getText()));
             book.setReserved(Integer.parseInt(editBookStatusTextField.getText()));
             book.setSubject(editBookSubjectTextField.getText());
+            book.modifyBook(Integer.parseInt(editBookISBNTextField.getText()), editBookTitleTextField.getText(),
+                    editBookSubjectTextField.getText(), editBookAuthorTextField.getText(), Date.valueOf(editBookCopyrightTextField.getText()),
+                    reserved);
+
+
             LoginController.controlWindows(editBookOKBtn);
             LibrarianBooksController.refresh();
-        }else {
+        } else {
             System.out.println("Book with this ISBN already exist");
         }
     }
 
-    public void editStudentCancel(){
+    public void editStudentCancel() {
         LoginController.controlWindows(editBookCancelBtn);
     }
 }

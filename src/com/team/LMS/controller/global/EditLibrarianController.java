@@ -49,8 +49,7 @@ public class EditLibrarianController {
     }
 
     public void editLibrarianOk() throws SQLException {
-        Librarian librarian;
-        librarian=new Librarian();
+        Librarian  librarian=new Librarian();
         if(!editLibrarianIDTextField.getText().equals("")) {
             librarian.setFirstName(editLibrarianFirstNameTextField.getText());
             librarian.setLastName(editLibrarianLastNameTextField.getText());

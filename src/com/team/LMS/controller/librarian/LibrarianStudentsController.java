@@ -3,6 +3,7 @@ package com.team.LMS.controller.librarian;
 import com.team.LMS.controller.global.AddStudentController;
 import com.team.LMS.controller.global.EditStudentController;
 import com.team.LMS.model.Librarian;
+import com.team.LMS.model.OverdueStudent;
 import com.team.LMS.model.Person;
 import com.team.LMS.model.Student;
 import javafx.collections.FXCollections;
@@ -33,14 +34,17 @@ public class LibrarianStudentsController implements Initializable {
     @FXML private TableColumn<Person,String> colLastName;
 
     public  static ObservableList<Person> personObservableList = FXCollections.observableArrayList();
-     static ObservableList<Person> getStudent() throws SQLException {
+     static ObservableList<Person> getStudent(ArrayList<Student>arrayList) throws SQLException {
         Student student = new Student();
         ArrayList<Student> students = student.getStudents();
-        personObservableList.addAll(students);
+        if(arrayList.isEmpty()) {
+            personObservableList.addAll(students);
+        }else
+        {
+            personObservableList.addAll(arrayList);
+        }
         return personObservableList;
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -51,7 +55,7 @@ public class LibrarianStudentsController implements Initializable {
 
 
         try {
-            studentsTableView.setItems(getStudent());
+            studentsTableView.setItems(getStudent(null));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -89,8 +93,23 @@ public class LibrarianStudentsController implements Initializable {
     }
    public static void refresh() throws SQLException {
        personObservableList.clear();
-       LibrarianStudentsController.getStudent();
+       LibrarianStudentsController.getStudent(null);
     }
+
+    public void overdueStudentsButton() throws SQLException {
+        OverdueStudent overdueStudent=new OverdueStudent();
+         Student student=new Student();
+         ArrayList<Student>students=new ArrayList<>();
+         ArrayList<Student>studentOverdue=new ArrayList<>();
+        for(Student student1:students){
+            if(overdueStudent.isOverdue(student1.getUsername())){
+                studentOverdue.add(student1);
+            }
+        }
+        personObservableList.clear();
+        LibrarianStudentsController.getStudent(studentOverdue);
+    }
+
 
 }
 

@@ -30,7 +30,7 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                     <children>
-                        <Button fx:id="borrowedBooksBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" stylesheets="@../../assets/styling/style.css" text="Borrowed Books" textFill="WHITE">
+                        <Button fx:id="borrowedBooksBtn" onAction="#borrowedBookButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" stylesheets="@../../assets/styling/style.css" text="Borrowed Books" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>

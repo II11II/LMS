@@ -15,6 +15,7 @@ public class Book extends LMS {
     private int ISBN;
     private Date publishDate;
     private int reserved;
+    private boolean isBorrowed;
     private ArrayList<Book> books = new ArrayList<>();
 
     private Book(String title, String subject, String author, int ISBN, Date publishDate, int reserved) throws SQLException {
@@ -140,6 +141,9 @@ public class Book extends LMS {
 
     }
 
+    public boolean isBorrowed() {
+        return isBorrowed;
+    }
 
     public Date getPublishDate() {
         return this.publishDate;

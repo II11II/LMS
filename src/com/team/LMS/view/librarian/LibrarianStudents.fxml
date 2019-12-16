@@ -29,7 +29,7 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button fx:id="overdueStudentsBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" text="Overdue Students" textFill="WHITE">
+                        <Button fx:id="overdueStudentsBtn" onAction="#overdueStudentsButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="139.0" text="Overdue Students" textFill="WHITE">
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>

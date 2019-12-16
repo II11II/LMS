@@ -148,4 +148,15 @@ public class LibrarianBooksController implements Initializable {
         LibrarianBooksController.getBook("default");
     }
 
+    public void borrowedBookButton() throws SQLException {
+        Book book=new Book();
+        ArrayList<Book>bookBorrow=new ArrayList<>();
+        ArrayList<Book>books=new ArrayList<>();
+        for(Book book1:books){
+            if(book1.getReserved()==0){
+                bookBorrow.add(book1);
+            }
+        }
+        booksObservableList.addAll(bookBorrow);
+    }
 }

@@ -36,4 +36,15 @@ public class LibrarianBlockController {
             }
         }
     }
+
+    public void blockStudentButton() throws SQLException {
+        Student student=new Student();
+        String id=blockIDTextField.getText();
+        ArrayList<Student>students=new ArrayList<>();
+        for(Student student1:students){
+            if(student1.getUsername().equals(id)){
+                student1.setBlocked(true);
+            }
+        }
+    }
 }

@@ -41,7 +41,7 @@ public class AdministratorLibrariansController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        adminLibrariansTableView.setEditable(true);
         colId.setCellValueFactory(new PropertyValueFactory<>("username"));
         colFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         colLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));

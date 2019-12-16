@@ -40,7 +40,7 @@ public class AdministratorBooksController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        adminBooksTableView.setEditable(true);
         try {
             setCol();
         } catch (SQLException e) {

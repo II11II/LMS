@@ -40,7 +40,7 @@ public class AdministratorStudentsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        adminStudentsTableView.setEditable(true);
         colId.setCellValueFactory(new PropertyValueFactory<>("username"));
         colFirstname.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         colLastname.setCellValueFactory(new PropertyValueFactory<>("lastName"));

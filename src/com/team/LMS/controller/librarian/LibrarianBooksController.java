@@ -38,7 +38,7 @@ public class LibrarianBooksController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        booksTableView.setEditable(true);
         try {
             setCol("default");
         } catch (SQLException e) {

@@ -42,6 +42,7 @@ public class LibrarianStudentsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        studentsTableView.setEditable(true);
         colId.setCellValueFactory(new PropertyValueFactory<>("username"));
         colFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         colLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));

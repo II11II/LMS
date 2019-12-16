@@ -16,7 +16,7 @@ public class BookIssue extends Book {
         this.username=username;
     }
 
-    public ArrayList<BookIssue> bookIssues(String username) throws SQLException {
+    public ArrayList<BookIssue> bookIssues() throws SQLException {
         ArrayList<BookIssue> bookIssues=new ArrayList<>();
         BookIssue bookIssue;
         String query="select * from BookIssue";

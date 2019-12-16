@@ -1,9 +1,6 @@
 package com.team.LMS;
 
-import com.team.LMS.model.Admin;
-import com.team.LMS.model.Book;
-import com.team.LMS.model.OverdueStudent;
-import com.team.LMS.model.Student;
+import com.team.LMS.model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,6 +23,14 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
+        OverdueStudent overdueStudent=new OverdueStudent();
+        BookIssue bookIssue=new BookIssue();
+        for (OverdueStudent s:overdueStudent.overdueStudents()
+             ) {
+            System.out.println(s.getUsername());
+
+        }
+        System.out.println(overdueStudent.overdueStudents());
 //        Admin admzzin=new Admin();
 //        admin.register("admin","admin","ABDUVOHID","ISROILOV");
 //        Student model = new Student();

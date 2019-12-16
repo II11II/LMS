@@ -1,6 +1,8 @@
 package com.team.LMS.controller.global;
 
+import com.team.LMS.controller.librarian.LibrarianStudentsController;
 import com.team.LMS.controller.login.LoginController;
+import com.team.LMS.model.Librarian;
 import com.team.LMS.model.Student;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,6 +54,8 @@ public class EditStudentController {
             student.setFirstName(editStudentFirstNameTextField.getText());
             student.setLastName(editStudentLastNameTextField.getText());
             student.modifyStudent(student.getUsername(),student.getFirstName(),student.getLastName());
+            LibrarianStudentsController.refresh();
+
             LoginController.controlWindows(editStudentOKBtn);
         }else {
             System.out.println("Student with this ID does not exist");

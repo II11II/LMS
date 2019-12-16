@@ -1,6 +1,7 @@
 package com.team.LMS.controller.global;
 
 import com.team.LMS.controller.librarian.LibrarianDashController;
+import com.team.LMS.controller.librarian.LibrarianStudentsController;
 import com.team.LMS.controller.login.LoginController;
 import com.team.LMS.model.Student;
 import javafx.fxml.FXML;
@@ -50,6 +51,7 @@ public class AddStudentController  {
         else {
             studentObject.register(studentId, "1", addStudentFirstNameTextField.getText(), addStudentLastNameTextField.getText());
             LoginController.controlWindows(addStudentOKBtn);
+            LibrarianStudentsController.refresh();
         }
     }
     public void cancelAdditionStudent(){

@@ -31,13 +31,16 @@ public class LibrarianStudentsController implements Initializable {
     @FXML private TableColumn<Person,String> colId;
     @FXML private TableColumn<Person,String> colFirstName;
     @FXML private TableColumn<Person,String> colLastName;
-    ObservableList<Person> personObservableList = FXCollections.observableArrayList();
-    ObservableList<Person> getStudent() throws SQLException {
+
+    public  static ObservableList<Person> personObservableList = FXCollections.observableArrayList();
+     static ObservableList<Person> getStudent() throws SQLException {
         Student student = new Student();
         ArrayList<Student> students = student.getStudents();
         personObservableList.addAll(students);
         return personObservableList;
     }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -84,4 +87,10 @@ public class LibrarianStudentsController implements Initializable {
         else
             System.out.println("This kind of student doesn't exist ! ");
     }
+   public static void refresh() throws SQLException {
+       personObservableList.clear();
+       LibrarianStudentsController.getStudent();
+    }
+
 }
+

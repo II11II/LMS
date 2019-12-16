@@ -1,5 +1,6 @@
 package com.team.LMS.controller.global;
 
+import com.team.LMS.controller.librarian.LibrarianBooksController;
 import com.team.LMS.controller.login.LoginController;
 import com.team.LMS.model.Book;
 import com.team.LMS.model.Student;
@@ -54,6 +55,7 @@ public class AddBookController {
         else {
             bookObject.saveBook(addBookTitleTextField.getText(), addBookSubjectTextField.getText(), addBookAuthorTextField.getText(), Integer.parseInt(addBookISBNTextField.getText()), Date.valueOf(addBookCopyrightTextField.getText()));
             LoginController.controlWindows(addBookOKBtn);
+            LibrarianBooksController.refresh();
         }
     }
 

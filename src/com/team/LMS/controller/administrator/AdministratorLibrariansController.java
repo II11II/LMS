@@ -2,6 +2,7 @@ package com.team.LMS.controller.administrator;
 
 import com.team.LMS.controller.global.AddLibrarianController;
 import com.team.LMS.controller.global.EditLibrarianController;
+import com.team.LMS.controller.librarian.LibrarianBooksController;
 import com.team.LMS.model.Librarian;
 import com.team.LMS.model.Person;
 import javafx.collections.FXCollections;
@@ -30,11 +31,11 @@ public class AdministratorLibrariansController implements Initializable {
     @FXML private TableColumn<Librarian,String> colFirstName;
     @FXML private TableColumn<Librarian,String> colId;
     @FXML private TableColumn<Librarian,String> colLastName;
+    public static ObservableList<Person> personObservableList = FXCollections.observableArrayList();
 
-    ObservableList<Person> getLibrarian() throws SQLException {
+   public static ObservableList<Person> getLibrarian() throws SQLException {
         Librarian librarian = new Librarian();
         ArrayList<Librarian> librarians = librarian.getLibrarians();
-        ObservableList<Person> personObservableList = FXCollections.observableArrayList();
         personObservableList.addAll(librarians);
         return personObservableList;
     }
@@ -62,5 +63,8 @@ public class AdministratorLibrariansController implements Initializable {
         EditLibrarianController editLibrarianController=new EditLibrarianController();
         editLibrarianController.editLibrarianFunction();
     }
-
+    public static void refresh() throws SQLException {
+        personObservableList.clear();
+        AdministratorLibrariansController.getLibrarian();
+    }
 }

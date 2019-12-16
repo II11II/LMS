@@ -1,5 +1,6 @@
 package com.team.LMS.controller.global;
 
+import com.team.LMS.controller.librarian.LibrarianBooksController;
 import com.team.LMS.controller.login.LoginController;
 import com.team.LMS.model.Book;
 import com.team.LMS.model.Student;
@@ -64,6 +65,7 @@ public class EditBookController {
             book.setReserved(Integer.parseInt(editBookStatusTextField.getText()));
             book.setSubject(editBookSubjectTextField.getText());
             LoginController.controlWindows(editBookOKBtn);
+            LibrarianBooksController.refresh();
         }else {
             System.out.println("Book with this ISBN already exist");
         }

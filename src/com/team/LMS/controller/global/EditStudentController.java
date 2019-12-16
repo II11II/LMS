@@ -62,7 +62,6 @@ public class EditStudentController {
             student.modifyStudent(editStudentIDTextField.getText(), editStudentFirstNameTextField.getText(), editStudentLastNameTextField.getText());
 
             LibrarianStudentsController.refresh();
-
             LoginController.controlWindows(editStudentOKBtn);
         } else {
             System.out.println("Student with this ID does not exist");

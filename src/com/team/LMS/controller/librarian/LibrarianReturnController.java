@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -71,5 +73,10 @@ public class LibrarianReturnController {
                 returnSubjectText.setText(null);
             }
         }
+    }
+
+    public void returnBook() throws SQLException {
+        Student student=new Student();
+        student.returnBook(returnIDTextField.getText(),Integer.parseInt(returnISBNTextField.getText()),new Date(new java.util.Date().getTime()));
     }
 }

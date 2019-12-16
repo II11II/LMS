@@ -26,10 +26,10 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-//        Admin admin=new Admin();
+//        Admin admzzin=new Admin();
 //        admin.register("admin","admin","ABDUVOHID","ISROILOV");
-        Student model = new Student();
-        model.modifyStudent("u1810037", "Islam", "Akhrarov");
+//        Student model = new Student();
+//        model.modifyStudent("s1810037", "Joker", "Batman");
         /**Example
          model.issueBook("s1810037",24,new Date(new java.util.Date().getTime()));
          **/

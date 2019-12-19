@@ -23,8 +23,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        LMS lms=new Student();
-        lms.createTable();
+//        LMS lms=new Student();
+//        lms.createTable();
         //        OverdueStudent overdueStudent=new OverdueStudent();
 //        BookIssue bookIssue=new BookIssue();
 //        for (Student s:overdueStudent.overdueStudent()
@@ -71,7 +71,7 @@ public class Main extends Application {
 //
 //        book.saveBook("A++","AI","Sara",32,new Date(new java.util.Date().getTime()));
 //        book.deleteBook(242);
-//        launch(args);
+        launch(args);
     }
 }
 

@@ -8,14 +8,13 @@ public abstract class LMS {
     final static String SSL = "?autoReconnect=true&useSSL=false";
     final static String driverName = "com.mysql.jdbc.Driver";
     final static String username = "root";
-    final static String password = "Vohid070";
+    final static String password = "";
     final static String url = "jdbc:mysql://" + SERVER_NAME + "/" + TABLE + SSL;
-    Statement statement;
-    Connection connection;
+
+    Connection connection =DriverManager.getConnection(url, username, password);
+    Statement statement = connection.createStatement();
 
     protected LMS() throws SQLException {
-        Connection connection =DriverManager.getConnection(url, username, password);
-        Statement statement = connection.createStatement();
 
 //        createTable();
     }

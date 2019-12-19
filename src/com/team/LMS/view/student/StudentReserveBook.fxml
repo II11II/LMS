@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team.LMS.controller.student.StudentReserveController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team.LMS.controller.student.StudentReserveController">
     <Pane layoutY="21.0" prefHeight="128.0" prefWidth="714.0" style="-fx-background-color: #2874A6;">
         <Label layoutX="47.0" layoutY="29.0" text="Reserve Book" textFill="WHITE">
             <font>
@@ -19,90 +13,7 @@
             </font>
         </Label>
     </Pane>
-    <Pane layoutX="33.0" layoutY="182.0" prefHeight="305.0" prefWidth="300.0" style="-fx-background-color: #9fc5e8;">
-        <children>
-            <VBox layoutY="-1.0" prefHeight="305.0" prefWidth="300.0">
-                <children>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Student ID :  " textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <TextField fx:id="reserveIDTextField" prefHeight="31.0" prefWidth="98.0">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </TextField>
-                            <Button fx:id="reserveIDSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </Button>
-                        </children>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="First Name : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                                <HBox.margin>
-                                    <Insets left="10.0" />
-                                </HBox.margin>
-                            </Label>
-                            <Label fx:id="reserveFirstNameText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Last Name : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <Label fx:id="reserveLastNameText" textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                        </children>
-                        <VBox.margin>
-                            <Insets />
-                        </VBox.margin>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
-                        <children>
-                            <Label text="Date of Reserve : " textFill="WHITE">
-                                <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                </font>
-                            </Label>
-                            <DatePicker fx:id="reserveDatePicker" prefHeight="31.0" prefWidth="152.0" />
-                        </children>
-                        <opaqueInsets>
-                            <Insets />
-                        </opaqueInsets>
-                        <padding>
-                            <Insets left="10.0" />
-                        </padding>
-                    </HBox>
-                </children>
-            </VBox>
-        </children>
-    </Pane>
-    <Pane layoutX="383.0" layoutY="182.0" prefHeight="305.0" prefWidth="300.0" style="-fx-background-color: #9fc5e8;">
+    <Pane layoutX="207.0" layoutY="182.0" prefHeight="305.0" prefWidth="300.0" style="-fx-background-color: #9fc5e8;">
         <children>
             <VBox layoutY="-1.0" prefHeight="305.0" prefWidth="300.0">
                 <children>
@@ -121,7 +32,7 @@
                                     <Insets left="10.0" />
                                 </HBox.margin>
                             </TextField>
-                            <Button fx:id="reserveISBNSearchBtn" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
+                            <Button fx:id="reserveISBNSearchBtn" onAction="#searchIsbnButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" stylesheets="@../../assets/styling/style.css" text="Search" textFill="WHITE">
                                 <HBox.margin>
                                     <Insets left="10.0" />
                                 </HBox.margin>
@@ -232,5 +143,5 @@
             </VBox>
         </children>
     </Pane>
-    <Button fx:id="reserveBookSaveBtn" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Reserve" textFill="WHITE" />
+    <Button fx:id="reserveBookSaveBtn" onAction="#saveBookButton" layoutX="464.0" layoutY="512.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="220.0" stylesheets="@../../assets/styling/style.css" text="Reserve" textFill="WHITE" />
 </AnchorPane>

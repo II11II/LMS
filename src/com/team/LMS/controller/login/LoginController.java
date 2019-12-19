@@ -70,4 +70,8 @@ public class LoginController {
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();
     }
+
+    public String getCurrentUser(){
+        return txtUsername.getText();
+    }
 }

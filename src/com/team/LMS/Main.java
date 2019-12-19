@@ -23,14 +23,16 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-        OverdueStudent overdueStudent=new OverdueStudent();
-        BookIssue bookIssue=new BookIssue();
-        for (Student s:overdueStudent.overdueStudent()
-             ) {
-            System.out.println(s.getUsername());
-
-        }
-        System.out.println(overdueStudent.overdueStudent());
+        LMS lms=new Student();
+        lms.createTable();
+        //        OverdueStudent overdueStudent=new OverdueStudent();
+//        BookIssue bookIssue=new BookIssue();
+//        for (Student s:overdueStudent.overdueStudent()
+//             ) {
+//            System.out.println(s.getUsername());
+//
+//        }
+//        System.out.println(overdueStudent.overdueStudent());
 //        Admin admzzin=new Admin();
 //        admin.register("admin","admin","ABDUVOHID","ISROILOV");
 //        Student model = new Student();
@@ -63,13 +65,13 @@ public class Main extends Application {
 //        System.out.println(book.getSortedBySubject());
 //        System.out.println(book.getSortedByQuantity());
 //
-        Book book=new Book();
+//        Book book=new Book();
 //      System.out.println(book.getBook());
-        book.modifyBook(24,"PI","Sara","100",new Date(new java.util.Date().getTime()),0);
+//        book.modifyBook(24,"PI","Sara","100",new Date(new java.util.Date().getTime()),0);
 //
 //        book.saveBook("A++","AI","Sara",32,new Date(new java.util.Date().getTime()));
 //        book.deleteBook(242);
-        launch(args);
+//        launch(args);
     }
 }
 

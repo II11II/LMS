@@ -14,7 +14,7 @@ public abstract class Person extends LMS {
     }
 
     public Person(String username, String password, String firstName, String lastName) throws java.sql.SQLException {
-        super.createTable();
+
         this.username = username;
         this.password = password;
         this.firstName = firstName;

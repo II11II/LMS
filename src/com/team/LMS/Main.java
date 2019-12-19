@@ -24,7 +24,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
 //        LMS lms=new Student();
-//        lms.createTable();
+
         //        OverdueStudent overdueStudent=new OverdueStudent();
 //        BookIssue bookIssue=new BookIssue();
 //        for (Student s:overdueStudent.overdueStudent()
